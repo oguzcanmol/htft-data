@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-06 16:56",
+  "updated": "2026-04-06 17:13",
   "matrix": {
     "strongHome": {
       "1/1": 0.4992,
@@ -37,186 +37,6 @@
   },
   "upcoming": [
     {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-06",
-      "time": "20:00",
-      "home": "Kocaelispor",
-      "away": "Başakşehir",
-      "open": {
-        "h": 2.83,
-        "d": 2.92,
-        "a": 1.97
-      },
-      "close": {
-        "h": 2.83,
-        "d": 2.92,
-        "a": 1.97
-      },
-      "htft": {
-        "1/1": 4.78,
-        "1/X": 13.2,
-        "1/2": 26.5,
-        "X/1": 6.6,
-        "X/X": 4.39,
-        "X/2": 4.99,
-        "2/1": 33.5,
-        "2/X": 12.7,
-        "2/2": 3.1
-      },
-      "nesineId": 2774429
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-06",
-      "time": "20:00",
-      "home": "Sporting U23",
-      "away": "Braga U23",
-      "open": {
-        "h": 2.27,
-        "d": 2.98,
-        "a": 2.15
-      },
-      "close": {
-        "h": 2.27,
-        "d": 2.98,
-        "a": 2.15
-      },
-      "htft": {},
-      "nesineId": 2776943
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-06",
-      "time": "20:00",
-      "home": "Barcelona (K)",
-      "away": "Levante Las Planas (K)",
-      "open": {
-        "h": 1,
-        "d": 13.1,
-        "a": 17.1
-      },
-      "close": {
-        "h": 1,
-        "d": 13.1,
-        "a": 17.1
-      },
-      "htft": {},
-      "nesineId": 2772769
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-06",
-      "time": "20:00",
-      "home": "HB Torshavn",
-      "away": "B36 Torshavn",
-      "open": {
-        "h": 1.87,
-        "d": 2.94,
-        "a": 2.74
-      },
-      "close": {
-        "h": 1.87,
-        "d": 2.94,
-        "a": 2.74
-      },
-      "htft": {},
-      "nesineId": 2774100
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-06",
-      "time": "20:00",
-      "home": "KR Reykjavik",
-      "away": "Valur Reykjavik",
-      "open": {
-        "h": 1.56,
-        "d": 3.86,
-        "a": 2.93
-      },
-      "close": {
-        "h": 1.56,
-        "d": 3.86,
-        "a": 2.93
-      },
-      "htft": {},
-      "nesineId": 2862305
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-06",
-      "time": "20:00",
-      "home": "Castellon",
-      "away": "Granada",
-      "open": {
-        "h": 1.32,
-        "d": 3.84,
-        "a": 5.39
-      },
-      "close": {
-        "h": 1.32,
-        "d": 3.84,
-        "a": 5.39
-      },
-      "htft": {
-        "1/1": 1.87,
-        "1/X": 15.55,
-        "1/2": 34,
-        "X/1": 3.98,
-        "X/X": 5.76,
-        "X/2": 11.7,
-        "2/1": 21.8,
-        "2/X": 17.7,
-        "2/2": 9.62
-      },
-      "nesineId": 2773835
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-06",
-      "time": "20:00",
-      "home": "Porto B",
-      "away": "Chaves",
-      "open": {
-        "h": 2.95,
-        "d": 2.77,
-        "a": 1.85
-      },
-      "close": {
-        "h": 2.95,
-        "d": 2.77,
-        "a": 1.85
-      },
-      "htft": {},
-      "nesineId": 2765708
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-06",
-      "time": "20:00",
-      "home": "Torreense",
-      "away": "Leixoes",
-      "open": {
-        "h": 1.71,
-        "d": 2.88,
-        "a": 3.26
-      },
-      "close": {
-        "h": 1.71,
-        "d": 2.88,
-        "a": 3.26
-      },
-      "htft": {},
-      "nesineId": 2765450
-    },
-    {
       "league": "EN1",
       "leagueName": "",
       "date": "2026-04-06",
@@ -224,25 +44,25 @@
       "home": "Tromso",
       "away": "Rosenborg",
       "open": {
-        "h": 1.38,
-        "d": 3.61,
-        "a": 4.97
+        "h": 1.39,
+        "d": 3.54,
+        "a": 4.84
       },
       "close": {
-        "h": 1.38,
-        "d": 3.61,
-        "a": 4.97
+        "h": 1.39,
+        "d": 3.54,
+        "a": 4.84
       },
       "htft": {
-        "1/1": 2,
-        "1/X": 15.65,
+        "1/1": 2.03,
+        "1/X": 15.25,
         "1/2": 34,
-        "X/1": 3.92,
-        "X/X": 5.22,
-        "X/2": 10.55,
+        "X/1": 3.98,
+        "X/X": 5.15,
+        "X/2": 10.35,
         "2/1": 23.5,
-        "2/X": 17.6,
-        "2/2": 8.93
+        "2/X": 17.2,
+        "2/2": 8.68
       },
       "nesineId": 2774403
     },
@@ -254,25 +74,25 @@
       "home": "Carrarese C. 1908",
       "away": "Spezia",
       "open": {
-        "h": 1.89,
-        "d": 2.75,
-        "a": 3.21
+        "h": 2.02,
+        "d": 2.69,
+        "a": 2.95
       },
       "close": {
-        "h": 1.89,
-        "d": 2.75,
-        "a": 3.21
+        "h": 2.02,
+        "d": 2.69,
+        "a": 2.95
       },
       "htft": {
-        "1/1": 2.93,
-        "1/X": 12.25,
+        "1/1": 3.18,
+        "1/X": 12.05,
         "1/2": 34,
-        "X/1": 4.88,
-        "X/X": 4.04,
-        "X/2": 7.26,
-        "2/1": 28,
-        "2/X": 13.1,
-        "2/2": 5.5
+        "X/1": 5.14,
+        "X/X": 3.97,
+        "X/2": 6.82,
+        "2/1": 28.5,
+        "2/X": 12.65,
+        "2/2": 4.99
       },
       "nesineId": 2774517
     },
@@ -284,14 +104,14 @@
       "home": "Pogon Grodzisk M.",
       "away": "Stal Mielec",
       "open": {
-        "h": 1.94,
+        "h": 2,
         "d": 3.14,
-        "a": 2.46
+        "a": 2.38
       },
       "close": {
-        "h": 1.94,
+        "h": 2,
         "d": 3.14,
-        "a": 2.46
+        "a": 2.38
       },
       "htft": {},
       "nesineId": 2773391
@@ -334,15 +154,15 @@
         "a": 2.47
       },
       "htft": {
-        "1/1": 3.29,
-        "1/X": 12.5,
+        "1/1": 3.28,
+        "1/X": 12.35,
         "1/2": 27.5,
-        "X/1": 5.45,
-        "X/X": 5,
-        "X/2": 6.19,
-        "2/1": 24.8,
-        "2/X": 12.7,
-        "2/2": 4.02
+        "X/1": 5.5,
+        "X/X": 5.05,
+        "X/2": 6.24,
+        "2/1": 24.35,
+        "2/X": 12.55,
+        "2/2": 4
       },
       "nesineId": 2766127
     },
@@ -454,25 +274,25 @@
       "home": "S. Gijon",
       "away": "R. Sociedad B",
       "open": {
-        "h": 1.54,
-        "d": 3.38,
-        "a": 3.88
+        "h": 1.51,
+        "d": 3.39,
+        "a": 4.01
       },
       "close": {
-        "h": 1.54,
-        "d": 3.38,
-        "a": 3.88
+        "h": 1.51,
+        "d": 3.39,
+        "a": 4.01
       },
       "htft": {
-        "1/1": 2.27,
-        "1/X": 13.5,
+        "1/1": 2.23,
+        "1/X": 13.6,
         "1/2": 34,
-        "X/1": 4.36,
-        "X/X": 5.22,
-        "X/2": 8.85,
+        "X/1": 4.33,
+        "X/X": 5.24,
+        "X/2": 9.11,
         "2/1": 22.25,
-        "2/X": 14.85,
-        "2/2": 6.74
+        "2/X": 15,
+        "2/2": 6.97
       },
       "nesineId": 2774361
     },
@@ -545,24 +365,24 @@
       "away": "Villarreal",
       "open": {
         "h": 2.66,
-        "d": 3.08,
-        "a": 1.98
+        "d": 3.06,
+        "a": 1.99
       },
       "close": {
         "h": 2.66,
-        "d": 3.08,
-        "a": 1.98
+        "d": 3.06,
+        "a": 1.99
       },
       "htft": {
-        "1/1": 4.33,
-        "1/X": 12.35,
+        "1/1": 4.32,
+        "1/X": 12.25,
         "1/2": 23.5,
-        "X/1": 6.7,
-        "X/X": 5.03,
-        "X/2": 5.37,
+        "X/1": 6.72,
+        "X/X": 5.01,
+        "X/2": 5.42,
         "2/1": 28,
-        "2/X": 12,
-        "2/2": 3.07
+        "2/X": 11.85,
+        "2/2": 3.08
       },
       "nesineId": 2773767
     },
@@ -704,15 +524,15 @@
         "a": 5.65
       },
       "htft": {
-        "1/1": 2,
-        "1/X": 17,
+        "1/1": 2.01,
+        "1/X": 17.35,
         "1/2": 34,
-        "X/1": 3.73,
-        "X/X": 4.53,
-        "X/2": 11.25,
+        "X/1": 3.69,
+        "X/X": 4.49,
+        "X/2": 11.15,
         "2/1": 28,
-        "2/X": 19.45,
-        "2/2": 10.45
+        "2/X": 19.85,
+        "2/2": 10.5
       },
       "nesineId": 2774216
     },
@@ -724,14 +544,14 @@
       "home": "Sport. Trinidense",
       "away": "Rubio NU",
       "open": {
-        "h": 1.82,
-        "d": 2.69,
-        "a": 3.14
+        "h": 1.86,
+        "d": 2.68,
+        "a": 3.04
       },
       "close": {
-        "h": 1.82,
-        "d": 2.69,
-        "a": 3.14
+        "h": 1.86,
+        "d": 2.68,
+        "a": 3.04
       },
       "htft": {},
       "nesineId": 2798192
@@ -744,14 +564,14 @@
       "home": "Goias GO",
       "away": "Criciuma",
       "open": {
-        "h": 1.87,
-        "d": 2.59,
-        "a": 3.14
+        "h": 1.91,
+        "d": 2.54,
+        "a": 3.1
       },
       "close": {
-        "h": 1.87,
-        "d": 2.59,
-        "a": 3.14
+        "h": 1.91,
+        "d": 2.54,
+        "a": 3.1
       },
       "htft": {},
       "nesineId": 2772527
@@ -944,14 +764,14 @@
       "home": "Magic Utd Tfa",
       "away": "Moreton City Excelsior",
       "open": {
-        "h": 5.38,
-        "d": 4.58,
-        "a": 1.2
+        "h": 5.74,
+        "d": 4.74,
+        "a": 1.17
       },
       "close": {
-        "h": 5.38,
-        "d": 4.58,
-        "a": 1.2
+        "h": 5.74,
+        "d": 4.74,
+        "a": 1.17
       },
       "htft": {},
       "nesineId": 2842480
@@ -1767,6 +1587,96 @@
       "nesineId": 2830353
     },
     {
+      "league": "EN1",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "20:00",
+      "home": "Aalesunds",
+      "away": "Fredrikstad",
+      "open": {
+        "h": 2.47,
+        "d": 3.15,
+        "a": 2.07
+      },
+      "close": {
+        "h": 2.47,
+        "d": 3.15,
+        "a": 2.07
+      },
+      "htft": {
+        "1/1": 4.05,
+        "1/X": 13.2,
+        "1/2": 25,
+        "X/1": 6.04,
+        "X/X": 4.95,
+        "X/2": 5.29,
+        "2/1": 28,
+        "2/X": 13,
+        "2/2": 3.3
+      },
+      "nesineId": 2776916
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "20:00",
+      "home": "Arka Gdynia",
+      "away": "Zaglebie Lubin",
+      "open": {
+        "h": 1.98,
+        "d": 2.77,
+        "a": 2.68
+      },
+      "close": {
+        "h": 1.98,
+        "d": 2.77,
+        "a": 2.68
+      },
+      "htft": {
+        "1/1": 3.27,
+        "1/X": 13.2,
+        "1/2": 34,
+        "X/1": 4.95,
+        "X/X": 4.13,
+        "X/2": 6.27,
+        "2/1": 28.5,
+        "2/X": 13.7,
+        "2/2": 4.71
+      },
+      "nesineId": 2766311
+    },
+    {
+      "league": "EN1",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "20:00",
+      "home": "Kfum Oslo",
+      "away": "Sandefjord",
+      "open": {
+        "h": 1.86,
+        "d": 3.1,
+        "a": 2.91
+      },
+      "close": {
+        "h": 1.86,
+        "d": 3.1,
+        "a": 2.91
+      },
+      "htft": {
+        "1/1": 2.88,
+        "1/X": 12.7,
+        "1/2": 32,
+        "X/1": 4.92,
+        "X/X": 4.81,
+        "X/2": 6.92,
+        "2/1": 23.95,
+        "2/X": 13.3,
+        "2/2": 4.88
+      },
+      "nesineId": 2776826
+    },
+    {
       "league": "OTHER",
       "leagueName": "",
       "date": "2026-04-07",
@@ -1957,66 +1867,6 @@
       "nesineId": 2766388
     },
     {
-      "league": "EN1",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "20:00",
-      "home": "Aalesunds",
-      "away": "Fredrikstad",
-      "open": {
-        "h": 2.47,
-        "d": 3.15,
-        "a": 2.07
-      },
-      "close": {
-        "h": 2.47,
-        "d": 3.15,
-        "a": 2.07
-      },
-      "htft": {
-        "1/1": 4.05,
-        "1/X": 13.2,
-        "1/2": 25,
-        "X/1": 6.04,
-        "X/X": 4.95,
-        "X/2": 5.29,
-        "2/1": 28,
-        "2/X": 13,
-        "2/2": 3.3
-      },
-      "nesineId": 2776916
-    },
-    {
-      "league": "EN1",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "20:00",
-      "home": "Kfum Oslo",
-      "away": "Sandefjord",
-      "open": {
-        "h": 1.86,
-        "d": 3.1,
-        "a": 2.91
-      },
-      "close": {
-        "h": 1.86,
-        "d": 3.1,
-        "a": 2.91
-      },
-      "htft": {
-        "1/1": 2.88,
-        "1/X": 12.7,
-        "1/2": 32,
-        "X/1": 4.92,
-        "X/X": 4.81,
-        "X/2": 6.92,
-        "2/1": 23.95,
-        "2/X": 13.3,
-        "2/2": 4.88
-      },
-      "nesineId": 2776826
-    },
-    {
       "league": "OTHER",
       "leagueName": "",
       "date": "2026-04-07",
@@ -2065,36 +1915,6 @@
         "2/2": 4.3
       },
       "nesineId": 2796562
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "20:00",
-      "home": "Arka Gdynia",
-      "away": "Zaglebie Lubin",
-      "open": {
-        "h": 1.98,
-        "d": 2.77,
-        "a": 2.68
-      },
-      "close": {
-        "h": 1.98,
-        "d": 2.77,
-        "a": 2.68
-      },
-      "htft": {
-        "1/1": 3.27,
-        "1/X": 13.2,
-        "1/2": 34,
-        "X/1": 4.95,
-        "X/X": 4.13,
-        "X/2": 6.27,
-        "2/1": 28.5,
-        "2/X": 13.7,
-        "2/2": 4.71
-      },
-      "nesineId": 2766311
     },
     {
       "league": "OTHER",
@@ -2824,15 +2644,15 @@
         "a": 3.62
       },
       "htft": {
-        "1/1": 2.66,
-        "1/X": 14.9,
+        "1/1": 2.65,
+        "1/X": 14.6,
         "1/2": 34,
-        "X/1": 4.14,
-        "X/X": 3.88,
-        "X/2": 7.7,
-        "2/1": 30,
-        "2/X": 16.15,
-        "2/2": 6.8
+        "X/1": 4.19,
+        "X/X": 3.92,
+        "X/2": 7.76,
+        "2/1": 29.5,
+        "2/X": 15.9,
+        "2/2": 6.77
       },
       "nesineId": 2825608
     },
@@ -3224,15 +3044,15 @@
         "a": 1.74
       },
       "htft": {
-        "1/1": 6.72,
-        "1/X": 15.95,
-        "1/2": 33.5,
-        "X/1": 7.51,
-        "X/X": 3.51,
-        "X/2": 4.26,
+        "1/1": 6.69,
+        "1/X": 15.65,
+        "1/2": 32.5,
+        "X/1": 7.57,
+        "X/X": 3.55,
+        "X/2": 4.3,
         "2/1": 34,
-        "2/X": 14.7,
-        "2/2": 2.84
+        "2/X": 14.4,
+        "2/2": 2.82
       },
       "nesineId": 2825667
     },
@@ -3594,14 +3414,14 @@
       "home": "AL Rayyan",
       "away": "Umm Salal SC",
       "open": {
-        "h": 1.19,
-        "d": 4.62,
-        "a": 5.44
+        "h": 1.21,
+        "d": 4.53,
+        "a": 5.12
       },
       "close": {
-        "h": 1.19,
-        "d": 4.62,
-        "a": 5.44
+        "h": 1.21,
+        "d": 4.53,
+        "a": 5.12
       },
       "htft": {},
       "nesineId": 2781831
@@ -4344,15 +4164,15 @@
         "a": 3.9
       },
       "htft": {
-        "1/1": 2.71,
-        "1/X": 14.9,
+        "1/1": 2.7,
+        "1/X": 14.6,
         "1/2": 34,
-        "X/1": 4.17,
-        "X/X": 3.43,
-        "X/2": 8.07,
+        "X/1": 4.22,
+        "X/X": 3.45,
+        "X/2": 8.13,
         "2/1": 34,
-        "2/X": 16.35,
-        "2/2": 7.41
+        "2/X": 16.05,
+        "2/2": 7.39
       },
       "nesineId": 2825576
     },
@@ -4394,25 +4214,25 @@
       "home": "CD Cuenca",
       "away": "Santos SP",
       "open": {
-        "h": 2.16,
-        "d": 2.61,
-        "a": 2.55
+        "h": 2.09,
+        "d": 2.62,
+        "a": 2.63
       },
       "close": {
-        "h": 2.16,
-        "d": 2.61,
-        "a": 2.55
+        "h": 2.09,
+        "d": 2.62,
+        "a": 2.63
       },
       "htft": {
-        "1/1": 3.73,
-        "1/X": 14.35,
+        "1/1": 3.59,
+        "1/X": 14.4,
         "1/2": 34,
-        "X/1": 4.99,
-        "X/X": 3.63,
-        "X/2": 5.68,
+        "X/1": 4.86,
+        "X/X": 3.64,
+        "X/2": 5.83,
         "2/1": 34,
-        "2/X": 14.6,
-        "2/2": 4.54
+        "2/X": 14.8,
+        "2/2": 4.73
       },
       "nesineId": 2825601
     },
@@ -5997,5 +5817,1465 @@
     }
   },
   "total_matches": 5859,
-  "nesine_updated": "2026-04-06 16:56"
+  "nesine_updated": "2026-04-06 17:13",
+  "team_profiles": {
+    "Galatasaray": {
+      "id": 2918,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Fenerbahce": {
+      "id": 2919,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Besiktas": {
+      "id": 2920,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Trabzonspor": {
+      "id": 2931,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Basaksehir": {
+      "id": 5981,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Sivasspor": {
+      "id": 2928,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Konyaspor": {
+      "id": 2930,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Alanyaspor": {
+      "id": 262309,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Kasimpasa": {
+      "id": 2933,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Antalyaspor": {
+      "id": 2929,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Kayserispor": {
+      "id": 2935,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Rizespor": {
+      "id": 2932,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Samsunspor": {
+      "id": 2927,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Gaziantep": {
+      "id": 2936,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Kocaelispor": {
+      "id": 2934,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Goztepe": {
+      "id": 2926,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Adana Demirspor": {
+      "id": 261274,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Eyupspor": {
+      "id": 680742,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Bodrum": {
+      "id": 680741,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Arsenal": {
+      "id": 42,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Chelsea": {
+      "id": 38,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Liverpool": {
+      "id": 44,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Man City": {
+      "id": 17,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Man United": {
+      "id": 35,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Tottenham": {
+      "id": 33,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Newcastle": {
+      "id": 39,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Aston Villa": {
+      "id": 40,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Brighton": {
+      "id": 30,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "West Ham": {
+      "id": 37,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Real Madrid": {
+      "id": 2829,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Barcelona": {
+      "id": 2817,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Atletico Madrid": {
+      "id": 2836,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Sevilla": {
+      "id": 2833,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Villarreal": {
+      "id": 2828,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Athletic Bilbao": {
+      "id": 2825,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Bayern Munich": {
+      "id": 2672,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Dortmund": {
+      "id": 2673,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "RB Leipzig": {
+      "id": 37945,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Leverkusen": {
+      "id": 2674,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Juventus": {
+      "id": 2686,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Inter Milan": {
+      "id": 2697,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "AC Milan": {
+      "id": 2692,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Napoli": {
+      "id": 2714,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "PSG": {
+      "id": 2172,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Monaco": {
+      "id": 2173,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Marseille": {
+      "id": 2175,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    },
+    "Lyon": {
+      "id": 2174,
+      "teamRating": 48,
+      "style": "balanced",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      "manager": "",
+      "character": {
+        "determination": 13,
+        "bravery": 14,
+        "composure": 13,
+        "leadership": 12,
+        "workRate": 14,
+        "teamwork": 14,
+        "concentration": 15
+      },
+      "managerStats": {
+        "manManagement": 13,
+        "tactical": 14,
+        "motivation": 13,
+        "adaptability": 13,
+        "pressureHandling": 12
+      },
+      "stats": {},
+      "updated": "2026-04-06"
+    }
+  },
+  "profiles_updated": "2026-04-06 17:20"
 }
