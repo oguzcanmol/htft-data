@@ -1,0 +1,409 @@
+{
+  "updated": "2026-04-06 10:23",
+  "matrix": {
+    "strongHome": {
+      "1/1": 0.4992,
+      "1/X": 0.0451,
+      "1/2": 0.0117,
+      "X/1": 0.1945,
+      "X/X": 0.0902,
+      "X/2": 0.0284,
+      "2/1": 0.0417,
+      "2/X": 0.0376,
+      "2/2": 0.0518
+    },
+    "balanced": {
+      "1/1": 0.2336,
+      "1/X": 0.0609,
+      "1/2": 0.0271,
+      "X/1": 0.1404,
+      "X/X": 0.1711,
+      "X/2": 0.1144,
+      "2/1": 0.0251,
+      "2/X": 0.0565,
+      "2/2": 0.1709
+    },
+    "strongAway": {
+      "1/1": 0.0655,
+      "1/X": 0.0441,
+      "1/2": 0.0414,
+      "X/1": 0.0361,
+      "X/X": 0.1136,
+      "X/2": 0.2206,
+      "2/1": 0.0107,
+      "2/X": 0.0575,
+      "2/2": 0.4104
+    }
+  },
+  "upcoming": [],
+  "teams": {
+    "GR1:Levadeiakos": {
+      "name": "Levadeiakos",
+      "league": "GR1",
+      "last5": [
+        "L",
+        "L",
+        "D",
+        "D",
+        "W"
+      ]
+    },
+    "GR1:Atromitos": {
+      "name": "Atromitos",
+      "league": "GR1",
+      "last5": [
+        "L",
+        "D",
+        "D",
+        "D",
+        "L"
+      ]
+    },
+    "GR1:Olympiakos": {
+      "name": "Olympiakos",
+      "league": "GR1",
+      "last5": [
+        "W",
+        "W",
+        "W",
+        "L",
+        "D"
+      ]
+    },
+    "GR1:Larisa": {
+      "name": "Larisa",
+      "league": "GR1",
+      "last5": [
+        "L",
+        "D"
+      ]
+    },
+    "GR1:Panetolikos": {
+      "name": "Panetolikos",
+      "league": "GR1",
+      "last5": [
+        "W",
+        "L",
+        "L",
+        "D",
+        "D"
+      ]
+    },
+    "GR1:Panserraikos": {
+      "name": "Panserraikos",
+      "league": "GR1",
+      "last5": [
+        "L",
+        "L",
+        "L",
+        "W",
+        "D"
+      ]
+    },
+    "GR1:Volos NFC": {
+      "name": "Volos NFC",
+      "league": "GR1",
+      "last5": [
+        "L",
+        "W",
+        "L",
+        "D",
+        "W"
+      ]
+    },
+    "GR1:PAOK": {
+      "name": "PAOK",
+      "league": "GR1",
+      "last5": [
+        "W",
+        "W",
+        "W",
+        "D",
+        "L"
+      ]
+    },
+    "GR1:Kifisia": {
+      "name": "Kifisia",
+      "league": "GR1",
+      "last5": [
+        "L"
+      ]
+    },
+    "GR1:Asteras Tripolis": {
+      "name": "Asteras Tripolis",
+      "league": "GR1",
+      "last5": [
+        "L",
+        "D",
+        "L",
+        "W",
+        "W"
+      ]
+    },
+    "GR1:Aris": {
+      "name": "Aris",
+      "league": "GR1",
+      "last5": [
+        "L",
+        "D",
+        "W",
+        "D",
+        "D"
+      ]
+    },
+    "GR1:OFI Crete": {
+      "name": "OFI Crete",
+      "league": "GR1",
+      "last5": [
+        "W",
+        "W",
+        "D",
+        "L",
+        "D"
+      ]
+    },
+    "GR1:AEK": {
+      "name": "AEK",
+      "league": "GR1",
+      "last5": [
+        "W",
+        "W",
+        "D",
+        "W",
+        "W"
+      ]
+    },
+    "GR1:Panathinaikos": {
+      "name": "Panathinaikos",
+      "league": "GR1",
+      "last5": [
+        "D",
+        "D",
+        "W",
+        "L",
+        "D"
+      ]
+    },
+    "GR1:Athens Kallithea": {
+      "name": "Athens Kallithea",
+      "league": "GR1",
+      "last5": [
+        "D",
+        "D",
+        "D",
+        "L",
+        "D"
+      ]
+    },
+    "GR1:Lamia": {
+      "name": "Lamia",
+      "league": "GR1",
+      "last5": [
+        "L",
+        "D",
+        "L",
+        "D",
+        "W"
+      ]
+    },
+    "BE1:Antwerp": {
+      "name": "Antwerp",
+      "league": "BE1",
+      "last5": [
+        "W",
+        "D",
+        "W",
+        "D",
+        "D"
+      ]
+    },
+    "BE1:St. Gilloise": {
+      "name": "St. Gilloise",
+      "league": "BE1",
+      "last5": [
+        "D",
+        "W",
+        "W",
+        "W",
+        "D"
+      ]
+    },
+    "BE1:Dender": {
+      "name": "Dender",
+      "league": "BE1",
+      "last5": [
+        "L",
+        "L",
+        "L",
+        "D",
+        "D"
+      ]
+    },
+    "BE1:Cercle Brugge": {
+      "name": "Cercle Brugge",
+      "league": "BE1",
+      "last5": [
+        "W",
+        "W",
+        "L",
+        "L",
+        "D"
+      ]
+    },
+    "BE1:Waregem": {
+      "name": "Waregem",
+      "league": "BE1",
+      "last5": [
+        "L",
+        "L",
+        "W",
+        "L",
+        "D"
+      ]
+    },
+    "BE1:Mechelen": {
+      "name": "Mechelen",
+      "league": "BE1",
+      "last5": [
+        "L",
+        "D",
+        "W",
+        "W",
+        "D"
+      ]
+    },
+    "BE1:RAAL La Louviere": {
+      "name": "RAAL La Louviere",
+      "league": "BE1",
+      "last5": [
+        "D",
+        "L",
+        "W",
+        "L",
+        "L"
+      ]
+    },
+    "BE1:Standard": {
+      "name": "Standard",
+      "league": "BE1",
+      "last5": [
+        "L",
+        "L",
+        "W",
+        "D",
+        "W"
+      ]
+    },
+    "BE1:Anderlecht": {
+      "name": "Anderlecht",
+      "league": "BE1",
+      "last5": [
+        "L",
+        "W",
+        "L",
+        "W",
+        "W"
+      ]
+    },
+    "BE1:Westerlo": {
+      "name": "Westerlo",
+      "league": "BE1",
+      "last5": [
+        "W",
+        "L",
+        "L",
+        "W",
+        "L"
+      ]
+    },
+    "BE1:Oud-Heverlee Leuven": {
+      "name": "Oud-Heverlee Leuven",
+      "league": "BE1",
+      "last5": [
+        "W",
+        "L",
+        "L",
+        "L",
+        "D"
+      ]
+    },
+    "BE1:Charleroi": {
+      "name": "Charleroi",
+      "league": "BE1",
+      "last5": [
+        "W",
+        "D",
+        "L",
+        "D",
+        "D"
+      ]
+    },
+    "BE1:Club Brugge": {
+      "name": "Club Brugge",
+      "league": "BE1",
+      "last5": [
+        "D",
+        "W",
+        "W",
+        "L",
+        "W"
+      ]
+    },
+    "BE1:Genk": {
+      "name": "Genk",
+      "league": "BE1",
+      "last5": [
+        "W",
+        "W",
+        "L",
+        "D",
+        "L"
+      ]
+    },
+    "BE1:St Truiden": {
+      "name": "St Truiden",
+      "league": "BE1",
+      "last5": [
+        "W",
+        "W",
+        "W",
+        "D",
+        "W"
+      ]
+    },
+    "BE1:Gent": {
+      "name": "Gent",
+      "league": "BE1",
+      "last5": [
+        "D",
+        "D",
+        "L",
+        "W",
+        "L"
+      ]
+    },
+    "BE1:Beerschot VA": {
+      "name": "Beerschot VA",
+      "league": "BE1",
+      "last5": [
+        "L",
+        "L",
+        "L",
+        "L",
+        "D"
+      ]
+    },
+    "BE1:Kortrijk": {
+      "name": "Kortrijk",
+      "league": "BE1",
+      "last5": [
+        "L",
+        "W",
+        "L",
+        "W",
+        "L"
+      ]
+    }
+  },
+  "total_matches": 5858
+}
