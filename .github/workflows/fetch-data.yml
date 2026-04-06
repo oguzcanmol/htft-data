@@ -25,6 +25,9 @@ jobs:
       - name: Nesine mac listesi cek
         run: python scripts/fetch_nesine.py
 
+      - name: SofaScore profilleri cek
+        run: python scripts/fetch_sofascore.py
+
       - name: Kaydet
         run: |
           git config user.name "HTFT Bot"
