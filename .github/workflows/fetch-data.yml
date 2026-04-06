@@ -2,7 +2,8 @@ name: Oran Verisi Guncelle
 
 on:
   schedule:
-    - cron: '0 6 * * 1,4'
+    - cron: '0 5 * * *'
+    - cron: '0 8,12,16 * * *'
   workflow_dispatch:
 
 jobs:
@@ -18,13 +19,16 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Veriyi cek
+      - name: Tarihsel veri cek
         run: python scripts/fetch_odds.py
+
+      - name: Nesine mac listesi cek
+        run: python scripts/fetch_nesine.py
 
       - name: Kaydet
         run: |
           git config user.name "HTFT Bot"
           git config user.email "bot@htft.local"
           git add data/
-          git diff --cached --quiet || git commit -m "Veri guncellendi: $(date '+%d/%m/%Y')"
+          git diff --cached --quiet || git commit -m "Veri guncellendi: $(date '+%d/%m/%Y %H:%M')"
           git push
