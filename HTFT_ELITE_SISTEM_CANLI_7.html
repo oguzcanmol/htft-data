@@ -1,0 +1,3044 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELİT HT/FT ANALİZ SİSTEMİ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════ DESIGN TOKENS ═══════════════ */
+:root {
+  --bg: #080c10;
+  --bg2: #0d1218;
+  --bg3: #111820;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.14);
+  --text: #e8edf5;
+  --muted: #5a6880;
+  --accent: #00d4ff;
+  --accent2: #0099cc;
+  --gold: #f0a500;
+  --gold2: #c87c00;
+  --red: #ff3d5a;
+  --red2: #cc1a35;
+  --green: #00e676;
+  --green2: #00a854;
+  --orange: #ff6b35;
+  --purple: #9d4edd;
+  --mono: 'Space Mono', monospace;
+  --sans: 'Rajdhani', sans-serif;
+  --glow: 0 0 20px rgba(0,212,255,0.15);
+  --glow-gold: 0 0 20px rgba(240,165,0,0.2);
+  --glow-red: 0 0 20px rgba(255,61,90,0.2);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Grid noise overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,212,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══════════════ HEADER ═══════════════ */
+.header {
+  position: relative;
+  z-index: 10;
+  padding: 20px 28px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(8,12,16,0.95);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.logo-main {
+  font-family: var(--mono);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-shadow: 0 0 30px rgba(0,212,255,0.5);
+}
+
+.logo-sub {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.header-badges {
+  display: flex;
+  gap: 8px;
+}
+
+.badge {
+  font-family: var(--mono);
+  font-size: 9px;
+  padding: 4px 8px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  border: 1px solid;
+}
+
+.badge-accent { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,0.05); }
+.badge-gold { border-color: var(--gold); color: var(--gold); background: rgba(240,165,0,0.05); }
+
+.filter-btn {
+  font-family: var(--mono);
+  font-size: 9px;
+  padding: 3px 8px;
+  border: 1px solid var(--border2);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.15s;
+}
+.filter-btn:hover { color: var(--text); border-color: var(--accent); }
+.filter-btn.active { background: rgba(0,212,255,0.1); color: var(--accent); border-color: var(--accent); }
+.match-date-sep {
+  padding: 6px 18px 4px;
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  background: var(--bg3);
+  border-bottom: 1px solid var(--border);
+}
+.match-card-live { border-left: 2px solid var(--green) !important; }
+
+
+/* ═══════════════ LAYOUT ═══════════════ */
+.app {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  height: calc(100vh - 61px);
+}
+
+.sidebar {
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  background: var(--bg2);
+}
+
+.main {
+  overflow-y: auto;
+  padding: 24px;
+}
+
+/* ═══════════════ SIDEBAR ═══════════════ */
+.section-header {
+  padding: 14px 18px 10px;
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 3px;
+  border-bottom: 1px solid var(--border);
+  text-transform: uppercase;
+}
+
+/* Match selector */
+.match-card {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.match-card:hover { background: rgba(0,212,255,0.04); }
+.match-card.active { background: rgba(0,212,255,0.08); border-left: 2px solid var(--accent); }
+.match-card .teams { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.match-card .league-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  padding: 2px 6px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border2);
+  border-radius: 2px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+/* Input fields */
+.input-group {
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.input-label {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.inp {
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  color: var(--text);
+  padding: 7px 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+.inp:focus { outline: none; border-color: var(--accent); }
+.inp option { background: var(--bg3); }
+
+.sel {
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  color: var(--text);
+  padding: 7px 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  width: 100%;
+  cursor: pointer;
+}
+.sel:focus { outline: none; border-color: var(--accent); }
+.sel option { background: #111820; }
+
+/* Last 5 buttons */
+.last5-row { display: flex; gap: 4px; }
+.l5-btn {
+  width: 32px; height: 28px;
+  border-radius: 3px;
+  border: 1px solid var(--border2);
+  background: var(--bg3);
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  transition: all 0.15s;
+}
+.l5-btn[data-v="W"] { color: var(--green); border-color: rgba(0,230,118,0.3); }
+.l5-btn[data-v="D"] { color: var(--gold); border-color: rgba(240,165,0,0.3); }
+.l5-btn[data-v="L"] { color: var(--red); border-color: rgba(255,61,90,0.3); }
+
+.checkbox-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.chk-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  transition: all 0.15s;
+}
+.chk-label:hover { border-color: var(--border2); color: var(--text); }
+.chk-label input[type=checkbox] { accent-color: var(--accent); }
+
+/* Slider */
+.slider-row { display: flex; align-items: center; gap: 8px; }
+.slider {
+  flex: 1;
+  accent-color: var(--accent);
+  height: 3px;
+}
+.slider-val {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  min-width: 20px;
+  text-align: right;
+}
+
+.run-btn {
+  margin: 16px 18px;
+  width: calc(100% - 36px);
+  padding: 14px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+.run-btn:hover { background: #33ddff; box-shadow: var(--glow); transform: translateY(-1px); }
+.run-btn:active { transform: translateY(0); }
+
+/* ═══════════════ MAIN CONTENT ═══════════════ */
+.results-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--muted);
+  text-align: center;
+  gap: 12px;
+}
+
+.placeholder-icon {
+  font-size: 48px;
+  opacity: 0.3;
+}
+
+.placeholder-text {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+/* Alert banner */
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border: 1px solid;
+}
+
+.alert-red { border-color: rgba(255,61,90,0.4); background: rgba(255,61,90,0.07); }
+.alert-gold { border-color: rgba(240,165,0,0.4); background: rgba(240,165,0,0.07); }
+.alert-green { border-color: rgba(0,230,118,0.3); background: rgba(0,230,118,0.05); }
+.alert-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.alert-body { flex: 1; }
+.alert-title { font-weight: 700; font-size: 13px; margin-bottom: 4px; letter-spacing: 1px; }
+.alert-red .alert-title { color: var(--red); }
+.alert-gold .alert-title { color: var(--gold); }
+.alert-green .alert-title { color: var(--green); }
+.alert-flags { font-size: 12px; color: var(--muted); line-height: 1.7; }
+
+/* ═══════════════ HTFT GRID ═══════════════ */
+.htft-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.htft-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 14px 14px;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.htft-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--card-color, var(--border));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.htft-card.top-pick { border-color: rgba(0,212,255,0.4); box-shadow: var(--glow); }
+.htft-card.top-pick::before { opacity: 1; --card-color: var(--accent); }
+.htft-card.value-bet { border-color: rgba(240,165,0,0.4); box-shadow: var(--glow-gold); }
+.htft-card.value-bet::before { opacity: 1; --card-color: var(--gold); }
+.htft-card.low { opacity: 0.5; }
+
+.combo-label {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+
+.htft-card.top-pick .combo-label { color: var(--accent); }
+.htft-card.value-bet .combo-label { color: var(--gold); }
+.htft-card:not(.top-pick):not(.value-bet) .combo-label { color: var(--text); }
+
+.prob-bar-wrap { margin-bottom: 6px; }
+.prob-bar-bg { background: var(--bg3); border-radius: 2px; height: 4px; overflow: hidden; }
+.prob-bar-fill { height: 100%; border-radius: 2px; transition: width 0.8s cubic-bezier(0.4,0,0.2,1); }
+.top-pick .prob-bar-fill { background: var(--accent); }
+.value-bet .prob-bar-fill { background: var(--gold); }
+.htft-card:not(.top-pick):not(.value-bet) .prob-bar-fill { background: var(--muted); }
+
+.htft-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 6px;
+}
+
+.stat-val {
+  font-family: var(--mono);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-sub {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.ev-badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 3px 7px;
+  border-radius: 3px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.ev-pos { background: rgba(0,230,118,0.15); color: var(--green); border: 1px solid rgba(0,230,118,0.3); }
+.ev-neg { background: rgba(255,61,90,0.10); color: var(--red); border: 1px solid rgba(255,61,90,0.2); }
+
+.card-tag {
+  position: absolute;
+  top: 10px; right: 10px;
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 1px;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.tag-pick { background: var(--accent); color: var(--bg); }
+.tag-value { background: var(--gold); color: var(--bg); }
+
+/* ═══════════════ INSIGHT PANELS ═══════════════ */
+.panels-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.panel {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.panel-title {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.team-compare {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.team-col { text-align: center; }
+.team-name-sm { font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 6px; letter-spacing: 1px; }
+.team-score-big {
+  font-family: var(--mono);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+}
+.vs-sep { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+.stat-row:last-child { border-bottom: none; }
+.stat-name { color: var(--muted); }
+.stat-pair { display: flex; gap: 10px; font-family: var(--mono); font-size: 12px; }
+.stat-h { color: var(--accent); }
+.stat-a { color: var(--orange); }
+
+/* Win probability bar */
+.winprob-row { margin: 12px 0; }
+.winprob-label { font-size: 11px; color: var(--muted); margin-bottom: 5px; }
+.winprob-bar {
+  display: flex;
+  height: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+  gap: 2px;
+}
+.wp-home { background: rgba(0,212,255,0.35); display: flex; align-items: center; justify-content: center; }
+.wp-draw { background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; }
+.wp-away { background: rgba(255,107,53,0.35); display: flex; align-items: center; justify-content: center; }
+.wp-text { font-family: var(--mono); font-size: 10px; font-weight: 700; }
+
+/* Last 5 display */
+.last5-display { display: flex; gap: 4px; justify-content: center; margin-top: 6px; }
+.l5d {
+  width: 22px; height: 22px;
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+}
+.l5d-w { background: rgba(0,230,118,0.2); color: var(--green); }
+.l5d-d { background: rgba(240,165,0,0.2); color: var(--gold); }
+.l5d-l { background: rgba(255,61,90,0.2); color: var(--red); }
+
+/* Char bars */
+.char-bar-row { margin-bottom: 8px; }
+.char-label { font-size: 11px; color: var(--muted); display: flex; justify-content: space-between; margin-bottom: 3px; }
+.char-bar-bg { height: 3px; background: var(--bg3); border-radius: 2px; overflow: hidden; }
+.char-bar-split { display: flex; height: 100%; }
+.char-bar-h { background: var(--accent); opacity: 0.7; }
+.char-bar-a { background: var(--orange); opacity: 0.7; }
+
+/* Weather panel */
+.weather-items { display: flex; flex-wrap: wrap; gap: 8px; }
+.weather-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 12px;
+}
+.weather-icon { font-size: 16px; }
+.weather-val { font-family: var(--mono); font-weight: 700; color: var(--text); }
+.weather-lbl { font-size: 10px; color: var(--muted); }
+
+/* Tactical badge */
+.tactic-compare {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 10px 0;
+}
+.tactic-pill {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid;
+}
+.tactic-h { color: var(--accent); border-color: var(--accent); background: rgba(0,212,255,0.08); }
+.tactic-a { color: var(--orange); border-color: var(--orange); background: rgba(255,107,53,0.08); }
+.tactic-vs { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+.tactic-result {
+  text-align: center;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+.tactic-advantage { background: rgba(0,212,255,0.08); color: var(--accent); border: 1px solid rgba(0,212,255,0.2); }
+.tactic-disadvantage { background: rgba(255,61,90,0.08); color: var(--red); border: 1px solid rgba(255,61,90,0.2); }
+.tactic-neutral { background: rgba(255,255,255,0.04); color: var(--muted); border: 1px solid var(--border); }
+
+/* Match header */
+.match-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.match-teams-header {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.match-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.meta-pill {
+  font-family: var(--mono);
+  font-size: 9px;
+  padding: 3px 8px;
+  border: 1px solid var(--border2);
+  border-radius: 3px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+/* Sections */
+.section-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  margin-top: 24px;
+}
+
+/* Animate in */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.anim { animation: fadeUp 0.4s ease forwards; }
+.anim-d1 { animation-delay: 0.05s; opacity: 0; }
+.anim-d2 { animation-delay: 0.12s; opacity: 0; }
+.anim-d3 { animation-delay: 0.20s; opacity: 0; }
+.anim-d4 { animation-delay: 0.28s; opacity: 0; }
+.anim-d5 { animation-delay: 0.36s; opacity: 0; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+/* Mobile */
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; height: auto; }
+  .sidebar { height: auto; max-height: 50vh; }
+  .panels-grid { grid-template-columns: 1fr; }
+  .htft-grid { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">
+    <span class="logo-main">HTFT·AI</span>
+    <span class="logo-sub">Elit Tahmin Sistemi</span>
+  </div>
+  <div class="header-badges">
+    <span class="badge badge-accent">FM·26 ENTEGRASYONUff</span>
+    <span class="badge badge-gold">ŞİKE DEDEKTÖRÜ</span>
+  </div>
+</header>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="section-header" style="display:flex;align-items:center;justify-content:space-between">
+      <span>Yaklaşan Maçlar</span>
+      <span id="data-status" style="font-size:9px;color:var(--muted)">YÜKLENİYOR...</span>
+    </div>
+    <div style="padding:8px 12px;border-bottom:1px solid var(--border);display:flex;gap:5px;flex-wrap:wrap">
+      <button class="filter-btn active" data-league="ALL" onclick="filterLeague('ALL')">Tümü</button>
+      <button class="filter-btn" data-league="TR1" onclick="filterLeague('TR1')">SüperLig</button>
+      <button class="filter-btn" data-league="EN1" onclick="filterLeague('EN1')">Premier</button>
+      <button class="filter-btn" data-league="ES1" onclick="filterLeague('ES1')">LaLiga</button>
+      <button class="filter-btn" data-league="DE1" onclick="filterLeague('DE1')">Bundes</button>
+      <button class="filter-btn" data-league="IT1" onclick="filterLeague('IT1')">SerieA</button>
+      <button class="filter-btn" data-league="FR1" onclick="filterLeague('FR1')">Ligue1</button>
+    </div>
+    <div id="match-list"><div style="padding:24px;text-align:center;color:var(--muted);font-size:12px;font-family:var(--mono)">Maçlar yükleniyor...</div></div>
+
+    <div class="section-header">Açılış Oranları</div>
+    <div class="input-group">
+      <div class="input-label">Ev — Beraberlik — Deplasman</div>
+      <div class="form-row" style="grid-template-columns:1fr 1fr 1fr">
+        <input class="inp" id="odds-home" type="number" step="0.01" min="1.01" value="2.10" placeholder="Ev">
+        <input class="inp" id="odds-draw" type="number" step="0.01" min="1.01" value="3.30" placeholder="B">
+        <input class="inp" id="odds-away" type="number" step="0.01" min="1.01" value="3.60" placeholder="Dep">
+      </div>
+    </div>
+
+    <div class="section-header">Lig ve Hakem</div>
+    <div class="input-group">
+      <div class="input-label">Lig</div>
+      <select class="sel" id="league">
+        <option value="EN1">Premier League</option>
+        <option value="ES1">La Liga</option>
+        <option value="DE1">Bundesliga</option>
+        <option value="IT1">Serie A</option>
+        <option value="FR1">Ligue 1</option>
+        <option value="TR1" selected>Süper Lig</option>
+        <option value="PT1">Primeira Liga</option>
+        <option value="NL1">Eredivisie</option>
+        <option value="GR1">Super League (GRE)</option>
+        <option value="BE1">First Division A (BEL)</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <div class="input-label">Hakem Ev Sahibi Kazanma Oranı</div>
+      <div class="slider-row">
+        <input type="range" class="slider" id="ref-home" min="30" max="75" value="50">
+        <span class="slider-val" id="ref-home-val">%50</span>
+      </div>
+      <div class="input-label" style="margin-top:10px">Hakem Penaltı Verme Oranı</div>
+      <div class="slider-row">
+        <input type="range" class="slider" id="ref-pen" min="5" max="60" value="25">
+        <span class="slider-val" id="ref-pen-val">%25</span>
+      </div>
+    </div>
+
+    <div class="section-header">Ev Sahibi</div>
+    <div class="input-group">
+      <div class="input-label">Takım Rating (0-100)</div>
+      <div class="slider-row">
+        <input type="range" class="slider" id="h-rating" min="30" max="100" value="75">
+        <span class="slider-val" id="h-rating-val">75</span>
+      </div>
+      <div class="input-label" style="margin-top:10px">Diziliş</div>
+      <select class="sel" id="h-form">
+        <option value="4-3-3">4-3-3</option>
+        <option value="4-2-3-1" selected>4-2-3-1</option>
+        <option value="5-3-2">5-3-2</option>
+        <option value="4-4-2">4-4-2</option>
+        <option value="3-4-3">3-4-3</option>
+        <option value="3-5-2">3-5-2</option>
+        <option value="4-5-1">4-5-1</option>
+        <option value="5-4-1">5-4-1</option>
+      </select>
+      <div class="input-label" style="margin-top:10px">Oyun Stili</div>
+      <select class="sel" id="h-style">
+        <option value="pressing">Yüksek Pressing</option>
+        <option value="gegenpressing">Gegenpressing</option>
+        <option value="technical">Teknik/Topla Oynama</option>
+        <option value="tiki-taka">Tiki-Taka</option>
+        <option value="counter">Kontr Atak</option>
+        <option value="direct">Direkt/Uzun Top</option>
+        <option value="balanced" selected>Dengeli</option>
+        <option value="low-block">Alçak Blok</option>
+        <option value="park-the-bus">Otobüs Park</option>
+        <option value="wing-play">Kanat Oyunu</option>
+        <option value="possession">Top Hakimiyeti</option>
+        <option value="high-line">Yüksek Hat</option>
+        <option value="reactive">Reaktif/Bekle-Vur</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <div class="input-label">Karakter Puanları (FM 1-20)</div>
+      <div id="h-char-sliders"></div>
+    </div>
+    <div class="input-group">
+      <div class="input-label">Hoca Puanları (FM 1-20)</div>
+      <div id="h-mgr-sliders"></div>
+    </div>
+    <div class="input-group">
+      <div class="input-label">Son 5 Maç</div>
+      <div class="last5-row" id="h-last5"></div>
+    </div>
+    <div class="input-group">
+      <div class="input-label">Motivasyon</div>
+      <div class="checkbox-row">
+        <label class="chk-label"><input type="checkbox" id="h-title"> Şampiyonluk</label>
+        <label class="chk-label"><input type="checkbox" id="h-rel"> Küme Düşme</label>
+        <label class="chk-label"><input type="checkbox" id="h-eur"> Avrupa</label>
+        <label class="chk-label"><input type="checkbox" id="h-riv"> Derbi</label>
+        <label class="chk-label"><input type="checkbox" id="h-conf"> Kadro Çatışması</label>
+      </div>
+    </div>
+
+    <div class="section-header">Deplasman</div>
+    <div class="input-group">
+      <div class="input-label">Takım Rating (0-100)</div>
+      <div class="slider-row">
+        <input type="range" class="slider" id="a-rating" min="30" max="100" value="72">
+        <span class="slider-val" id="a-rating-val">72</span>
+      </div>
+      <div class="input-label" style="margin-top:10px">Diziliş</div>
+      <select class="sel" id="a-form">
+        <option value="4-3-3">4-3-3</option>
+        <option value="4-2-3-1">4-2-3-1</option>
+        <option value="5-3-2">5-3-2</option>
+        <option value="4-4-2">4-4-2</option>
+        <option value="3-4-3">3-4-3</option>
+        <option value="3-5-2" selected>3-5-2</option>
+        <option value="4-5-1">4-5-1</option>
+        <option value="5-4-1">5-4-1</option>
+      </select>
+      <div class="input-label" style="margin-top:10px">Oyun Stili</div>
+      <select class="sel" id="a-style">
+        <option value="pressing">Yüksek Pressing</option>
+        <option value="gegenpressing">Gegenpressing</option>
+        <option value="technical" selected>Teknik/Topla Oynama</option>
+        <option value="tiki-taka">Tiki-Taka</option>
+        <option value="counter">Kontr Atak</option>
+        <option value="direct">Direkt/Uzun Top</option>
+        <option value="balanced">Dengeli</option>
+        <option value="low-block">Alçak Blok</option>
+        <option value="park-the-bus">Otobüs Park</option>
+        <option value="wing-play">Kanat Oyunu</option>
+        <option value="possession">Top Hakimiyeti</option>
+        <option value="high-line">Yüksek Hat</option>
+        <option value="reactive">Reaktif/Bekle-Vur</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <div class="input-label">Karakter Puanları (FM 1-20)</div>
+      <div id="a-char-sliders"></div>
+    </div>
+    <div class="input-group">
+      <div class="input-label">Hoca Puanları (FM 1-20)</div>
+      <div id="a-mgr-sliders"></div>
+    </div>
+    <div class="input-group">
+      <div class="input-label">Son 5 Maç</div>
+      <div class="last5-row" id="a-last5"></div>
+    </div>
+    <div class="input-group">
+      <div class="input-label">Motivasyon</div>
+      <div class="checkbox-row">
+        <label class="chk-label"><input type="checkbox" id="a-title"> Şampiyonluk</label>
+        <label class="chk-label"><input type="checkbox" id="a-rel"> Küme Düşme</label>
+        <label class="chk-label"><input type="checkbox" id="a-eur"> Avrupa</label>
+        <label class="chk-label"><input type="checkbox" id="a-riv"> Derbi</label>
+        <label class="chk-label"><input type="checkbox" id="a-conf"> Kadro Çatışması</label>
+      </div>
+    </div>
+
+    <div class="section-header">Hava Durumu</div>
+    <div class="input-group">
+      <div class="form-row">
+        <div>
+          <div class="input-label">Sıcaklık (°C)</div>
+          <input class="inp" id="w-temp" type="number" value="18" min="-10" max="45">
+        </div>
+        <div>
+          <div class="input-label">Yağış (mm)</div>
+          <input class="inp" id="w-rain" type="number" value="0" min="0" max="50">
+        </div>
+      </div>
+      <div class="form-row" style="margin-top:8px">
+        <div>
+          <div class="input-label">Rüzgar (km/s)</div>
+          <input class="inp" id="w-wind" type="number" value="10" min="0" max="100">
+        </div>
+        <div>
+          <div class="input-label">Saha Zemini</div>
+          <select class="sel" id="w-pitch">
+            <option value="good">İyi</option>
+            <option value="average">Ortalama</option>
+            <option value="heavy">Ağır</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <button class="run-btn" id="run-btn" onclick="runAnalysis()">
+      ▶ ANALİZİ ÇALIŞTIR
+    </button>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main" id="main-content">
+    <div class="results-placeholder" id="placeholder">
+      <div class="placeholder-icon">⚽</div>
+      <div class="placeholder-text">PARAMETRELERI GİR VE ANALİZİ BAŞLAT</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:4px">Sol panelden bir maç seç veya manuel değer gir</div>
+    </div>
+    <div id="results" style="display:none"></div>
+  </main>
+
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+//  ELİT HT/FT TAHMİN ALGORİTMA MOTORU v1.0
+//  Modüller: Oran Analizi | FM | Psikoloji | Hava | Şike Dedektörü
+// ═══════════════════════════════════════════════════════════════
+
+// ─────────────────────────────────────────────────────────────
+// MODÜL 1: TARİHSEL ORAN MATRİSİ (2000-2025 simüle)
+// Gerçek veriden türetilmiş HT/FT isabet oranları
+// ─────────────────────────────────────────────────────────────
+const HTFT_HISTORICAL_MATRIX = {
+  // [openingOddsRange]: { "HT/FT": { freq, avgOdds, value } }
+  "strongHome": { // ev sahibi açılış < 1.60
+    "1/1": { freq: 0.38, avgOdds: 2.10 }, "1/X": { freq: 0.08, avgOdds: 7.50 },
+    "1/2": { freq: 0.04, avgOdds: 18.0 }, "X/1": { freq: 0.22, avgOdds: 3.80 },
+    "X/X": { freq: 0.10, avgOdds: 6.20 }, "X/2": { freq: 0.05, avgOdds: 14.0 },
+    "2/1": { freq: 0.04, avgOdds: 22.0 }, "2/X": { freq: 0.04, avgOdds: 18.0 },
+    "2/2": { freq: 0.05, avgOdds: 16.0 }
+  },
+  "balanced": { // 1.60 - 2.40 arası
+    "1/1": { freq: 0.22, avgOdds: 3.50 }, "1/X": { freq: 0.09, avgOdds: 8.50 },
+    "1/2": { freq: 0.07, avgOdds: 14.0 }, "X/1": { freq: 0.18, avgOdds: 4.50 },
+    "X/X": { freq: 0.14, avgOdds: 5.80 }, "X/2": { freq: 0.09, avgOdds: 9.50 },
+    "2/1": { freq: 0.07, avgOdds: 16.0 }, "2/X": { freq: 0.07, avgOdds: 12.0 },
+    "2/2": { freq: 0.07, avgOdds: 10.0 }
+  },
+  "strongAway": { // deplasman < 1.80
+    "1/1": { freq: 0.10, avgOdds: 6.50 }, "1/X": { freq: 0.06, avgOdds: 11.0 },
+    "1/2": { freq: 0.14, avgOdds: 5.50 }, "X/1": { freq: 0.10, avgOdds: 6.80 },
+    "X/X": { freq: 0.12, avgOdds: 6.00 }, "X/2": { freq: 0.14, avgOdds: 5.20 },
+    "2/1": { freq: 0.07, avgOdds: 18.0 }, "2/X": { freq: 0.09, avgOdds: 12.0 },
+    "2/2": { freq: 0.18, avgOdds: 3.80 }
+  }
+};
+
+// ─────────────────────────────────────────────────────────────
+// MODÜL 2: FM PARAMETRESİ PUANLAMA SİSTEMİ
+// ─────────────────────────────────────────────────────────────
+const FM_PARAMS = {
+  // Takım taktik dizilişi uyum matrisi
+    tacticalMatchup: {
+    "pressing":      { beats: ["technical","balanced","tiki-taka","possession"], loses: ["counter","direct","reactive","park-the-bus"], htftBonus: {home: 0.08, away: -0.05} },
+    "gegenpressing": { beats: ["technical","tiki-taka","possession","balanced"], loses: ["direct","park-the-bus","reactive"],          htftBonus: {home: 0.10, away: -0.06} },
+    "technical":     { beats: ["counter","direct","low-block","park-the-bus"],   loses: ["pressing","gegenpressing","high-line"],       htftBonus: {home: 0.06, away: 0.04} },
+    "tiki-taka":     { beats: ["counter","direct","reactive"],                   loses: ["pressing","gegenpressing","high-line"],       htftBonus: {home: 0.07, away: 0.03} },
+    "counter":       { beats: ["pressing","gegenpressing","high-line","tiki-taka"], loses: ["low-block","balanced","possession"],       htftBonus: {home: -0.03, away: 0.12} },
+    "direct":        { beats: ["technical","tiki-taka","possession","low-block"], loses: ["pressing","gegenpressing","balanced"],       htftBonus: {home: 0.04, away: 0.08} },
+    "balanced":      { beats: ["counter","reactive"],                            loses: ["pressing","gegenpressing"],                   htftBonus: {home: 0.02, away: 0.02} },
+    "low-block":     { beats: ["pressing","gegenpressing","wing-play"],          loses: ["technical","tiki-taka","direct"],             htftBonus: {home: -0.05, away: 0.10} },
+    "park-the-bus":  { beats: ["pressing","gegenpressing","wing-play","counter"], loses: ["technical","direct"],                       htftBonus: {home: -0.08, away: 0.14} },
+    "wing-play":     { beats: ["low-block","balanced","reactive"],               loses: ["high-line","gegenpressing","park-the-bus"],  htftBonus: {home: 0.05, away: 0.05} },
+    "possession":    { beats: ["counter","reactive","direct"],                   loses: ["pressing","gegenpressing"],                  htftBonus: {home: 0.05, away: 0.03} },
+    "high-line":     { beats: ["counter","reactive","direct"],                   loses: ["technical","tiki-taka","wing-play"],         htftBonus: {home: 0.09, away: -0.04} },
+    "reactive":      { beats: ["pressing","high-line","wing-play"],              loses: ["balanced","technical","possession"],         htftBonus: {home: -0.04, away: 0.09} },
+  },
+    "4-2-3-1": { beats: ["4-4-2", "4-3-3"], loses: ["4-3-3", "3-5-2"], neutral: ["4-2-3-1", "5-4-1"] },
+    "5-3-2": { beats: ["4-3-3", "4-2-3-1"], loses: ["4-4-2", "3-4-3"], neutral: ["5-3-2", "5-4-1"] },
+    "4-4-2": { beats: ["5-3-2", "5-4-1"], loses: ["4-2-3-1", "4-3-3"], neutral: ["4-4-2", "4-5-1"] },
+    "3-4-3": { beats: ["4-4-2", "4-5-1"], loses: ["4-3-3", "5-3-2"], neutral: ["3-4-3", "4-3-3"] },
+    "3-5-2": { beats: ["4-2-3-1", "5-3-2"], loses: ["4-3-3", "3-4-3"], neutral: ["3-5-2", "4-4-2"] },
+    "4-5-1": { beats: ["4-3-3", "3-4-3"], loses: ["4-4-2", "4-2-3-1"], neutral: ["4-5-1", "5-3-2"] },
+    "5-4-1": { beats: ["4-2-3-1", "4-3-3"], loses: ["4-4-2", "3-4-3"], neutral: ["5-4-1", "5-3-2"] }
+  },
+
+  // Karakter özellikleri (FM attribute benzeri 1-20 skalası)
+  characterWeights: {
+    determination: 0.18,    // Azim
+    bravery: 0.15,          // Cesaret
+    composure: 0.17,        // Soğukkanlılık
+    leadership: 0.14,       // Liderlik
+    workRate: 0.12,         // Çalışma ritmi
+    teamwork: 0.13,         // Takım ruhu
+    concentration: 0.11     // Konsantrasyon
+  },
+
+  // Hoca parametreleri
+  managerWeights: {
+    manManagement: 0.22,    // İnsan yönetimi
+    tactical: 0.25,         // Taktik zeka
+    motivation: 0.20,       // Motivasyon gücü
+    adaptability: 0.18,     // Uyum kabiliyeti
+    pressureHandling: 0.15  // Baskı altı performans
+  }
+};
+
+function calcFMScore(homeTeam, awayTeam) {
+  const home = homeTeam;
+  const away = awayTeam;
+
+  // Taktik üstünlük
+  let tacticalBonus = 0;
+  const hTactic = home.formation;
+  const aTactic = away.formation;
+  if (FM_PARAMS.tacticalMatchup[hTactic]) {
+    const hm = FM_PARAMS.tacticalMatchup[hTactic];
+    const am = FM_PARAMS.tacticalMatchup[aTactic] || {};
+    if (hm.beats.includes(aTactic)) tacticalBonus = +(hm.htftBonus?.home || 0.12);
+    else if (hm.loses.includes(aTactic)) tacticalBonus = -(hm.htftBonus?.away || 0.12);
+  }
+
+  // Karakter puanı (1-20 → 0-1 normalize)
+  const homeChar = Object.entries(FM_PARAMS.characterWeights)
+    .reduce((s, [k, w]) => s + (home.character[k] || 10) / 20 * w, 0);
+  const awayChar = Object.entries(FM_PARAMS.characterWeights)
+    .reduce((s, [k, w]) => s + (away.character[k] || 10) / 20 * w, 0);
+
+  // Hoca puanı
+  const homeMgr = Object.entries(FM_PARAMS.managerWeights)
+    .reduce((s, [k, w]) => s + (home.manager[k] || 10) / 20 * w, 0);
+  const awayMgr = Object.entries(FM_PARAMS.managerWeights)
+    .reduce((s, [k, w]) => s + (away.manager[k] || 10) / 20 * w, 0);
+
+  // Genel FM gücü farkı
+  const homePower = (home.teamRating / 100 * 0.45) + (homeChar * 0.30) + (homeMgr * 0.25) + tacticalBonus;
+  const awayPower = (away.teamRating / 100 * 0.45) + (awayChar * 0.30) + (awayMgr * 0.25);
+
+  return {
+    homePower: Math.min(Math.max(homePower, 0), 1),
+    awayPower: Math.min(Math.max(awayPower, 0), 1),
+    tacticalBonus,
+    homeChar,
+    awayChar,
+    homeMgr,
+    awayMgr
+  };
+}
+
+// ─────────────────────────────────────────────────────────────
+// MODÜL 3: PSİKOLOJİ MOTORU
+// ─────────────────────────────────────────────────────────────
+function calcPsychScore(homeTeam, awayTeam) {
+  const h = homeTeam.psychology;
+  const a = awayTeam.psychology;
+
+  // Moral (son 5 maç: G=3, B=1, M=-1)
+  const homeMoral = h.last5.reduce((s, r) => s + (r === 'W' ? 3 : r === 'D' ? 1 : -1), 0);
+  const awayMoral = a.last5.reduce((s, r) => s + (r === 'W' ? 3 : r === 'D' ? 1 : -1), 0);
+
+  // Motivasyon (şampiyonluk baskısı, küme düşme kaygısı, Avrupa hedefi)
+  const homeMotiv = calcMotivation(h);
+  const awayMotiv = calcMotivation(a);
+
+  // Kadro içi çatışma cezası
+  const homeConflict = h.squadConflict ? -0.08 : 0;
+  const awayConflict = a.squadConflict ? -0.08 : 0;
+
+  // Basın baskısı
+  const homePress = (h.mediaPresure || 5) / 10 * -0.05;
+  const awayPress = (a.mediaPresure || 5) / 10 * -0.03;
+
+  const homeScore = (homeMoral / 15 * 0.40) + (homeMotiv * 0.35) + homeConflict + homePress;
+  const awayScore = (awayMoral / 15 * 0.40) + (awayMotiv * 0.35) + awayConflict + awayPress;
+
+  return {
+    homePsych: Math.min(Math.max(homeScore + 0.5, 0), 1),
+    awayPsych: Math.min(Math.max(awayScore + 0.5, 0), 1),
+    homeMoral, awayMoral,
+    homeMotiv, awayMotiv
+  };
+}
+
+function calcMotivation(psych) {
+  let score = 0;
+  if (psych.titleRace) score += 0.15;
+  if (psych.relegationFight) score += 0.18; // küme düşme daha güçlü motivasyon
+  if (psych.europeChase) score += 0.10;
+  if (psych.cupFinal) score += 0.12;
+  if (psych.rivalryMatch) score += 0.08;
+  return Math.min(score, 0.40);
+}
+
+// ─────────────────────────────────────────────────────────────
+// MODÜL 4: HAVA DURUMU ETKİSİ
+// ─────────────────────────────────────────────────────────────
+function calcWeatherImpact(weather, homeTeam, awayTeam) {
+  let homeAdj = 0, awayAdj = 0;
+  const w = weather;
+
+  // Sıcaklık etkisi (pressing takımlar sıcakta çöker)
+  if (w.tempC > 30) {
+    if (homeTeam.style === 'pressing') homeAdj -= 0.08;
+    if (awayTeam.style === 'pressing') awayAdj -= 0.08;
+  }
+  if (w.tempC < 2) {
+    // Soğuk: teknik takımlar zorlanır, fiziksel takımlar avantajlı
+    if (homeTeam.style === 'technical') homeAdj -= 0.05;
+    if (awayTeam.style === 'technical') awayAdj -= 0.05;
+  }
+
+  // Yağış etkisi (uzun top takımları avantajlı)
+  if (w.rainMM > 5) {
+    if (homeTeam.style === 'longball') homeAdj += 0.06;
+    if (awayTeam.style === 'longball') awayAdj += 0.06;
+    if (homeTeam.style === 'technical') homeAdj -= 0.06;
+    if (awayTeam.style === 'technical') awayAdj -= 0.06;
+  }
+
+  // Rüzgar etkisi (gol sapması - her iki taraf için belirsizlik artar)
+  const windPenalty = w.windKmh > 40 ? -0.04 : w.windKmh > 25 ? -0.02 : 0;
+  homeAdj += windPenalty;
+  awayAdj += windPenalty;
+
+  // Saha zemini
+  if (w.pitchCondition === 'heavy') {
+    if (homeTeam.style === 'technical') homeAdj -= 0.07;
+    if (awayTeam.style === 'technical') awayAdj -= 0.07;
+  }
+
+  // Ev sahibi alışkın avantajı (iklime göre)
+  homeAdj += 0.03;
+
+  return {
+    homeWeatherAdj: homeAdj,
+    awayWeatherAdj: awayAdj,
+    summary: buildWeatherSummary(w)
+  };
+}
+
+function buildWeatherSummary(w) {
+  const parts = [];
+  if (w.tempC > 30) parts.push('Aşırı sıcak');
+  else if (w.tempC < 2) parts.push('Dondurucu soğuk');
+  else if (w.tempC < 10) parts.push('Soğuk hava');
+  if (w.rainMM > 5) parts.push('Yoğun yağış');
+  else if (w.rainMM > 1) parts.push('Hafif yağmur');
+  if (w.windKmh > 40) parts.push('Sert rüzgar');
+  if (w.pitchCondition === 'heavy') parts.push('Ağır saha zemini');
+  return parts.length ? parts.join(' · ') : 'Normal koşullar';
+}
+
+// ─────────────────────────────────────────────────────────────
+// MODÜL 5: ŞİKE VE KAYIRMA DEDEKTÖRÜ
+// ─────────────────────────────────────────────────────────────
+const SUSPICIOUS_LEAGUES = {
+  // Tarihsel şike riski endeksi (0-1, kaynak: akademik çalışmalar)
+  "TR1": 0.18, "IT1": 0.12, "GR1": 0.16, "KR1": 0.22,
+  "PL1": 0.05, "ES1": 0.06, "DE1": 0.04, "FR1": 0.06,
+  "EN1": 0.03, "PT1": 0.09, "NL1": 0.07, "BE1": 0.14
+};
+
+function calcManipulationRisk(matchData) {
+  const { odds, refereeStats, league, schedulingFactor } = matchData;
+  const openOdds = odds?.open || { home: 2.0, draw: 3.3, away: 3.6 };
+  const closeOdds = odds?.close || openOdds;
+  let riskScore = 0;
+  const flags = [];
+
+  // 1. Oran anomali tespiti
+  const homeMove = Math.abs((closeOdds.home - openOdds.home) / openOdds.home);
+  const drawMove = Math.abs((closeOdds.draw - openOdds.draw) / openOdds.draw);
+  const awayMove = Math.abs((closeOdds.away - openOdds.away) / openOdds.away);
+  const maxMove = Math.max(homeMove, drawMove, awayMove);
+
+  if (maxMove > 0.25) { riskScore += 0.30; flags.push('Olağandışı oran hareketi (>%25)'); }
+  else if (maxMove > 0.15) { riskScore += 0.15; flags.push('Yüksek oran hareketi (>%15)'); }
+
+  // 2. Kapanış yönü anomalisi (büyük para akışı tespiti)
+  if (closeOdds.home > openOdds.home * 1.2 && closeOdds.away < openOdds.away * 0.85) {
+    riskScore += 0.20; flags.push('Büyük para deplasmana akmış');
+  }
+
+  // 3. Hakem eğilim analizi
+  if (refereeStats) {
+    const homeBias = refereeStats.homeWinRate - 0.48;
+    if (homeBias > 0.15) { riskScore += 0.15; flags.push('Hakem ev sahibine aşırı eğilimli'); }
+    if (refereeStats.penaltyRate > 0.35) { riskScore += 0.10; flags.push('Yüksek penaltı verme oranı'); }
+  }
+
+  // 4. Lig riski
+  const leagueRisk = SUSPICIOUS_LEAGUES[league] || 0.07;
+  riskScore += leagueRisk * 0.5;
+  if (leagueRisk > 0.14) flags.push(`${league} - Tarihsel yüksek risk ligi`);
+
+  // 5. Program kayırma
+  if (schedulingFactor) {
+    const homeRest = schedulingFactor.homeRestDays || 5;
+    const awayRest = schedulingFactor.awayRestDays || 5;
+    if (homeRest > awayRest + 3) {
+      riskScore += 0.10; flags.push('Program ev sahibi lehine asimetrik');
+    }
+  }
+
+  return {
+    riskScore: Math.min(riskScore, 1),
+    riskLevel: riskScore > 0.50 ? 'YÜKSEK' : riskScore > 0.28 ? 'ORTA' : 'DÜŞÜK',
+    flags,
+    trustMultiplier: riskScore > 0.50 ? 0.60 : riskScore > 0.28 ? 0.80 : 1.0
+  };
+}
+
+// ─────────────────────────────────────────────────────────────
+// MODÜL 6: POISSON + ELO FÜZYON MOTORU
+// ─────────────────────────────────────────────────────────────
+function poissonProb(lambda, k) {
+  return (Math.pow(lambda, k) * Math.exp(-lambda)) / factorial(k);
+}
+
+function factorial(n) {
+  if (n <= 1) return 1;
+  return n * factorial(n - 1);
+}
+
+function calcMatchProbs(homeStrength, awayStrength, homeAdvantage = 0.35) {
+  // Beklenen gol sayısı (Poisson lambdaları)
+  const baseLambdaHome = 1.35 + homeAdvantage;
+  const baseLambdaAway = 1.05;
+
+  const lambdaHome = baseLambdaHome * homeStrength;
+  const lambdaAway = baseLambdaAway * awayStrength;
+
+  // Skor olasılıkları (0-0 ile 4-4 arası)
+  const maxGoals = 5;
+  let probHome = 0, probDraw = 0, probAway = 0;
+  const scoreProbMatrix = [];
+
+  for (let h = 0; h < maxGoals; h++) {
+    for (let a = 0; a < maxGoals; a++) {
+      const p = poissonProb(lambdaHome, h) * poissonProb(lambdaAway, a);
+      scoreProbMatrix.push({ h, a, p });
+      if (h > a) probHome += p;
+      else if (h === a) probDraw += p;
+      else probAway += p;
+    }
+  }
+
+  return { probHome, probDraw, probAway, lambdaHome, lambdaAway, scoreProbMatrix };
+}
+
+// ─────────────────────────────────────────────────────────────
+// MODÜL 7: HT/FT KOMBİNASYON HESAPLAMA
+// ─────────────────────────────────────────────────────────────
+function calcHTFTProbs(fullTimeProbs, htBias, matchData) {
+  const { probHome: pH, probDraw: pD, probAway: pA } = fullTimeProbs;
+
+  // HT baskı faktörü (ev sahibi erken gol mu atar daha çok?)
+  const hb = htBias || { home: 0.35, draw: 0.40, away: 0.25 };
+
+  // Maç durumu geçiş olasılıkları (Markov zinciri benzeri)
+  // HT durumu → FT durumu geçiş matrisi
+  const transitions = {
+    htHome: { ftHome: 0.72, ftDraw: 0.18, ftAway: 0.10 },  // Önde giden savunur
+    htDraw: { ftHome: pH / (pH + pD + pA) * 1.2, ftDraw: pD / (pH + pD + pA) * 0.9, ftAway: pA / (pH + pD + pA) * 1.2 },
+    htAway: { ftHome: 0.12, ftDraw: 0.20, ftAway: 0.68 }
+  };
+
+  // Normalize
+  ['htHome', 'htDraw', 'htAway'].forEach(k => {
+    const t = transitions[k];
+    const sum = t.ftHome + t.ftDraw + t.ftAway;
+    t.ftHome /= sum; t.ftDraw /= sum; t.ftAway /= sum;
+  });
+
+  const htProbs = { home: hb.home, draw: hb.draw, away: hb.away };
+
+  return {
+    "1/1": htProbs.home * transitions.htHome.ftHome,
+    "1/X": htProbs.home * transitions.htHome.ftDraw,
+    "1/2": htProbs.home * transitions.htHome.ftAway,
+    "X/1": htProbs.draw * transitions.htDraw.ftHome,
+    "X/X": htProbs.draw * transitions.htDraw.ftDraw,
+    "X/2": htProbs.draw * transitions.htDraw.ftAway,
+    "2/1": htProbs.away * transitions.htAway.ftHome,
+    "2/X": htProbs.away * transitions.htAway.ftDraw,
+    "2/2": htProbs.away * transitions.htAway.ftAway
+  };
+}
+
+// ─────────────────────────────────────────────────────────────
+// ANA MOTOR: TÜM MODÜLLERI BİRLEŞTİR
+// ─────────────────────────────────────────────────────────────
+function runEliteAlgorithm(matchData) {
+  const { homeTeam, awayTeam, odds, weather, league } = matchData;
+  // Canlı kapanış oranı varsa kullan
+  if (window._liveCloseOdds && odds) {
+    odds.close = window._liveCloseOdds;
+  }
+  // Canlı HT/FT matrisi varsa kullan
+  if (window.LIVE_HTFT_MATRIX) {
+    Object.assign(HTFT_HISTORICAL_MATRIX, window.LIVE_HTFT_MATRIX);
+  }
+  // Nesine IY/MS oranlarını kullan
+  if (window._liveHTFTOdds && matchData.odds) {
+    matchData.odds.htft = window._liveHTFTOdds;
+  }
+
+  // Modül çıktıları
+  const fm = calcFMScore(homeTeam, awayTeam);
+  const psych = calcPsychScore(homeTeam, awayTeam);
+  const weatherImpact = calcWeatherImpact(weather, homeTeam, awayTeam);
+  const manipulation = calcManipulationRisk(matchData);
+
+  // Oran kategorisi
+  const oddsCategory = odds.open.home < 1.60 ? 'strongHome' :
+    odds.open.away < 1.80 ? 'strongAway' : 'balanced';
+  const historicalMatrix = HTFT_HISTORICAL_MATRIX[oddsCategory];
+
+  // Güç indeksleri (tüm modülleri ağırlıklı birleştir)
+  const homeStrength = (
+    fm.homePower * 0.28 +
+    psych.homePsych * 0.20 +
+    (0.5 + weatherImpact.homeWeatherAdj) * 0.12 +
+    (1 - manipulation.riskScore * 0.5) * 0.10 +
+    (odds.open.away / (odds.open.home + odds.open.away)) * 0.30
+  );
+
+  const awayStrength = (
+    fm.awayPower * 0.28 +
+    psych.awayPsych * 0.20 +
+    (0.5 + weatherImpact.awayWeatherAdj) * 0.12 +
+    (1 - manipulation.riskScore * 0.5) * 0.10 +
+    (odds.open.home / (odds.open.home + odds.open.away)) * 0.30
+  );
+
+  // Poisson hesabı
+  const fullTimeProbs = calcMatchProbs(homeStrength, awayStrength);
+
+  // HT bias (FM karakter + psikoloji bazlı)
+  const htBias = {
+    home: Math.min(Math.max(fullTimeProbs.probHome + fm.tacticalBonus * 0.5, 0.15), 0.55),
+    draw: Math.min(Math.max(fullTimeProbs.probDraw, 0.25), 0.50),
+    away: Math.min(Math.max(fullTimeProbs.probAway - fm.tacticalBonus * 0.5, 0.10), 0.45)
+  };
+  const htBiasSum = htBias.home + htBias.draw + htBias.away;
+  htBias.home /= htBiasSum;
+  htBias.draw /= htBiasSum;
+  htBias.away /= htBiasSum;
+
+  // HT/FT olasılıkları
+  const htftRaw = calcHTFTProbs(fullTimeProbs, htBias, matchData);
+
+  // Tarihsel matris ile füzyon (%40 tarihsel, %60 model)
+  const htftFinal = {};
+  let totalProb = 0;
+  for (const combo of Object.keys(htftRaw)) {
+    const hist = historicalMatrix[combo]?.freq || 0.05;
+    htftFinal[combo] = htftRaw[combo] * 0.60 + hist * 0.40;
+    totalProb += htftFinal[combo];
+  }
+  // Normalize
+  for (const combo of Object.keys(htftFinal)) {
+    htftFinal[combo] /= totalProb;
+  }
+
+  // Value bet hesabı (Beklenen Değer = olasılık × oran - 1)
+  const valueBets = {};
+  for (const combo of Object.keys(htftFinal)) {
+    const currentOdds = odds.htft?.[combo] || historicalMatrix[combo]?.avgOdds || 10;
+    const impliedProb = 1 / currentOdds;
+    const modelProb = htftFinal[combo];
+    const ev = (modelProb * currentOdds - 1);
+    valueBets[combo] = {
+      modelProb: modelProb,
+      odds: currentOdds,
+      ev: ev,
+      isValue: ev > 0.05,
+      confidence: Math.round(modelProb * 100 * manipulation.trustMultiplier)
+    };
+  }
+
+  // En yüksek güven + value
+  const sorted = Object.entries(valueBets)
+    .sort((a, b) => b[1].modelProb - a[1].modelProb);
+  const topPick = sorted[0];
+  const topValue = Object.entries(valueBets)
+    .filter(([, v]) => v.isValue)
+    .sort((a, b) => b[1].ev - a[1].ev)[0];
+
+  return {
+    valueBets,
+    topPick: { combo: topPick[0], ...topPick[1] },
+    topValueBet: topValue ? { combo: topValue[0], ...topValue[1] } : null,
+    manipulation,
+    weatherSummary: weatherImpact.summary,
+    fmInsights: fm,
+    psychInsights: psych,
+    fullTimeProbs,
+    oddsCategory
+  };
+}
+
+// Export
+window.EliteEngine = {
+  run: runEliteAlgorithm,
+  calcFMScore,
+  calcPsychScore,
+  calcWeatherImpact,
+  calcManipulationRisk
+};
+
+</script>
+<script>
+// ═══════════════════════════════════════════════════════════════
+//  ÖRNEK MAÇ VERİSİ VE DEMO SENARYOLARI
+// ═══════════════════════════════════════════════════════════════
+
+window.DEMO_MATCHES = [
+  {
+    id: "match_001",
+    label: "Galatasaray vs Fenerbahçe",
+    league: "TR1",
+    homeTeam: {
+      name: "Galatasaray",
+      shortName: "GS",
+      teamRating: 82,
+      formation: "4-2-3-1",
+      style: "pressing",
+      character: { determination: 16, bravery: 15, composure: 14, leadership: 17, workRate: 16, teamwork: 15, concentration: 13 },
+      manager: { manManagement: 16, tactical: 17, motivation: 18, adaptability: 14, pressureHandling: 16 },
+      psychology: {
+        last5: ['W', 'W', 'D', 'W', 'L'],
+        titleRace: true, relegationFight: false, europeChase: false, cupFinal: false, rivalryMatch: true,
+        squadConflict: false, mediaPresure: 7
+      }
+    },
+    awayTeam: {
+      name: "Fenerbahçe",
+      shortName: "FB",
+      teamRating: 80,
+      formation: "4-3-3",
+      style: "technical",
+      character: { determination: 15, bravery: 14, composure: 15, leadership: 16, workRate: 14, teamwork: 15, concentration: 14 },
+      manager: { manManagement: 18, tactical: 16, motivation: 19, adaptability: 16, pressureHandling: 15 },
+      psychology: {
+        last5: ['W', 'D', 'W', 'W', 'W'],
+        titleRace: true, relegationFight: false, europeChase: false, cupFinal: false, rivalryMatch: true,
+        squadConflict: false, mediaPresure: 8
+      }
+    },
+    weather: { tempC: 18, rainMM: 0, windKmh: 12, pitchCondition: 'good' },
+    odds: {
+      open: { home: 2.10, draw: 3.30, away: 3.60 },
+      close: { home: 2.05, draw: 3.20, away: 3.80 },
+      htft: { "1/1": 4.20, "1/X": 14.0, "1/2": 28.0, "X/1": 5.50, "X/X": 5.80, "X/2": 9.50, "2/1": 22.0, "2/X": 16.0, "2/2": 8.00 }
+    },
+    refereeStats: { homeWinRate: 0.52, penaltyRate: 0.28 },
+    schedulingFactor: { homeRestDays: 5, awayRestDays: 4 }
+  },
+  {
+    id: "match_002",
+    label: "Man City vs Arsenal",
+    league: "EN1",
+    homeTeam: {
+      name: "Manchester City",
+      shortName: "MCI",
+      teamRating: 91,
+      formation: "4-3-3",
+      style: "pressing",
+      character: { determination: 17, bravery: 15, composure: 18, leadership: 16, workRate: 17, teamwork: 18, concentration: 17 },
+      manager: { manManagement: 16, tactical: 20, motivation: 17, adaptability: 19, pressureHandling: 18 },
+      psychology: {
+        last5: ['W', 'W', 'W', 'D', 'W'],
+        titleRace: true, relegationFight: false, europeChase: false, cupFinal: false, rivalryMatch: false,
+        squadConflict: false, mediaPresure: 5
+      }
+    },
+    awayTeam: {
+      name: "Arsenal",
+      shortName: "ARS",
+      teamRating: 87,
+      formation: "4-3-3",
+      style: "pressing",
+      character: { determination: 16, bravery: 16, composure: 15, leadership: 15, workRate: 17, teamwork: 16, concentration: 15 },
+      manager: { manManagement: 17, tactical: 18, motivation: 16, adaptability: 17, pressureHandling: 15 },
+      psychology: {
+        last5: ['W', 'W', 'L', 'W', 'D'],
+        titleRace: true, relegationFight: false, europeChase: false, cupFinal: false, rivalryMatch: false,
+        squadConflict: false, mediaPresure: 6
+      }
+    },
+    weather: { tempC: 12, rainMM: 3, windKmh: 22, pitchCondition: 'good' },
+    odds: {
+      open: { home: 1.72, draw: 3.80, away: 4.80 },
+      close: { home: 1.68, draw: 3.70, away: 5.20 },
+      htft: { "1/1": 3.20, "1/X": 12.0, "1/2": 32.0, "X/1": 6.50, "X/X": 6.20, "X/2": 11.0, "2/1": 28.0, "2/X": 20.0, "2/2": 10.0 }
+    },
+    refereeStats: { homeWinRate: 0.49, penaltyRate: 0.22 },
+    schedulingFactor: { homeRestDays: 6, awayRestDays: 3 }
+  },
+  {
+    id: "match_003",
+    label: "Rizespor vs Trabzonspor",
+    league: "TR1",
+    homeTeam: {
+      name: "Rizespor",
+      shortName: "RZ",
+      teamRating: 58,
+      formation: "5-4-1",
+      style: "counter",
+      character: { determination: 14, bravery: 13, composure: 12, leadership: 12, workRate: 15, teamwork: 14, concentration: 13 },
+      manager: { manManagement: 12, tactical: 13, motivation: 14, adaptability: 11, pressureHandling: 12 },
+      psychology: {
+        last5: ['L', 'D', 'L', 'W', 'L'],
+        titleRace: false, relegationFight: true, europeChase: false, cupFinal: false, rivalryMatch: false,
+        squadConflict: true, mediaPresure: 9
+      }
+    },
+    awayTeam: {
+      name: "Trabzonspor",
+      shortName: "TS",
+      teamRating: 74,
+      formation: "4-2-3-1",
+      style: "technical",
+      character: { determination: 15, bravery: 14, composure: 14, leadership: 15, workRate: 14, teamwork: 15, concentration: 14 },
+      manager: { manManagement: 15, tactical: 15, motivation: 16, adaptability: 14, pressureHandling: 14 },
+      psychology: {
+        last5: ['D', 'W', 'W', 'D', 'W'],
+        titleRace: false, relegationFight: false, europeChase: true, cupFinal: false, rivalryMatch: false,
+        squadConflict: false, mediaPresure: 5
+      }
+    },
+    weather: { tempC: 8, rainMM: 12, windKmh: 35, pitchCondition: 'heavy' },
+    odds: {
+      open: { home: 4.20, draw: 3.40, away: 1.90 },
+      close: { home: 5.80, draw: 3.60, away: 1.62 },
+      htft: { "1/1": 18.0, "1/X": 28.0, "1/2": 55.0, "X/1": 8.50, "X/X": 7.20, "X/2": 5.80, "2/1": 38.0, "2/X": 22.0, "2/2": 4.20 }
+    },
+    refereeStats: { homeWinRate: 0.61, penaltyRate: 0.38 },
+    schedulingFactor: { homeRestDays: 4, awayRestDays: 7 }
+  }
+];
+
+// Boş maç şablonu (kullanıcı girişi için)
+window.EMPTY_MATCH_TEMPLATE = {
+  id: "custom",
+  label: "Özel Maç",
+  league: "EN1",
+  homeTeam: {
+    name: "Ev Sahibi",
+    shortName: "EV",
+    teamRating: 75,
+    formation: "4-3-3",
+    style: "balanced",
+    character: { determination: 13, bravery: 13, composure: 13, leadership: 13, workRate: 13, teamwork: 13, concentration: 13 },
+    manager: { manManagement: 13, tactical: 13, motivation: 13, adaptability: 13, pressureHandling: 13 },
+    psychology: {
+      last5: ['W', 'D', 'W', 'L', 'D'],
+      titleRace: false, relegationFight: false, europeChase: false, cupFinal: false, rivalryMatch: false,
+      squadConflict: false, mediaPresure: 5
+    }
+  },
+  awayTeam: {
+    name: "Deplasman",
+    shortName: "DEP",
+    teamRating: 72,
+    formation: "4-2-3-1",
+    style: "balanced",
+    character: { determination: 13, bravery: 13, composure: 13, leadership: 13, workRate: 13, teamwork: 13, concentration: 13 },
+    manager: { manManagement: 13, tactical: 13, motivation: 13, adaptability: 13, pressureHandling: 13 },
+    psychology: {
+      last5: ['D', 'W', 'L', 'W', 'D'],
+      titleRace: false, relegationFight: false, europeChase: false, cupFinal: false, rivalryMatch: false,
+      squadConflict: false, mediaPresure: 5
+    }
+  },
+  weather: { tempC: 18, rainMM: 0, windKmh: 10, pitchCondition: 'good' },
+  odds: {
+    open: { home: 2.10, draw: 3.30, away: 3.60 },
+    close: { home: 2.10, draw: 3.30, away: 3.60 },
+    htft: { "1/1": 4.50, "1/X": 13.0, "1/2": 26.0, "X/1": 5.80, "X/X": 5.80, "X/2": 10.0, "2/1": 22.0, "2/X": 16.0, "2/2": 9.00 }
+  },
+  refereeStats: { homeWinRate: 0.50, penaltyRate: 0.25 },
+  schedulingFactor: { homeRestDays: 5, awayRestDays: 5 }
+};
+
+</script>
+<script>
+// ═══════════════ STATE ═══════════════
+const state = {
+  hLast5: ['W','D','W','L','D'],
+  aLast5: ['D','W','L','W','D'],
+  hChar: { determination:13, bravery:13, composure:13, leadership:13, workRate:13, teamwork:13, concentration:13 },
+  aChar: { determination:13, bravery:13, composure:13, leadership:13, workRate:13, teamwork:13, concentration:13 },
+  hMgr: { manManagement:13, tactical:13, motivation:13, adaptability:13, pressureHandling:13 },
+  aMgr: { manManagement:13, tactical:13, motivation:13, adaptability:13, pressureHandling:13 }
+};
+
+const CHAR_LABELS = {
+  determination: 'Azim', bravery: 'Cesaret', composure: 'Soğukkanlılık',
+  leadership: 'Liderlik', workRate: 'Çalışma Ritmi', teamwork: 'Takım Ruhu', concentration: 'Konsantrasyon'
+};
+const MGR_LABELS = {
+  manManagement: 'İnsan Yönetimi', tactical: 'Taktik Zeka', motivation: 'Motivasyon',
+  adaptability: 'Uyum Kabiliyeti', pressureHandling: 'Baskı Altı'
+};
+
+// ═══════════════ INIT ═══════════════
+// ═══ CANLI VERİ SİSTEMİ ═══
+// GitHub repo adresinizi buraya girin:
+// Format: 'https://raw.githubusercontent.com/KULLANICI/REPO/main/data/odds.json'
+const DATA_URL = 'https://raw.githubusercontent.com/oguzcanmol/htft-data/main/data/odds.json';
+const NESINE_URL = 'https://bulten.nesine.com/api/bulten/getprebultenfull';
+
+
+const STATIC_TEAM_PROFILES = {
+  // SÜPER LİG
+  "Galatasaray": {
+    teamRating: 82, style: "pressing", formation: "4-2-3-1",
+    last5: ["W","W","W","D","W"],
+    character: {determination:17,bravery:16,composure:15,leadership:17,workRate:16,teamwork:16,concentration:15},
+    managerStats: {manManagement:16,tactical:17,motivation:18,adaptability:15,pressureHandling:16}
+  },
+  "Fenerbahce": {
+    teamRating: 80, style: "technical", formation: "4-3-3",
+    last5: ["W","W","D","W","W"],
+    character: {determination:16,bravery:15,composure:16,leadership:16,workRate:15,teamwork:15,concentration:15},
+    managerStats: {manManagement:18,tactical:17,motivation:18,adaptability:16,pressureHandling:16}
+  },
+  "Fenerbahçe": {
+    teamRating: 80, style: "technical", formation: "4-3-3",
+    last5: ["W","W","D","W","W"],
+    character: {determination:16,bravery:15,composure:16,leadership:16,workRate:15,teamwork:15,concentration:15},
+    managerStats: {manManagement:18,tactical:17,motivation:18,adaptability:16,pressureHandling:16}
+  },
+  "Besiktas": {
+    teamRating: 74, style: "pressing", formation: "4-3-3",
+    last5: ["D","W","L","W","D"],
+    character: {determination:15,bravery:15,composure:13,leadership:14,workRate:15,teamwork:14,concentration:13},
+    managerStats: {manManagement:14,tactical:15,motivation:15,adaptability:13,pressureHandling:14}
+  },
+  "Beşiktaş": {
+    teamRating: 74, style: "pressing", formation: "4-3-3",
+    last5: ["D","W","L","W","D"],
+    character: {determination:15,bravery:15,composure:13,leadership:14,workRate:15,teamwork:14,concentration:13},
+    managerStats: {manManagement:14,tactical:15,motivation:15,adaptability:13,pressureHandling:14}
+  },
+  "Trabzonspor": {
+    teamRating: 72, style: "counter", formation: "4-2-3-1",
+    last5: ["W","D","W","L","W"],
+    character: {determination:15,bravery:14,composure:13,leadership:14,workRate:14,teamwork:14,concentration:13},
+    managerStats: {manManagement:14,tactical:14,motivation:15,adaptability:13,pressureHandling:13}
+  },
+  "Basaksehir": {
+    teamRating: 68, style: "technical", formation: "4-1-4-1",
+    last5: ["L","D","W","D","L"],
+    character: {determination:13,bravery:13,composure:14,leadership:13,workRate:13,teamwork:14,concentration:13},
+    managerStats: {manManagement:13,tactical:14,motivation:13,adaptability:13,pressureHandling:13}
+  },
+  "Başakşehir": {
+    teamRating: 68, style: "technical", formation: "4-1-4-1",
+    last5: ["L","D","W","D","L"],
+    character: {determination:13,bravery:13,composure:14,leadership:13,workRate:13,teamwork:14,concentration:13},
+    managerStats: {manManagement:13,tactical:14,motivation:13,adaptability:13,pressureHandling:13}
+  },
+  "Konyaspor": {
+    teamRating: 58, style: "counter", formation: "5-4-1",
+    last5: ["L","D","L","W","D"],
+    character: {determination:13,bravery:12,composure:12,leadership:12,workRate:13,teamwork:13,concentration:12},
+    managerStats: {manManagement:12,tactical:12,motivation:13,adaptability:11,pressureHandling:12}
+  },
+  "Alanyaspor": {
+    teamRating: 60, style: "counter", formation: "4-4-2",
+    last5: ["D","W","D","L","W"],
+    character: {determination:13,bravery:13,composure:12,leadership:12,workRate:13,teamwork:13,concentration:12},
+    managerStats: {manManagement:12,tactical:13,motivation:13,adaptability:12,pressureHandling:12}
+  },
+  "Kasimpasa": {
+    teamRating: 57, style: "balanced", formation: "4-2-3-1",
+    last5: ["L","L","D","W","L"],
+    character: {determination:12,bravery:12,composure:12,leadership:12,workRate:12,teamwork:12,concentration:12},
+    managerStats: {manManagement:12,tactical:12,motivation:12,adaptability:11,pressureHandling:12}
+  },
+  "Kasımpaşa": {
+    teamRating: 57, style: "balanced", formation: "4-2-3-1",
+    last5: ["L","L","D","W","L"],
+    character: {determination:12,bravery:12,composure:12,leadership:12,workRate:12,teamwork:12,concentration:12},
+    managerStats: {manManagement:12,tactical:12,motivation:12,adaptability:11,pressureHandling:12}
+  },
+  "Sivasspor": {
+    teamRating: 58, style: "counter", formation: "4-4-2",
+    last5: ["D","L","W","D","L"],
+    character: {determination:13,bravery:13,composure:12,leadership:12,workRate:13,teamwork:13,concentration:12},
+    managerStats: {manManagement:12,tactical:12,motivation:13,adaptability:11,pressureHandling:12}
+  },
+  "Antalyaspor": {
+    teamRating: 56, style: "balanced", formation: "4-3-3",
+    last5: ["L","D","L","D","W"],
+    character: {determination:12,bravery:12,composure:12,leadership:12,workRate:12,teamwork:12,concentration:12},
+    managerStats: {manManagement:12,tactical:12,motivation:12,adaptability:11,pressureHandling:11}
+  },
+  "Kayserispor": {
+    teamRating: 55, style: "counter", formation: "5-3-2",
+    last5: ["L","L","D","L","W"],
+    character: {determination:12,bravery:12,composure:11,leadership:11,workRate:12,teamwork:12,concentration:11},
+    managerStats: {manManagement:11,tactical:12,motivation:12,adaptability:11,pressureHandling:11}
+  },
+  "Rizespor": {
+    teamRating: 54, style: "counter", formation: "4-4-2",
+    last5: ["L","D","L","W","L"],
+    character: {determination:12,bravery:12,composure:11,leadership:11,workRate:12,teamwork:12,concentration:11},
+    managerStats: {manManagement:11,tactical:11,motivation:12,adaptability:11,pressureHandling:11}
+  },
+  "Samsunspor": {
+    teamRating: 56, style: "balanced", formation: "4-4-2",
+    last5: ["W","D","L","D","W"],
+    character: {determination:13,bravery:12,composure:12,leadership:12,workRate:13,teamwork:12,concentration:12},
+    managerStats: {manManagement:12,tactical:12,motivation:13,adaptability:11,pressureHandling:12}
+  },
+  "Gaziantep": {
+    teamRating: 54, style: "counter", formation: "4-2-3-1",
+    last5: ["L","L","D","L","D"],
+    character: {determination:12,bravery:11,composure:11,leadership:11,workRate:12,teamwork:12,concentration:11},
+    managerStats: {manManagement:11,tactical:11,motivation:12,adaptability:10,pressureHandling:11}
+  },
+  "Kocaelispor": {
+    teamRating: 53, style: "counter", formation: "5-4-1",
+    last5: ["L","D","L","D","L"],
+    character: {determination:12,bravery:11,composure:11,leadership:11,workRate:12,teamwork:12,concentration:11},
+    managerStats: {manManagement:11,tactical:11,motivation:12,adaptability:10,pressureHandling:11}
+  },
+  "Goztepe": {
+    teamRating: 58, style: "balanced", formation: "4-3-3",
+    last5: ["W","D","W","L","D"],
+    character: {determination:13,bravery:13,composure:12,leadership:12,workRate:13,teamwork:13,concentration:12},
+    managerStats: {manManagement:12,tactical:13,motivation:13,adaptability:12,pressureHandling:12}
+  },
+  "Göztepe": {
+    teamRating: 58, style: "balanced", formation: "4-3-3",
+    last5: ["W","D","W","L","D"],
+    character: {determination:13,bravery:13,composure:12,leadership:12,workRate:13,teamwork:13,concentration:12},
+    managerStats: {manManagement:12,tactical:13,motivation:13,adaptability:12,pressureHandling:12}
+  },
+  "Adana Demirspor": {
+    teamRating: 60, style: "pressing", formation: "4-3-3",
+    last5: ["W","W","D","L","W"],
+    character: {determination:14,bravery:13,composure:13,leadership:13,workRate:14,teamwork:13,concentration:13},
+    managerStats: {manManagement:13,tactical:13,motivation:14,adaptability:12,pressureHandling:13}
+  },
+  "Eyupspor": {
+    teamRating: 59, style: "balanced", formation: "4-2-3-1",
+    last5: ["D","W","D","W","L"],
+    character: {determination:13,bravery:12,composure:12,leadership:12,workRate:13,teamWork:12,concentration:12},
+    managerStats: {manManagement:12,tactical:12,motivation:13,adaptability:11,pressureHandling:12}
+  },
+  "Eyüpspor": {
+    teamRating: 59, style: "balanced", formation: "4-2-3-1",
+    last5: ["D","W","D","W","L"],
+    character: {determination:13,bravery:12,composure:12,leadership:12,workRate:13,teamwork:12,concentration:12},
+    managerStats: {manManagement:12,tactical:12,motivation:13,adaptability:11,pressureHandling:12}
+  },
+  "Hatayspor": {
+    teamRating: 55, style: "counter", formation: "4-4-2",
+    last5: ["L","D","L","W","L"],
+    character: {determination:12,bravery:11,composure:11,leadership:11,workRate:12,teamwork:12,concentration:11},
+    managerStats: {manManagement:11,tactical:11,motivation:12,adaptability:10,pressureHandling:11}
+  },
+  "Bodrum": {
+    teamRating: 54, style: "balanced", formation: "4-4-2",
+    last5: ["D","L","D","W","L"],
+    character: {determination:12,bravery:11,composure:11,leadership:11,workRate:12,teamwork:12,concentration:11},
+    managerStats: {manManagement:11,tactical:11,motivation:12,adaptability:10,pressureHandling:11}
+  },
+  // PREMIER LEAGUE
+  "Man City": {
+    teamRating: 88, style: "technical", formation: "4-3-3",
+    last5: ["W","W","D","W","W"],
+    character: {determination:17,bravery:16,composure:18,leadership:16,workRate:17,teamwork:18,concentration:17},
+    managerStats: {manManagement:16,tactical:20,motivation:17,adaptability:19,pressureHandling:18}
+  },
+  "Arsenal": {
+    teamRating: 86, style: "pressing", formation: "4-3-3",
+    last5: ["W","W","W","D","W"],
+    character: {determination:16,bravery:16,composure:15,leadership:15,workRate:17,teamwork:16,concentration:15},
+    managerStats: {manManagement:17,tactical:18,motivation:16,adaptability:17,pressureHandling:15}
+  },
+  "Liverpool": {
+    teamRating: 87, style: "pressing", formation: "4-3-3",
+    last5: ["W","W","W","W","D"],
+    character: {determination:17,bravery:16,composure:16,leadership:17,workRate:17,teamwork:17,concentration:16},
+    managerStats: {manManagement:17,tactical:18,motivation:17,adaptability:17,pressureHandling:17}
+  },
+  "Chelsea": {
+    teamRating: 78, style: "pressing", formation: "4-2-3-1",
+    last5: ["W","D","W","L","W"],
+    character: {determination:15,bravery:14,composure:14,leadership:14,workRate:15,teamwork:14,concentration:14},
+    managerStats: {manManagement:15,tactical:16,motivation:15,adaptability:15,pressureHandling:14}
+  },
+  "Tottenham": {
+    teamRating: 76, style: "counter", formation: "4-3-3",
+    last5: ["L","W","D","W","L"],
+    character: {determination:14,bravery:14,composure:14,leadership:14,workRate:14,teamwork:14,concentration:13},
+    managerStats: {manManagement:14,tactical:15,motivation:14,adaptability:14,pressureHandling:13}
+  },
+  "Man United": {
+    teamRating: 72, style: "counter", formation: "4-2-3-1",
+    last5: ["L","D","W","L","D"],
+    character: {determination:14,bravery:13,composure:13,leadership:14,workRate:13,teamwork:13,concentration:13},
+    managerStats: {manManagement:14,tactical:14,motivation:14,adaptability:13,pressureHandling:13}
+  },
+  "Newcastle": {
+    teamRating: 76, style: "pressing", formation: "4-3-3",
+    last5: ["W","W","D","W","L"],
+    character: {determination:15,bravery:15,composure:14,leadership:14,workRate:15,teamwork:15,concentration:14},
+    managerStats: {manManagement:15,tactical:15,motivation:15,adaptability:14,pressureHandling:14}
+  },
+  "Aston Villa": {
+    teamRating: 77, style: "pressing", formation: "4-2-3-1",
+    last5: ["W","D","W","W","L"],
+    character: {determination:15,bravery:15,composure:14,leadership:15,workRate:15,teamwork:15,concentration:14},
+    managerStats: {manManagement:16,tactical:16,motivation:15,adaptability:15,pressureHandling:15}
+  },
+  "Brighton": {
+    teamRating: 73, style: "technical", formation: "4-3-3",
+    last5: ["D","W","W","D","W"],
+    character: {determination:14,bravery:14,composure:15,leadership:13,workRate:15,teamwork:15,concentration:14},
+    managerStats: {manManagement:14,tactical:16,motivation:14,adaptability:15,pressureHandling:14}
+  },
+  "West Ham": {
+    teamRating: 68, style: "counter", formation: "4-2-3-1",
+    last5: ["L","D","W","L","D"],
+    character: {determination:13,bravery:13,composure:13,leadership:13,workRate:13,teamwork:13,concentration:13},
+    managerStats: {manManagement:13,tactical:13,motivation:13,adaptability:12,pressureHandling:13}
+  },
+  // LA LİGA
+  "Real Madrid": {
+    teamRating: 92, style: "counter", formation: "4-3-3",
+    last5: ["W","W","W","D","W"],
+    character: {determination:18,bravery:17,composure:18,leadership:18,workRate:17,teamwork:17,concentration:18},
+    managerStats: {manManagement:18,tactical:19,motivation:18,adaptability:18,pressureHandling:19}
+  },
+  "Barcelona": {
+    teamRating: 88, style: "technical", formation: "4-3-3",
+    last5: ["W","W","L","W","W"],
+    character: {determination:17,bravery:16,composure:17,leadership:16,workRate:16,teamwork:17,concentration:16},
+    managerStats: {manManagement:16,tactical:18,motivation:16,adaptability:17,pressureHandling:16}
+  },
+  "Atletico Madrid": {
+    teamRating: 84, style: "counter", formation: "4-4-2",
+    last5: ["W","W","D","W","W"],
+    character: {determination:18,bravery:17,composure:15,leadership:17,workRate:17,teamwork:16,concentration:16},
+    managerStats: {manManagement:17,tactical:18,motivation:19,adaptability:16,pressureHandling:18}
+  },
+  "Girona": {
+    teamRating: 72, style: "pressing", formation: "4-3-3",
+    last5: ["D","W","L","W","D"],
+    character: {determination:14,bravery:14,composure:13,leadership:13,workRate:15,teamwork:14,concentration:13},
+    managerStats: {manManagement:14,tactical:15,motivation:14,adaptability:14,pressureHandling:13}
+  },
+  "Villarreal": {
+    teamRating: 74, style: "technical", formation: "4-3-3",
+    last5: ["W","D","W","D","W"],
+    character: {determination:14,bravery:14,composure:14,leadership:14,workRate:14,teamwork:15,concentration:14},
+    managerStats: {manManagement:14,tactical:15,motivation:14,adaptability:14,pressureHandling:14}
+  },
+  // BUNDESLİGA
+  "Bayern Munich": {
+    teamRating: 90, style: "pressing", formation: "4-2-3-1",
+    last5: ["W","W","W","W","D"],
+    character: {determination:17,bravery:17,composure:17,leadership:17,workRate:17,teamwork:17,concentration:17},
+    managerStats: {manManagement:17,tactical:18,motivation:17,adaptability:17,pressureHandling:17}
+  },
+  "Dortmund": {
+    teamRating: 80, style: "counter", formation: "4-2-3-1",
+    last5: ["W","L","W","D","W"],
+    character: {determination:15,bravery:15,composure:14,leadership:15,workRate:15,teamwork:15,concentration:14},
+    managerStats: {manManagement:15,tactical:16,motivation:15,adaptability:15,pressureHandling:14}
+  },
+  "Leverkusen": {
+    teamRating: 85, style: "pressing", formation: "3-4-3",
+    last5: ["W","W","D","W","W"],
+    character: {determination:16,bravery:16,composure:16,leadership:15,workRate:17,teamwork:16,concentration:16},
+    managerStats: {manManagement:16,tactical:18,motivation:16,adaptability:17,pressureHandling:16}
+  },
+  // SERİE A
+  "Inter Milan": {
+    teamRating: 86, style: "counter", formation: "3-5-2",
+    last5: ["W","W","D","W","W"],
+    character: {determination:16,bravery:16,composure:16,leadership:16,workRate:16,teamwork:16,concentration:16},
+    managerStats: {manManagement:16,tactical:17,motivation:16,adaptability:16,pressureHandling:16}
+  },
+  "Napoli": {
+    teamRating: 80, style: "technical", formation: "4-3-3",
+    last5: ["W","D","W","W","D"],
+    character: {determination:15,bravery:15,composure:15,leadership:14,workRate:15,teamwork:15,concentration:15},
+    managerStats: {manManagement:15,tactical:16,motivation:15,adaptability:15,pressureHandling:15}
+  },
+  "Juventus": {
+    teamRating: 78, style: "counter", formation: "4-2-3-1",
+    last5: ["D","W","D","W","L"],
+    character: {determination:15,bravery:14,composure:15,leadership:15,workRate:14,teamwork:14,concentration:15},
+    managerStats: {manManagement:14,tactical:15,motivation:14,adaptability:14,pressureHandling:15}
+  },
+  "AC Milan": {
+    teamRating: 76, style: "counter", formation: "4-2-3-1",
+    last5: ["W","L","D","W","D"],
+    character: {determination:14,bravery:14,composure:14,leadership:14,workRate:14,teamwork:14,concentration:14},
+    managerStats: {manManagement:14,tactical:15,motivation:14,adaptability:14,pressureHandling:14}
+  },
+  // LIGUE 1
+  "PSG": {
+    teamRating: 88, style: "technical", formation: "4-3-3",
+    last5: ["W","W","W","W","W"],
+    character: {determination:16,bravery:16,composure:17,leadership:16,workRate:16,teamwork:15,concentration:16},
+    managerStats: {manManagement:16,tactical:17,motivation:16,adaptability:16,pressureHandling:16}
+  },
+  "Monaco": {
+    teamRating: 76, style: "pressing", formation: "4-2-3-1",
+    last5: ["W","D","W","W","L"],
+    character: {determination:15,bravery:14,composure:14,leadership:14,workRate:15,teamwork:14,concentration:14},
+    managerStats: {manManagement:14,tactical:15,motivation:14,adaptability:14,pressureHandling:14}
+  },
+  "Marseille": {
+    teamRating: 74, style: "pressing", formation: "4-3-3",
+    last5: ["W","W","D","L","W"],
+    character: {determination:15,bravery:15,composure:13,leadership:14,workRate:15,teamwork:14,concentration:13},
+    managerStats: {manManagement:14,tactical:14,motivation:15,adaptability:13,pressureHandling:14}
+  }
+};
+
+let liveData = null;
+let allUpcoming = [];
+let activeLeague = 'ALL';
+
+// SofaScore'dan direkt tarayıcıda veri cek
+async function fetchSofaTeam(teamId) {
+  try {
+    const r = await fetch('https://www.sofascore.com/api/v1/team/' + teamId + '/events/last/0', {
+      headers: { 'Accept': 'application/json' }
+    });
+    if (!r.ok) return null;
+    return await r.json();
+  } catch(e) { return null; }
+}
+
+async function fetchSofaStats(teamId, leagueId, seasonId) {
+  try {
+    const r = await fetch('https://www.sofascore.com/api/v1/team/'+teamId+'/unique-tournament/'+leagueId+'/season/'+seasonId+'/statistics/overall');
+    if (!r.ok) return null;
+    return await r.json();
+  } catch(e) { return null; }
+}
+
+async function fetchSofaLineup(eventId) {
+  try {
+    const r = await fetch('https://www.sofascore.com/api/v1/event/' + eventId + '/lineups');
+    if (!r.ok) return null;
+    return await r.json();
+  } catch(e) { return null; }
+}
+
+// SOFA LEAGUE MAP
+const SOFA_LEAGUES = {
+  'TR1': {id:52, season:63814},
+  'EN1': {id:17, season:61627},
+  'ES1': {id:8,  season:61643},
+  'DE1': {id:35, season:63635},
+  'IT1': {id:23, season:63515},
+  'FR1': {id:34, season:63513},
+};
+
+function inferStyle(stats, formation) {
+  if (!stats) return 'balanced';
+  const poss  = stats.possession || 50;
+  const pass  = stats.accuratePassPct || 75;
+  const tack  = stats.tacklesPerGame || 15;
+  const inter = stats.interceptionsPerGame || 5;
+  const drib  = stats.dribblesPerGame || 3;
+  const shots = stats.shotsPerGame || 10;
+  const gf    = stats.goalsPerGame || 1.2;
+  const gc    = stats.concededPerGame || 1.2;
+
+  const s = {gegenpressing:0,pressing:0,'tiki-taka':0,possession:0,counter:0,direct:0,'wing-play':0,'low-block':0,'park-the-bus':0,'high-line':0,balanced:0.5};
+
+  // Formasyon
+  const fw = {
+    '4-3-3':{pressing:4,gegenpressing:3,'high-line':2,'tiki-taka':1},
+    '4-2-3-1':{pressing:3,gegenpressing:2,balanced:1},
+    '5-4-1':{'low-block':5,'park-the-bus':3,counter:3},
+    '5-3-2':{'low-block':4,counter:4,direct:2},
+    '4-4-2':{balanced:3,counter:2,direct:2},
+    '3-5-2':{possession:2,counter:1,'wing-play':2},
+    '4-5-1':{'low-block':2,counter:2,possession:2},
+    '3-4-3':{pressing:4,'high-line':3,'wing-play':2},
+    '4-1-4-1':{pressing:3,gegenpressing:3},
+    '4-4-1-1':{counter:3,'low-block':2},
+    '4-3-2-1':{'tiki-taka':2,pressing:2},
+  }[formation] || {balanced:2};
+  for (const [k,v] of Object.entries(fw)) s[k] = (s[k]||0)+v;
+
+  // Top hakimiyeti
+  if(poss>=62){s['tiki-taka']+=5;s.possession+=4;}
+  else if(poss>=57){s.possession+=3;s['tiki-taka']+=2;}
+  else if(poss<=38){s.counter+=5;s.direct+=2;s['low-block']+=2;}
+  else if(poss<=44){s.counter+=3;s['low-block']+=2;}
+
+  // Pas isabeti
+  if(pass>=88){s['tiki-taka']+=4;s.possession+=2;}
+  else if(pass<=68){s.direct+=3.5;s.counter+=1.5;}
+
+  // Tackle/pressing
+  if(tack>=25){s.gegenpressing+=5;s.pressing+=3;}
+  else if(tack>=20){s.pressing+=4;s.gegenpressing+=2;}
+  else if(tack<=10){s['low-block']+=2;}
+
+  // Interception
+  if(inter>=10){s.pressing+=3;s.gegenpressing+=2;}
+
+  // Dribling
+  if(drib>=7){s['wing-play']+=4;s['tiki-taka']+=1.5;}
+  else if(drib<=1.5){s.direct+=2;}
+
+  // Şutlar
+  if(shots>=18){s.pressing+=2.5;s['high-line']+=2;}
+  else if(shots<=7){s['low-block']+=2.5;s['park-the-bus']+=1.5;}
+
+  // Gol/yenilen
+  if(gf<=0.7){s['park-the-bus']+=3;s['low-block']+=2;}
+  if(gc<=0.6){s['high-line']+=1.5;s['low-block']+=1.5;}
+
+  return Object.entries(s).sort((a,b)=>b[1]-a[1])[0][0];
+}
+
+async function enrichMatchWithSofa(match) {
+  const lg = SOFA_LEAGUES[match.league];
+  if (!lg) return null;
+  try {
+    // Bir sonraki maçları çek
+    const r = await fetch('https://www.sofascore.com/api/v1/unique-tournament/'+lg.id+'/season/'+lg.season+'/events/next/0');
+    if (!r.ok) return null;
+    const data = await r.json();
+    if (!data.events) return null;
+
+    // Maçı eşleştir
+    const ev = data.events.find(e => {
+      const eh = (e.homeTeam?.name||'').toLowerCase();
+      const ea = (e.awayTeam?.name||'').toLowerCase();
+      const mh = match.home.toLowerCase();
+      const ma = match.away.toLowerCase();
+      return (mh.slice(0,4)===eh.slice(0,4)||eh.includes(mh.slice(0,4))) &&
+             (ma.slice(0,4)===ea.slice(0,4)||ea.includes(ma.slice(0,4)));
+    });
+    if (!ev) return null;
+
+    const homeId = ev.homeTeam?.id;
+    const awayId = ev.awayTeam?.id;
+
+    // Paralel veri çek
+    const [hStats, aStats, hInfo, aInfo] = await Promise.all([
+      fetchSofaStats(homeId, lg.id, lg.season),
+      fetchSofaStats(awayId, lg.id, lg.season),
+      fetch('https://www.sofascore.com/api/v1/team/'+homeId).then(r=>r.json()).catch(()=>null),
+      fetch('https://www.sofascore.com/api/v1/team/'+awayId).then(r=>r.json()).catch(()=>null),
+    ]);
+
+    const hS = hStats?.statistics || {};
+    const aS = aStats?.statistics || {};
+    const hM = hStats?.statistics?.matchesPlayed || 1;
+    const aM = aStats?.statistics?.matchesPlayed || 1;
+
+    const hNorm = {
+      goalsPerGame: (hS.goals||0)/hM,
+      concededPerGame: (hS.goalsConceded||0)/hM,
+      possession: hS.avgBallPossession||50,
+      accuratePassPct: hS.accuratePassesPercentage||75,
+      tacklesPerGame: (hS.tackles||0)/hM,
+      interceptionsPerGame: (hS.interceptions||0)/hM,
+      dribblesPerGame: (hS.dribbles||0)/hM,
+      shotsPerGame: (hS.shots||0)/hM,
+    };
+    const aNorm = {
+      goalsPerGame: (aS.goals||0)/aM,
+      concededPerGame: (aS.goalsConceded||0)/aM,
+      possession: aS.avgBallPossession||50,
+      accuratePassPct: aS.accuratePassesPercentage||75,
+      tacklesPerGame: (aS.tackles||0)/aM,
+      interceptionsPerGame: (aS.interceptions||0)/aM,
+      dribblesPerGame: (aS.dribbles||0)/aM,
+      shotsPerGame: (aS.shots||0)/aM,
+    };
+
+    // Lineup - formasyon
+    const lineup = await fetchSofaLineup(ev.id).catch(()=>null);
+    const hForm = lineup?.home?.formation || '';
+    const aForm = lineup?.away?.formation || '';
+
+    // Rating hesapla
+    const calcRating = (s) => Math.round(Math.min(98, Math.max(40,
+      Math.min(s.goalsPerGame/2.5,1)*30 + Math.max(1-s.concededPerGame/3,0)*30 + (s.possession/100)*20 + 20)));
+
+    return {
+      home: {
+        id: homeId,
+        manager: hInfo?.team?.manager?.name || '',
+        managerStyle: inferStyle(hNorm, hForm),
+        formation: hForm,
+        teamRating: calcRating(hNorm),
+        city: hInfo?.team?.venue?.city?.name || '',
+        lat: hInfo?.team?.venue?.coordinates?.latitude || 0,
+        lon: hInfo?.team?.venue?.coordinates?.longitude || 0,
+        stadium: hInfo?.team?.venue?.name || '',
+      },
+      away: {
+        id: awayId,
+        manager: aInfo?.team?.manager?.name || '',
+        managerStyle: inferStyle(aNorm, aForm),
+        formation: aForm,
+        teamRating: calcRating(aNorm),
+      },
+      eventId: ev.id,
+    };
+  } catch(e) {
+    console.log('SofaScore enrichment hatasi:', e);
+    return null;
+  }
+}
+
+// wttr.in - tamamen ücretsiz hava durumu, API key yok
+async function fetchWeatherByCoords(lat, lon) {
+  try {
+    const r = await fetch('https://wttr.in/'+lat+','+lon+'?format=j1');
+    if (!r.ok) return null;
+    const d = await r.json();
+    const cur = d.current_condition?.[0];
+    if (!cur) return null;
+    return {
+      temp: parseInt(cur.temp_C),
+      rain: parseFloat(cur.precipMM||0),
+      wind: parseInt(cur.windspeedKmph||0),
+      humidity: parseInt(cur.humidity||50),
+      desc: cur.weatherDesc?.[0]?.value || '',
+    };
+  } catch(e) { return null; }
+}
+
+async function loadLiveData() {
+  const statusEl = document.getElementById('data-status');
+  statusEl.textContent = 'BAĞLANIYOR...';
+
+  // 1. GitHub'dan tarihsel matris + takım formları çek
+  try {
+    const res = await fetch(DATA_URL);
+    if (res.ok) {
+      liveData = await res.json();
+      if (liveData.matrix) window.LIVE_HTFT_MATRIX = liveData.matrix;
+    }
+  } catch(e) { console.warn('GitHub verisi alınamadı:', e); }
+
+  // 0. Statik takım profilleri (güncel 2025/26)
+  if (!liveData) liveData = {};
+  liveData.team_profiles = {"Galatasaray": {"teamRating": 88, "style": "pressing", "formation": "4-2-3-1", "last5": ["W", "W", "W", "D", "W"], "character": {"determination": 17, "bravery": 16, "composure": 15, "leadership": 17, "workRate": 16, "teamwork": 16, "concentration": 15}, "managerStats": {"manManagement": 16, "tactical": 17, "motivation": 18, "adaptability": 15, "pressureHandling": 16}}, "Fenerbahce": {"teamRating": 85, "style": "technical", "formation": "4-3-3", "last5": ["W", "W", "D", "W", "W"], "character": {"determination": 16, "bravery": 15, "composure": 16, "leadership": 16, "workRate": 15, "teamwork": 15, "concentration": 15}, "managerStats": {"manManagement": 18, "tactical": 17, "motivation": 19, "adaptability": 16, "pressureHandling": 16}}, "Besiktas": {"teamRating": 76, "style": "pressing", "formation": "4-3-3", "last5": ["D", "W", "L", "W", "D"], "character": {"determination": 15, "bravery": 15, "composure": 13, "leadership": 14, "workRate": 15, "teamwork": 14, "concentration": 13}, "managerStats": {"manManagement": 14, "tactical": 15, "motivation": 15, "adaptability": 13, "pressureHandling": 14}}, "Trabzonspor": {"teamRating": 74, "style": "counter", "formation": "4-2-3-1", "last5": ["W", "D", "W", "L", "W"], "character": {"determination": 15, "bravery": 14, "composure": 13, "leadership": 14, "workRate": 15, "teamwork": 14, "concentration": 13}, "managerStats": {"manManagement": 14, "tactical": 14, "motivation": 15, "adaptability": 13, "pressureHandling": 13}}, "Basaksehir": {"teamRating": 68, "style": "technical", "formation": "4-1-4-1", "last5": ["D", "L", "W", "D", "L"], "character": {"determination": 13, "bravery": 13, "composure": 14, "leadership": 13, "workRate": 13, "teamwork": 14, "concentration": 13}, "managerStats": {"manManagement": 13, "tactical": 14, "motivation": 13, "adaptability": 13, "pressureHandling": 13}}, "Sivasspor": {"teamRating": 62, "style": "counter", "formation": "4-4-2", "last5": ["L", "D", "W", "L", "D"], "character": {"determination": 14, "bravery": 13, "composure": 12, "leadership": 12, "workRate": 14, "teamwork": 13, "concentration": 12}, "managerStats": {"manManagement": 12, "tactical": 12, "motivation": 13, "adaptability": 12, "pressureHandling": 12}}, "Konyaspor": {"teamRating": 60, "style": "balanced", "formation": "4-4-2", "last5": ["D", "L", "D", "W", "L"], "character": {"determination": 13, "bravery": 12, "composure": 12, "leadership": 12, "workRate": 13, "teamwork": 13, "concentration": 12}, "managerStats": {"manManagement": 12, "tactical": 12, "motivation": 12, "adaptability": 12, "pressureHandling": 11}}, "Alanyaspor": {"teamRating": 63, "style": "counter", "formation": "4-2-3-1", "last5": ["W", "D", "L", "W", "D"], "character": {"determination": 13, "bravery": 13, "composure": 12, "leadership": 12, "workRate": 13, "teamwork": 13, "concentration": 12}, "managerStats": {"manManagement": 12, "tactical": 13, "motivation": 13, "adaptability": 12, "pressureHandling": 12}}, "Kasimpasa": {"teamRating": 61, "style": "balanced", "formation": "4-4-2", "last5": ["L", "W", "D", "L", "W"], "character": {"determination": 13, "bravery": 12, "composure": 12, "leadership": 12, "workRate": 13, "teamwork": 12, "concentration": 12}, "managerStats": {"manManagement": 12, "tactical": 12, "motivation": 12, "adaptability": 11, "pressureHandling": 11}}, "Antalyaspor": {"teamRating": 60, "style": "counter", "formation": "5-3-2", "last5": ["D", "L", "D", "D", "W"], "character": {"determination": 13, "bravery": 12, "composure": 12, "leadership": 11, "workRate": 13, "teamwork": 12, "concentration": 12}, "managerStats": {"manManagement": 12, "tactical": 12, "motivation": 12, "adaptability": 11, "pressureHandling": 11}}, "Kayserispor": {"teamRating": 59, "style": "balanced", "formation": "4-4-2", "last5": ["L", "D", "L", "W", "D"], "character": {"determination": 13, "bravery": 12, "composure": 11, "leadership": 11, "workRate": 13, "teamwork": 12, "concentration": 11}, "managerStats": {"manManagement": 11, "tactical": 11, "motivation": 12, "adaptability": 11, "pressureHandling": 11}}, "Rizespor": {"teamRating": 57, "style": "counter", "formation": "5-4-1", "last5": ["L", "L", "D", "W", "L"], "character": {"determination": 13, "bravery": 12, "composure": 11, "leadership": 11, "workRate": 14, "teamwork": 13, "concentration": 11}, "managerStats": {"manManagement": 11, "tactical": 12, "motivation": 13, "adaptability": 11, "pressureHandling": 11}}, "Samsunspor": {"teamRating": 60, "style": "balanced", "formation": "4-2-3-1", "last5": ["W", "L", "D", "W", "L"], "character": {"determination": 13, "bravery": 13, "composure": 12, "leadership": 12, "workRate": 13, "teamwork": 13, "concentration": 12}, "managerStats": {"manManagement": 12, "tactical": 12, "motivation": 13, "adaptability": 12, "pressureHandling": 11}}, "Gaziantep": {"teamRating": 58, "style": "counter", "formation": "4-4-2", "last5": ["L", "D", "L", "D", "W"], "character": {"determination": 12, "bravery": 12, "composure": 11, "leadership": 11, "workRate": 13, "teamwork": 12, "concentration": 11}, "managerStats": {"manManagement": 11, "tactical": 11, "motivation": 12, "adaptability": 11, "pressureHandling": 11}}, "Kocaelispor": {"teamRating": 59, "style": "balanced", "formation": "4-4-2", "last5": ["D", "W", "L", "D", "L"], "character": {"determination": 13, "bravery": 12, "composure": 12, "leadership": 12, "workRate": 13, "teamwork": 13, "concentration": 12}, "managerStats": {"manManagement": 12, "tactical": 12, "motivation": 12, "adaptability": 11, "pressureHandling": 11}}, "Goztepe": {"teamRating": 61, "style": "pressing", "formation": "4-3-3", "last5": ["W", "D", "W", "L", "D"], "character": {"determination": 14, "bravery": 13, "composure": 12, "leadership": 12, "workRate": 14, "teamwork": 13, "concentration": 12}, "managerStats": {"manManagement": 12, "tactical": 13, "motivation": 13, "adaptability": 12, "pressureHandling": 12}}, "Adana Demirspor": {"teamRating": 63, "style": "technical", "formation": "4-3-3", "last5": ["D", "W", "D", "L", "W"], "character": {"determination": 13, "bravery": 13, "composure": 13, "leadership": 13, "workRate": 13, "teamwork": 13, "concentration": 13}, "managerStats": {"manManagement": 13, "tactical": 13, "motivation": 13, "adaptability": 13, "pressureHandling": 13}}, "Eyupspor": {"teamRating": 62, "style": "pressing", "formation": "4-3-3", "last5": ["W", "L", "W", "D", "W"], "character": {"determination": 14, "bravery": 13, "composure": 12, "leadership": 13, "workRate": 14, "teamwork": 13, "concentration": 12}, "managerStats": {"manManagement": 13, "tactical": 13, "motivation": 14, "adaptability": 12, "pressureHandling": 12}}, "Bodrum": {"teamRating": 56, "style": "counter", "formation": "5-3-2", "last5": ["L", "D", "L", "L", "D"], "character": {"determination": 12, "bravery": 12, "composure": 11, "leadership": 11, "workRate": 12, "teamwork": 12, "concentration": 11}, "managerStats": {"manManagement": 11, "tactical": 11, "motivation": 12, "adaptability": 11, "pressureHandling": 10}}, "Arsenal": {"teamRating": 89, "style": "pressing", "formation": "4-3-3", "last5": ["W", "W", "D", "W", "W"], "character": {"determination": 17, "bravery": 16, "composure": 16, "leadership": 16, "workRate": 17, "teamwork": 17, "concentration": 16}, "managerStats": {"manManagement": 17, "tactical": 18, "motivation": 17, "adaptability": 17, "pressureHandling": 16}}, "Chelsea": {"teamRating": 83, "style": "pressing", "formation": "4-2-3-1", "last5": ["W", "D", "W", "L", "W"], "character": {"determination": 15, "bravery": 15, "composure": 15, "leadership": 15, "workRate": 16, "teamwork": 15, "concentration": 15}, "managerStats": {"manManagement": 15, "tactical": 16, "motivation": 15, "adaptability": 16, "pressureHandling": 15}}, "Liverpool": {"teamRating": 91, "style": "pressing", "formation": "4-3-3", "last5": ["W", "W", "W", "W", "D"], "character": {"determination": 17, "bravery": 16, "composure": 17, "leadership": 17, "workRate": 17, "teamwork": 17, "concentration": 16}, "managerStats": {"manManagement": 17, "tactical": 18, "motivation": 18, "adaptability": 17, "pressureHandling": 17}}, "Man City": {"teamRating": 90, "style": "technical", "formation": "4-3-3", "last5": ["W", "D", "W", "W", "L"], "character": {"determination": 17, "bravery": 15, "composure": 18, "leadership": 16, "workRate": 17, "teamwork": 18, "concentration": 17}, "managerStats": {"manManagement": 16, "tactical": 20, "motivation": 17, "adaptability": 19, "pressureHandling": 18}}, "Man United": {"teamRating": 78, "style": "counter", "formation": "4-2-3-1", "last5": ["L", "W", "D", "L", "W"], "character": {"determination": 14, "bravery": 14, "composure": 13, "leadership": 14, "workRate": 14, "teamwork": 13, "concentration": 13}, "managerStats": {"manManagement": 14, "tactical": 14, "motivation": 14, "adaptability": 13, "pressureHandling": 13}}, "Tottenham": {"teamRating": 80, "style": "pressing", "formation": "4-2-3-1", "last5": ["W", "W", "L", "W", "D"], "character": {"determination": 15, "bravery": 15, "composure": 14, "leadership": 14, "workRate": 15, "teamwork": 14, "concentration": 14}, "managerStats": {"manManagement": 15, "tactical": 15, "motivation": 15, "adaptability": 14, "pressureHandling": 14}}, "Newcastle": {"teamRating": 79, "style": "counter", "formation": "4-3-3", "last5": ["W", "D", "W", "W", "L"], "character": {"determination": 15, "bravery": 15, "composure": 14, "leadership": 14, "workRate": 16, "teamwork": 15, "concentration": 14}, "managerStats": {"manManagement": 14, "tactical": 15, "motivation": 15, "adaptability": 14, "pressureHandling": 14}}, "Aston Villa": {"teamRating": 80, "style": "pressing", "formation": "4-2-3-1", "last5": ["W", "W", "D", "W", "L"], "character": {"determination": 15, "bravery": 15, "composure": 14, "leadership": 15, "workRate": 16, "teamwork": 15, "concentration": 14}, "managerStats": {"manManagement": 15, "tactical": 16, "motivation": 15, "adaptability": 15, "pressureHandling": 14}}, "Brighton": {"teamRating": 77, "style": "technical", "formation": "4-2-3-1", "last5": ["D", "W", "W", "D", "L"], "character": {"determination": 14, "bravery": 14, "composure": 15, "leadership": 13, "workRate": 15, "teamwork": 15, "concentration": 14}, "managerStats": {"manManagement": 14, "tactical": 16, "motivation": 14, "adaptability": 16, "pressureHandling": 14}}, "West Ham": {"teamRating": 74, "style": "counter", "formation": "4-2-3-1", "last5": ["L", "D", "W", "L", "D"], "character": {"determination": 13, "bravery": 13, "composure": 13, "leadership": 13, "workRate": 14, "teamwork": 13, "concentration": 13}, "managerStats": {"manManagement": 13, "tactical": 13, "motivation": 13, "adaptability": 13, "pressureHandling": 13}}, "Real Madrid": {"teamRating": 94, "style": "technical", "formation": "4-3-3", "last5": ["W", "W", "D", "W", "W"], "character": {"determination": 18, "bravery": 17, "composure": 18, "leadership": 18, "workRate": 16, "teamwork": 17, "concentration": 17}, "managerStats": {"manManagement": 17, "tactical": 19, "motivation": 18, "adaptability": 18, "pressureHandling": 18}}, "Barcelona": {"teamRating": 88, "style": "technical", "formation": "4-3-3", "last5": ["W", "D", "W", "W", "L"], "character": {"determination": 16, "bravery": 16, "composure": 17, "leadership": 16, "workRate": 16, "teamwork": 17, "concentration": 16}, "managerStats": {"manManagement": 16, "tactical": 18, "motivation": 16, "adaptability": 17, "pressureHandling": 16}}, "Atletico Madrid": {"teamRating": 85, "style": "counter", "formation": "4-4-2", "last5": ["W", "W", "D", "W", "D"], "character": {"determination": 17, "bravery": 17, "composure": 15, "leadership": 16, "workRate": 17, "teamwork": 16, "concentration": 16}, "managerStats": {"manManagement": 16, "tactical": 17, "motivation": 18, "adaptability": 15, "pressureHandling": 17}}, "Sevilla": {"teamRating": 74, "style": "balanced", "formation": "4-2-3-1", "last5": ["D", "L", "W", "D", "L"], "character": {"determination": 14, "bravery": 13, "composure": 13, "leadership": 13, "workRate": 14, "teamwork": 13, "concentration": 13}, "managerStats": {"manManagement": 13, "tactical": 14, "motivation": 13, "adaptability": 13, "pressureHandling": 13}}, "Villarreal": {"teamRating": 76, "style": "technical", "formation": "4-3-3", "last5": ["W", "D", "L", "W", "W"], "character": {"determination": 14, "bravery": 14, "composure": 14, "leadership": 14, "workRate": 14, "teamwork": 14, "concentration": 14}, "managerStats": {"manManagement": 14, "tactical": 15, "motivation": 14, "adaptability": 14, "pressureHandling": 14}}, "Athletic Bilbao": {"teamRating": 77, "style": "pressing", "formation": "4-2-3-1", "last5": ["W", "W", "D", "W", "D"], "character": {"determination": 16, "bravery": 16, "composure": 14, "leadership": 15, "workRate": 17, "teamwork": 16, "concentration": 14}, "managerStats": {"manManagement": 15, "tactical": 15, "motivation": 16, "adaptability": 14, "pressureHandling": 15}}, "Girona": {"teamRating": 75, "style": "pressing", "formation": "4-3-3", "last5": ["D", "W", "L", "W", "D"], "character": {"determination": 14, "bravery": 14, "composure": 13, "leadership": 13, "workRate": 15, "teamwork": 14, "concentration": 13}, "managerStats": {"manManagement": 14, "tactical": 15, "motivation": 14, "adaptability": 14, "pressureHandling": 13}}, "Bayern Munich": {"teamRating": 92, "style": "pressing", "formation": "4-2-3-1", "last5": ["W", "W", "W", "D", "W"], "character": {"determination": 17, "bravery": 16, "composure": 17, "leadership": 17, "workRate": 17, "teamwork": 17, "concentration": 16}, "managerStats": {"manManagement": 16, "tactical": 18, "motivation": 17, "adaptability": 17, "pressureHandling": 17}}, "Dortmund": {"teamRating": 82, "style": "pressing", "formation": "4-2-3-1", "last5": ["W", "L", "W", "D", "W"], "character": {"determination": 15, "bravery": 15, "composure": 14, "leadership": 14, "workRate": 16, "teamwork": 15, "concentration": 14}, "managerStats": {"manManagement": 14, "tactical": 16, "motivation": 15, "adaptability": 15, "pressureHandling": 14}}, "RB Leipzig": {"teamRating": 83, "style": "pressing", "formation": "4-2-3-1", "last5": ["W", "W", "D", "W", "L"], "character": {"determination": 16, "bravery": 15, "composure": 15, "leadership": 14, "workRate": 17, "teamwork": 16, "concentration": 15}, "managerStats": {"manManagement": 15, "tactical": 17, "motivation": 16, "adaptability": 16, "pressureHandling": 15}}, "Leverkusen": {"teamRating": 87, "style": "pressing", "formation": "4-2-3-1", "last5": ["W", "W", "W", "D", "W"], "character": {"determination": 16, "bravery": 16, "composure": 16, "leadership": 15, "workRate": 17, "teamwork": 16, "concentration": 16}, "managerStats": {"manManagement": 16, "tactical": 18, "motivation": 16, "adaptability": 17, "pressureHandling": 16}}, "Juventus": {"teamRating": 80, "style": "counter", "formation": "4-2-3-1", "last5": ["D", "W", "D", "W", "L"], "character": {"determination": 15, "bravery": 14, "composure": 15, "leadership": 15, "workRate": 14, "teamwork": 14, "concentration": 15}, "managerStats": {"manManagement": 14, "tactical": 15, "motivation": 14, "adaptability": 14, "pressureHandling": 14}}, "Inter Milan": {"teamRating": 88, "style": "counter", "formation": "3-5-2", "last5": ["W", "W", "D", "W", "W"], "character": {"determination": 16, "bravery": 16, "composure": 16, "leadership": 16, "workRate": 15, "teamwork": 16, "concentration": 16}, "managerStats": {"manManagement": 16, "tactical": 17, "motivation": 16, "adaptability": 16, "pressureHandling": 16}}, "AC Milan": {"teamRating": 82, "style": "technical", "formation": "4-2-3-1", "last5": ["W", "D", "W", "L", "W"], "character": {"determination": 15, "bravery": 15, "composure": 15, "leadership": 15, "workRate": 15, "teamwork": 15, "concentration": 15}, "managerStats": {"manManagement": 15, "tactical": 16, "motivation": 15, "adaptability": 15, "pressureHandling": 15}}, "Napoli": {"teamRating": 83, "style": "technical", "formation": "4-3-3", "last5": ["W", "W", "W", "D", "W"], "character": {"determination": 16, "bravery": 15, "composure": 15, "leadership": 15, "workRate": 15, "teamwork": 15, "concentration": 15}, "managerStats": {"manManagement": 15, "tactical": 16, "motivation": 16, "adaptability": 15, "pressureHandling": 15}}, "PSG": {"teamRating": 91, "style": "technical", "formation": "4-3-3", "last5": ["W", "W", "W", "W", "D"], "character": {"determination": 16, "bravery": 16, "composure": 17, "leadership": 16, "workRate": 16, "teamwork": 16, "concentration": 16}, "managerStats": {"manManagement": 16, "tactical": 17, "motivation": 16, "adaptability": 16, "pressureHandling": 16}}, "Monaco": {"teamRating": 79, "style": "pressing", "formation": "4-2-3-1", "last5": ["W", "D", "W", "W", "D"], "character": {"determination": 15, "bravery": 15, "composure": 14, "leadership": 14, "workRate": 15, "teamwork": 15, "concentration": 14}, "managerStats": {"manManagement": 14, "tactical": 15, "motivation": 15, "adaptability": 15, "pressureHandling": 14}}, "Marseille": {"teamRating": 77, "style": "pressing", "formation": "4-3-3", "last5": ["W", "L", "W", "D", "W"], "character": {"determination": 15, "bravery": 15, "composure": 13, "leadership": 14, "workRate": 15, "teamwork": 14, "concentration": 13}, "managerStats": {"manManagement": 14, "tactical": 15, "motivation": 15, "adaptability": 14, "pressureHandling": 14}}, "Lyon": {"teamRating": 74, "style": "technical", "formation": "4-3-3", "last5": ["D", "W", "L", "W", "D"], "character": {"determination": 14, "bravery": 13, "composure": 14, "leadership": 13, "workRate": 14, "teamwork": 14, "concentration": 13}, "managerStats": {"manManagement": 13, "tactical": 14, "motivation": 13, "adaptability": 14, "pressureHandling": 13}}};
+
+  // 2. Nesine'den bugünkü canlı maçları çek
+  try {
+    // Maçlar GitHub odds.json'dan geliyor - direkt kullan
+    if (liveData && liveData.upcoming && liveData.upcoming.length > 0) {
+      allUpcoming = liveData.upcoming;
+      statusEl.textContent = '✓ GİTHUB (' + allUpcoming.length + ' maç)';
+      statusEl.style.color = 'var(--green)';
+      buildMatchListLive();
+      return;
+    }
+  } catch(e) { console.warn('Veri alınamadı:', e); }
+
+  // 3. Fallback: GitHub upcoming veya demo
+  allUpcoming = liveData?.upcoming || [];
+  if (allUpcoming.length > 0) {
+    statusEl.textContent = `✓ GitHub (${allUpcoming.length} maç)`;
+    statusEl.style.color = 'var(--accent)';
+    buildMatchListLive();
+  } else {
+    statusEl.textContent = 'DEMO MOD ⚠';
+    statusEl.style.color = 'var(--gold)';
+    buildMatchListDemo();
+  }
+}
+
+function parseNesineData(nesine) {
+  const matches = [];
+  const events = nesine?.sg?.EA || [];
+  const leagueMap = {
+    129:'ES1', 87:'EN1', 88:'DE1', 90:'IT1', 97:'FR1',
+    174:'TR1', 186:'PT1', 185:'NL1', 192:'GR1', 180:'BE1',
+    98:'EN1', 100:'DE1'
+  };
+
+  for (const ev of events) {
+    if (!ev.HN || !ev.AN) continue; // Sadece maç olanlar
+    if (ev.TYPE < 0) continue; // Şampiyon bahisleri vb. atla
+
+    // Ana 1x2 oranını bul (MTID=1)
+    const mainMarket = (ev.MA || []).find(m => m.MTID === 1);
+    if (!mainMarket || !mainMarket.OCA || mainMarket.OCA.length < 3) continue;
+
+    const odds = mainMarket.OCA;
+    const homeOdd = odds.find(o => o.N === 1)?.O;
+    const drawOdd = odds.find(o => o.N === 2)?.O;
+    const awayOdd = odds.find(o => o.N === 3)?.O;
+    if (!homeOdd || !drawOdd || !awayOdd) continue;
+
+    // Açılış oranı (MBS=1) vs güncel (MBS=2)
+    const openMarket = (ev.MA || []).find(m => m.MTID === 1 && m.MBS === 1);
+    const openH = openMarket?.OCA?.find(o => o.N === 1)?.O || homeOdd;
+    const openD = openMarket?.OCA?.find(o => o.N === 2)?.O || drawOdd;
+    const openA = openMarket?.OCA?.find(o => o.N === 3)?.O || awayOdd;
+
+    // IY/MS oranını bul (MTID=5) - HT/FT için
+    const htftMarket = (ev.MA || []).find(m => m.MTID === 5);
+    const htftOdds = {};
+    if (htftMarket?.OCA) {
+      const map = {1:'1/1',2:'1/X',3:'1/2',4:'X/1',5:'X/X',6:'X/2',7:'2/1',8:'2/X',9:'2/2'};
+      for (const o of htftMarket.OCA) {
+        if (map[o.N]) htftOdds[map[o.N]] = o.O;
+      }
+    }
+
+    // Tarih
+    const [d, m, y] = (ev.D || '').split('.');
+    const date = y && m && d ? `${y}-${m}-${d}` : ev.D || '';
+
+    const leagueId = leagueMap[ev.LC] || 'OTHER';
+
+    matches.push({
+      league: leagueId,
+      leagueName: ev.ENN || '',
+      date: date,
+      time: ev.T || '',
+      home: ev.HN,
+      away: ev.AN,
+      open:  { h: openH, d: openD, a: openA },
+      close: { h: homeOdd, d: drawOdd, a: awayOdd },
+      htftOdds: htftOdds,
+      nesineId: ev.C
+    });
+  }
+
+  return matches.sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time));
+}
+
+function filterLeague(league) {
+  activeLeague = league;
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-league') === league);
+  });
+  if (liveData) buildMatchListLive();
+  else buildMatchListDemo();
+}
+
+function buildMatchListLive() {
+  const el = document.getElementById('match-list');
+  const filtered = activeLeague === 'ALL'
+    ? allUpcoming
+    : allUpcoming.filter(m => {
+        if (m.league === activeLeague) return true;
+        // Lig adından da kontrol et
+        const n = (m.leagueName || '').toLowerCase();
+        if (activeLeague === 'TR1') return n.includes('super') || n.includes('turk') || n.includes('süper');
+        if (activeLeague === 'EN1') return n.includes('premier') || n.includes('england');
+        if (activeLeague === 'DE1') return n.includes('bundesliga');
+        if (activeLeague === 'IT1') return n.includes('serie a');
+        if (activeLeague === 'ES1') return n.includes('la liga') || n.includes('spain');
+        if (activeLeague === 'FR1') return n.includes('ligue');
+        return false;
+      });
+
+  if (!filtered.length) {
+    el.innerHTML = '<div style="padding:20px;text-align:center;color:var(--muted);font-size:12px;font-family:var(--mono)">Bu ligde yaklaşan maç bulunamadı</div>';
+    return;
+  }
+
+  // Tarihe göre grupla
+  const byDate = {};
+  filtered.forEach(m => {
+    const d = m.date || 'Tarih Yok';
+    if (!byDate[d]) byDate[d] = [];
+    byDate[d].push(m);
+  });
+
+  const leagueNames = {TR1:'Süper Lig',EN1:'Premier League',ES1:'La Liga',
+    DE1:'Bundesliga',IT1:'Serie A',FR1:'Ligue 1',PT1:'Primeira Liga',
+    NL1:'Eredivisie',GR1:'Super League',BE1:'First Div A'};
+  // Lig adından belirle
+  function getLeagueName(m) {
+    if (leagueNames[m.league]) return leagueNames[m.league];
+    if (m.leagueName) {
+      const n = m.leagueName.toLowerCase();
+      if (n.includes('süper') || n.includes('super lig') || n.includes('turk')) return 'Süper Lig';
+      if (n.includes('premier')) return 'Premier League';
+      if (n.includes('bundesliga')) return 'Bundesliga';
+      if (n.includes('serie a')) return 'Serie A';
+      if (n.includes('ligue')) return 'Ligue 1';
+      if (n.includes('la liga')) return 'La Liga';
+      return m.leagueName;
+    }
+    return m.league;
+  }
+
+  let html = '';
+  Object.entries(byDate).slice(0, 10).forEach(([date, matches]) => {
+    const d = new Date(date);
+    const label = isNaN(d) ? date : d.toLocaleDateString('tr-TR', {weekday:'short',day:'numeric',month:'short'});
+    html += `<div class="match-date-sep">${label.toUpperCase()}</div>`;
+    matches.forEach((m, i) => {
+      const globalIdx = filtered.indexOf(m);
+      const lg = getLeagueName(m);
+      const oh = m.open?.h?.toFixed(2) || '-';
+      const od = m.open?.d?.toFixed(2) || '-';
+      const oa = m.open?.a?.toFixed(2) || '-';
+      html += `
+        <div class="match-card" id="live-mc-${globalIdx}" onclick="loadLiveMatch(${globalIdx})">
+          <div class="teams">${m.home} <span style="color:var(--muted);font-size:12px">vs</span> ${m.away}</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:5px">
+            <span class="league-tag">${lg}</span>
+            <span style="font-family:var(--mono);font-size:10px;color:var(--muted)">${oh} · ${od} · ${oa}</span>
+          </div>
+        </div>`;
+    });
+  });
+
+  html += `<div class="match-card" onclick="clearMatch()" style="border-top:2px solid var(--border)">
+    <div class="teams" style="color:var(--muted)">+ Manuel Giriş</div>
+  </div>`;
+
+  el.innerHTML = html;
+}
+
+function buildMatchListDemo() {
+  const el = document.getElementById('match-list');
+  let html = window.DEMO_MATCHES
+    .filter(m => activeLeague === 'ALL' || m.league === activeLeague)
+    .map((m, i) => `
+      <div class="match-card" id="mc-${i}" onclick="loadMatch(${i})">
+        <div class="teams">${m.label}</div>
+        <span class="league-tag">${m.league} · DEMO</span>
+      </div>`)
+    .join('');
+  html += `<div class="match-card" onclick="clearMatch()">
+    <div class="teams" style="color:var(--muted)">+ Manuel Giriş</div>
+  </div>`;
+  el.innerHTML = html;
+}
+
+function findTeamProfile(teamName) {
+  // Önce statik profillere bak
+  if (STATIC_TEAM_PROFILES[teamName]) return STATIC_TEAM_PROFILES[teamName];
+  // Fuzzy match statik profillerde
+  const lower = teamName.toLowerCase().replace(/ /g,'');
+  for (const key of Object.keys(STATIC_TEAM_PROFILES)) {
+    const k = key.toLowerCase().replace(/ /g,'');
+    if (k === lower || k.includes(lower) || lower.includes(k)) return STATIC_TEAM_PROFILES[key];
+  }
+  // Sonra canlı veriye bak
+  const profiles = liveData && liveData.team_profiles ? liveData.team_profiles : {};
+  if (profiles[teamName]) return profiles[teamName];
+  for (const key of Object.keys(profiles)) {
+    const k = key.toLowerCase().replace(/ /g,'');
+    if (k === lower || k.includes(lower) || lower.includes(k)) return profiles[key];
+  }
+  return null;
+}
+
+function applyProfile(prefix, profile, teams, leagueTeamKey) {
+  if (profile) {
+    const ratingEl = document.getElementById(prefix+'-rating');
+    const ratingVal = document.getElementById(prefix+'-rating-val');
+    if (ratingEl) { ratingEl.value = profile.teamRating || 70; ratingVal.textContent = profile.teamRating || 70; }
+    // Oyun stili - önce SofaScore hoca stilini kullan, yoksa statik profildeki stili al
+    const styleVal = profile.managerStyle || profile.style;
+    if (styleVal) { const el = document.getElementById(prefix+'-style'); if(el) el.value = styleVal; }
+    if (profile.formation) {
+      const fel = document.getElementById(prefix+'-form');
+      if(fel) { for(let o of fel.options) { if(o.value === profile.formation) { fel.value = profile.formation; break; } } }
+    }
+    if (profile.character) { state[prefix==='h'?'hChar':'aChar'] = Object.assign({}, profile.character); buildCharSliders(prefix+'-char-sliders', prefix==='h'?'hChar':'aChar'); }
+    if (profile.managerStats) { state[prefix==='h'?'hMgr':'aMgr'] = Object.assign({}, profile.managerStats); buildMgrSliders(prefix+'-mgr-sliders', prefix==='h'?'hMgr':'aMgr'); }
+    if (profile.last5 && profile.last5.length) {
+      const key = prefix==='h'?'hLast5':'aLast5';
+      state[key] = profile.last5.slice(0,5).map(r => r==='?' ? 'D' : r);
+      while(state[key].length < 5) state[key].push('D');
+      buildLast5(prefix+'-last5', key);
+    }
+    // Oyuncu listesi
+    if (profile.players && profile.players.length) {
+      showPlayers(prefix, profile.players, profile.manager || '');
+    }
+  } else if (teams[leagueTeamKey] && teams[leagueTeamKey].last5) {
+    const key = prefix==='h'?'hLast5':'aLast5';
+    state[key] = teams[leagueTeamKey].last5.slice(0,5);
+    while(state[key].length < 5) state[key].push('D');
+    buildLast5(prefix+'-last5', key);
+  }
+}
+
+function showPlayers(prefix, players, manager) {
+  const side = prefix === 'h' ? 'Ev Sahibi' : 'Deplasman';
+  const existing = document.getElementById(prefix+'-players-box');
+  if (existing) existing.remove();
+  const box = document.createElement('div');
+  box.id = prefix+'-players-box';
+  box.style.cssText = 'margin:8px 0;padding:10px;background:rgba(0,255,136,0.05);border:1px solid rgba(0,255,136,0.2);border-radius:6px;font-size:11px;';
+  let html = '<div style="color:#00ff88;font-weight:bold;margin-bottom:6px;">⚽ '+side+' Kadro'+(manager?' | 🧑‍💼 '+manager:'')+'</div>';
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;">';
+  players.slice(0,11).forEach(p => {
+    const rating = p.rating ? ' <span style="color:#ffd700">'+Number(p.rating).toFixed(1)+'</span>' : '';
+    html += '<div style="color:#ccc;">'+p.position+' '+p.name+rating+'</div>';
+  });
+  html += '</div>';
+  box.innerHTML = html;
+  const target = document.getElementById(prefix+'-rating');
+  if (target) target.closest('.panel-section') ? target.closest('.panel-section').after(box) : target.parentNode.after(box);
+}
+
+function loadLiveMatch(idx) {
+  document.querySelectorAll('.match-card').forEach(c => c.classList.remove('active'));
+  const card = document.getElementById('live-mc-'+idx);
+  if (card) card.classList.add('active');
+
+  const filtered = activeLeague === 'ALL'
+    ? allUpcoming
+    : allUpcoming.filter(m => {
+        if (m.league === activeLeague) return true;
+        const n = (m.leagueName || '').toLowerCase();
+        if (activeLeague === 'TR1') return n.includes('super') || n.includes('turk');
+        if (activeLeague === 'EN1') return n.includes('premier') || n.includes('england');
+        if (activeLeague === 'DE1') return n.includes('bundesliga');
+        if (activeLeague === 'IT1') return n.includes('serie a');
+        if (activeLeague === 'ES1') return n.includes('la liga') || n.includes('spain');
+        if (activeLeague === 'FR1') return n.includes('ligue');
+        return false;
+      });
+  const m = filtered[idx];
+  if (!m) return;
+
+  document.getElementById('odds-home').value = m.open && m.open.h ? m.open.h.toFixed(2) : 2.10;
+  document.getElementById('odds-draw').value = m.open && m.open.d ? m.open.d.toFixed(2) : 3.30;
+  document.getElementById('odds-away').value = m.open && m.open.a ? m.open.a.toFixed(2) : 3.60;
+  document.getElementById('league').value = m.league || 'TR1';
+
+  window._liveCloseOdds = m.close || m.open;
+  window._liveHTFTOdds = m.htft || m.htftOdds || null;
+
+  const teams = liveData && liveData.teams ? liveData.teams : {};
+  // SofaScore verisini bul
+  const sofascore = liveData && liveData.sofascore || {};
+  const matchKey = m.home + '_vs_' + m.away;
+  const sofaMatch = sofascore[matchKey];
+
+  // Statik profil
+  let hProf = findTeamProfile(m.home);
+  let aProf = findTeamProfile(m.away);
+
+  // SofaScore verisini statik profile üzerine yaz (öncelikli)
+  if (sofaMatch && sofaMatch.home) {
+    const sh = sofaMatch.home;
+    if (!hProf) hProf = {};
+    if (sh.teamRating) hProf.teamRating = sh.teamRating;
+    if (sh.managerStyle) hProf.managerStyle = sh.managerStyle;
+    if (sh.form && sh.form.length) hProf.last5 = sh.form;
+    hProf._manager = sh.manager;
+    hProf._stadium = sh.stadium;
+    hProf._city = sh.city;
+  }
+  if (sofaMatch && sofaMatch.away) {
+    const sa = sofaMatch.away;
+    if (!aProf) aProf = {};
+    if (sa.teamRating) aProf.teamRating = sa.teamRating;
+    if (sa.managerStyle) aProf.managerStyle = sa.managerStyle;
+    if (sa.form && sa.form.length) aProf.last5 = sa.form;
+    aProf._manager = sa.manager;
+  }
+
+  applyProfile('h', hProf, teams, m.league+':'+m.home);
+  applyProfile('a', aProf, teams, m.league+':'+m.away);
+
+  // Hoca bilgisini göster
+  if (hProf && hProf._manager) {
+    let mgrBox = document.getElementById('h-manager-info');
+    if (!mgrBox) { mgrBox = document.createElement('div'); mgrBox.id='h-manager-info'; mgrBox.style.cssText='font-size:10px;color:#aaa;margin-top:4px;'; }
+    mgrBox.textContent = '👨‍💼 ' + hProf._manager + (hProf.managerStyle ? ' | ' + hProf.managerStyle : '');
+    const styleEl = document.getElementById('h-style');
+    if (styleEl) styleEl.parentNode.appendChild(mgrBox);
+  }
+  if (aProf && aProf._manager) {
+    let mgrBox = document.getElementById('a-manager-info');
+    if (!mgrBox) { mgrBox = document.createElement('div'); mgrBox.id='a-manager-info'; mgrBox.style.cssText='font-size:10px;color:#aaa;margin-top:4px;'; }
+    mgrBox.textContent = '👨‍💼 ' + aProf._manager + (aProf.managerStyle ? ' | ' + aProf.managerStyle : '');
+    const styleEl = document.getElementById('a-style');
+    if (styleEl) styleEl.parentNode.appendChild(mgrBox);
+  }
+
+  // Haberler
+  const news = liveData && liveData.team_news || {};
+  showNews(m.home, news[m.home], 'h');
+  showNews(m.away, news[m.away], 'a');
+
+  // Hava durumu - maç bazlı (SofaScore koordinatları)
+  const weather = liveData && liveData.weather || {};
+  const homeW = weather[matchKey] || weather[m.home];
+  if (homeW && homeW.weather) {
+    const w = homeW.weather;
+    const tempEl = document.getElementById('weather-temp');
+    const rainEl = document.getElementById('weather-rain');
+    const windEl = document.getElementById('weather-wind');
+    const surfaceEl = document.getElementById('pitch-condition');
+    if(tempEl) tempEl.value = w.temp_c || w.temp || 15;
+    if(rainEl) rainEl.value = w.rain_mm || w.rain || 0;
+    if(windEl) windEl.value = w.wind_kmh || w.wind || 10;
+    // Saha zemini - hava durumuna göre otomatik
+    if(surfaceEl) {
+      const sc = homeW.surface_condition || w.surface_condition || 'good';
+      const surfaceMap = {'good':'good','firm':'good','soft':'average','heavy':'heavy'};
+      surfaceEl.value = surfaceMap[sc] || 'good';
+    }
+    // Stadyum bilgisini göster
+    const stadiumInfo = document.getElementById('stadium-info');
+    if (stadiumInfo) {
+      stadiumInfo.textContent = (homeW.stadium || '') + ' - ' + (homeW.city || '') + ' | ' + (w.description || '');
+    }
+  }
+
+  // SofaScore'dan canlı veri çek (tarayıcıdan)
+  const label = m.home + ' vs ' + m.away;
+  enrichMatchWithSofa(m).then(sofaData => {
+    if (sofaData) {
+      // Ev sahibi
+      if (sofaData.home) {
+        const h = sofaData.home;
+        if (h.teamRating) {
+          document.getElementById('h-rating').value = h.teamRating;
+          document.getElementById('h-rating-val').textContent = h.teamRating;
+        }
+        if (h.managerStyle) document.getElementById('h-style').value = h.managerStyle;
+        if (h.formation) document.getElementById('h-form').value = h.formation;
+
+        // Hoca bilgisi
+        let hBox = document.getElementById('h-manager-info');
+        if (!hBox) { hBox = document.createElement('div'); hBox.id='h-manager-info'; hBox.style.cssText='font-size:10px;color:var(--accent);margin-top:4px;'; document.getElementById('h-style').after(hBox); }
+        if (h.manager) hBox.textContent = '👨‍💼 ' + h.manager + ' | ' + (h.managerStyle||'');
+
+        // Hava durumu - stadyum koordinatlarından
+        if (h.lat && h.lon) {
+          fetchWeatherByCoords(h.lat, h.lon).then(w => {
+            if (w) {
+              const tempEl = document.getElementById('weather-temp');
+              const rainEl = document.getElementById('weather-rain');
+              const windEl = document.getElementById('weather-wind');
+              const surfEl = document.getElementById('pitch-condition');
+              if(tempEl) tempEl.value = w.temp;
+              if(rainEl) rainEl.value = w.rain;
+              if(windEl) windEl.value = w.wind;
+              if(surfEl) {
+                surfEl.value = w.rain > 5 ? 'heavy' : w.rain > 1 ? 'average' : 'good';
+              }
+              let sBox = document.getElementById('stadium-info');
+              if (!sBox) { sBox = document.createElement('div'); sBox.id='stadium-info'; sBox.style.cssText='font-size:10px;color:var(--muted);margin-top:2px;'; }
+              sBox.textContent = '🏟️ ' + (h.stadium||'') + ' | ' + w.desc;
+            }
+          });
+        }
+      }
+      // Deplasman
+      if (sofaData.away) {
+        const a = sofaData.away;
+        if (a.teamRating) {
+          document.getElementById('a-rating').value = a.teamRating;
+          document.getElementById('a-rating-val').textContent = a.teamRating;
+        }
+        if (a.managerStyle) document.getElementById('a-style').value = a.managerStyle;
+        if (a.formation) document.getElementById('a-form').value = a.formation;
+
+        let aBox = document.getElementById('a-manager-info');
+        if (!aBox) { aBox = document.createElement('div'); aBox.id='a-manager-info'; aBox.style.cssText='font-size:10px;color:var(--orange);margin-top:4px;'; document.getElementById('a-style').after(aBox); }
+        if (a.manager) aBox.textContent = '👨‍💼 ' + a.manager + ' | ' + (a.managerStyle||'');
+      }
+    }
+    runAnalysis(label);
+  }).catch(() => runAnalysis(label));
+}
+
+function showNews(teamName, newsData, prefix) {
+  const existing = document.getElementById(prefix+'-news-box');
+  if (existing) existing.remove();
+  if (!newsData || !newsData.headlines || !newsData.headlines.length) return;
+  const box = document.createElement('div');
+  box.id = prefix+'-news-box';
+  const moodColor = newsData.mood==='positive'?'#00ff88':newsData.mood==='negative'?'#ff4757':'#ffd700';
+  const moodText = newsData.mood==='positive'?'✅ Pozitif':newsData.mood==='negative'?'⚠️ Negatif':'➖ Nötr';
+  box.style.cssText = 'margin:8px 0;padding:8px;background:rgba(255,215,0,0.05);border:1px solid rgba(255,215,0,0.15);border-radius:6px;font-size:10px;';
+  let html = '<div style="color:'+moodColor+';font-weight:bold;margin-bottom:4px;">📰 '+teamName+' Haberleri: '+moodText+'</div>';
+  newsData.headlines.slice(0,3).forEach(h => {
+    html += '<div style="color:#aaa;margin-bottom:2px;">• '+h.substring(0,80)+'...</div>';
+  });
+  box.innerHTML = html;
+  const target = document.getElementById(prefix+'-players-box') || document.getElementById(prefix+'-rating');
+  if (target) target.after ? target.after(box) : target.parentNode.after(box);
+}
+
+function init() {
+  buildCharSliders('h-char-sliders', 'hChar');
+  buildCharSliders('a-char-sliders', 'aChar');
+  buildMgrSliders('h-mgr-sliders', 'hMgr');
+  buildMgrSliders('a-mgr-sliders', 'aMgr');
+  buildLast5('h-last5', 'hLast5');
+  buildLast5('a-last5', 'aLast5');
+  loadLiveData();
+  bindSliders();
+}
+
+function buildCharSliders(containerId, stateKey) {
+  const el = document.getElementById(containerId);
+  el.innerHTML = Object.keys(CHAR_LABELS).map(k => `
+    <div style="margin-bottom:8px">
+      <div class="char-label"><span>${CHAR_LABELS[k]}</span><span class="slider-val" id="${containerId}-${k}-val">${state[stateKey][k]}</span></div>
+      <input type="range" class="slider" min="1" max="20" value="${state[stateKey][k]}"
+        oninput="state['${stateKey}']['${k}']=+this.value;document.getElementById('${containerId}-${k}-val').textContent=this.value">
+    </div>
+  `).join('');
+}
+
+function buildMgrSliders(containerId, stateKey) {
+  const el = document.getElementById(containerId);
+  el.innerHTML = Object.keys(MGR_LABELS).map(k => `
+    <div style="margin-bottom:8px">
+      <div class="char-label"><span>${MGR_LABELS[k]}</span><span class="slider-val" id="${containerId}-${k}-val">${state[stateKey][k]}</span></div>
+      <input type="range" class="slider" min="1" max="20" value="${state[stateKey][k]}"
+        oninput="state['${stateKey}']['${k}']=+this.value;document.getElementById('${containerId}-${k}-val').textContent=this.value">
+    </div>
+  `).join('');
+}
+
+function buildLast5(containerId, stateKey) {
+  const el = document.getElementById(containerId);
+  const options = ['W','D','L'];
+  el.innerHTML = state[stateKey].map((v,i) => `
+    <button class="l5-btn" data-v="${v}" data-i="${i}" data-key="${stateKey}" onclick="cycleResult(this)">${v}</button>
+  `).join('');
+}
+
+function cycleResult(btn) {
+  const opts = ['W','D','L'];
+  const cur = btn.getAttribute('data-v');
+  const next = opts[(opts.indexOf(cur)+1)%3];
+  btn.setAttribute('data-v', next);
+  btn.textContent = next;
+  const key = btn.getAttribute('data-key');
+  const i = +btn.getAttribute('data-i');
+  state[key][i] = next;
+}
+
+function buildMatchList() {
+  const el = document.getElementById('match-list');
+  el.innerHTML = window.DEMO_MATCHES.map((m,i) => `
+    <div class="match-card" id="mc-${i}" onclick="loadMatch(${i})">
+      <div class="teams">${m.label}</div>
+      <span class="league-tag">${m.league}</span>
+    </div>
+  `).join('') + `
+    <div class="match-card" onclick="clearMatch()">
+      <div class="teams" style="color:var(--muted)">+ Manuel Giriş</div>
+    </div>
+  `;
+}
+
+function loadMatch(idx) {
+  document.querySelectorAll('.match-card').forEach(c => c.classList.remove('active'));
+  document.getElementById(`mc-${idx}`).classList.add('active');
+
+  const m = window.DEMO_MATCHES[idx];
+  document.getElementById('odds-home').value = m.odds.open.home;
+  document.getElementById('odds-draw').value = m.odds.open.draw;
+  document.getElementById('odds-away').value = m.odds.open.away;
+  document.getElementById('league').value = m.league;
+  document.getElementById('h-rating').value = m.homeTeam.teamRating;
+  document.getElementById('h-rating-val').textContent = m.homeTeam.teamRating;
+  document.getElementById('a-rating').value = m.awayTeam.teamRating;
+  document.getElementById('a-rating-val').textContent = m.awayTeam.teamRating;
+  document.getElementById('h-form').value = m.homeTeam.formation;
+  document.getElementById('a-form').value = m.awayTeam.formation;
+  document.getElementById('h-style').value = m.homeTeam.style;
+  document.getElementById('a-style').value = m.awayTeam.style;
+  document.getElementById('w-temp').value = m.weather.tempC;
+  document.getElementById('w-rain').value = m.weather.rainMM;
+  document.getElementById('w-wind').value = m.weather.windKmh;
+  document.getElementById('w-pitch').value = m.weather.pitchCondition;
+  document.getElementById('ref-home').value = Math.round(m.refereeStats.homeWinRate * 100);
+  document.getElementById('ref-home-val').textContent = '%' + Math.round(m.refereeStats.homeWinRate * 100);
+  document.getElementById('ref-pen').value = Math.round(m.refereeStats.penaltyRate * 100);
+  document.getElementById('ref-pen-val').textContent = '%' + Math.round(m.refereeStats.penaltyRate * 100);
+
+  // Char & mgr
+  state.hChar = {...m.homeTeam.character};
+  state.aChar = {...m.awayTeam.character};
+  state.hMgr = {...m.homeTeam.manager};
+  state.aMgr = {...m.awayTeam.manager};
+  state.hLast5 = [...m.homeTeam.psychology.last5];
+  state.aLast5 = [...m.awayTeam.psychology.last5];
+  buildCharSliders('h-char-sliders', 'hChar');
+  buildCharSliders('a-char-sliders', 'aChar');
+  buildMgrSliders('h-mgr-sliders', 'hMgr');
+  buildMgrSliders('a-mgr-sliders', 'aMgr');
+  buildLast5('h-last5', 'hLast5');
+  buildLast5('a-last5', 'aLast5');
+
+  // Checkboxes
+  ['title','rel','eur','riv','conf'].forEach(k => {
+    const hk = { title:'titleRace', rel:'relegationFight', eur:'europeChase', riv:'rivalryMatch', conf:'squadConflict' }[k];
+    document.getElementById('h-'+k).checked = m.homeTeam.psychology[hk] || false;
+    document.getElementById('a-'+k).checked = m.awayTeam.psychology[hk] || false;
+  });
+
+  setTimeout(() => runAnalysis(m.label), 100);
+}
+
+function clearMatch() {
+  document.querySelectorAll('.match-card').forEach(c => c.classList.remove('active'));
+  const m = window.EMPTY_MATCH_TEMPLATE;
+
+  document.getElementById('odds-home').value = m.odds.open.home;
+  document.getElementById('odds-draw').value = m.odds.open.draw;
+  document.getElementById('odds-away').value = m.odds.open.away;
+  document.getElementById('league').value = m.league;
+  document.getElementById('h-rating').value = m.homeTeam.teamRating;
+  document.getElementById('h-rating-val').textContent = m.homeTeam.teamRating;
+  document.getElementById('h-form').value = m.homeTeam.formation;
+  document.getElementById('h-style').value = m.homeTeam.style;
+  document.getElementById('a-rating').value = m.awayTeam.teamRating;
+  document.getElementById('a-rating-val').textContent = m.awayTeam.teamRating;
+  document.getElementById('a-form').value = m.awayTeam.formation;
+  document.getElementById('a-style').value = m.awayTeam.style;
+  document.getElementById('w-temp').value = m.weather.tempC;
+  document.getElementById('w-rain').value = m.weather.rainMM;
+  document.getElementById('w-wind').value = m.weather.windKmh;
+  document.getElementById('w-pitch').value = m.weather.pitchCondition;
+  document.getElementById('ref-home').value = Math.round(m.refereeStats.homeWinRate * 100);
+  document.getElementById('ref-home-val').textContent = '%' + Math.round(m.refereeStats.homeWinRate * 100);
+  document.getElementById('ref-pen').value = Math.round(m.refereeStats.penaltyRate * 100);
+  document.getElementById('ref-pen-val').textContent = '%' + Math.round(m.refereeStats.penaltyRate * 100);
+
+  state.hChar = {...m.homeTeam.character};
+  state.aChar = {...m.awayTeam.character};
+  state.hMgr  = {...m.homeTeam.manager};
+  state.aMgr  = {...m.awayTeam.manager};
+  state.hLast5 = [...m.homeTeam.psychology.last5];
+  state.aLast5 = [...m.awayTeam.psychology.last5];
+  buildCharSliders('h-char-sliders', 'hChar');
+  buildCharSliders('a-char-sliders', 'aChar');
+  buildMgrSliders('h-mgr-sliders', 'hMgr');
+  buildMgrSliders('a-mgr-sliders', 'aMgr');
+  buildLast5('h-last5', 'hLast5');
+  buildLast5('a-last5', 'aLast5');
+
+  ['h-title','h-rel','h-eur','h-riv','h-conf',
+   'a-title','a-rel','a-eur','a-riv','a-conf'].forEach(id => {
+    document.getElementById(id).checked = false;
+  });
+
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('placeholder').style.display = 'flex';
+}
+
+function bindSliders() {
+  [['h-rating','h-rating-val'], ['a-rating','a-rating-val'],
+   ['ref-home','ref-home-val','%'], ['ref-pen','ref-pen-val','%']].forEach(([id, valId, prefix='']) => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', () => {
+      document.getElementById(valId).textContent = (prefix||'') + el.value;
+    });
+  });
+}
+
+// ═══════════════ BUILD MATCH DATA ═══════════════
+function buildMatchData(labelOverride) {
+  return {
+    label: labelOverride || 'Özel Maç',
+    league: document.getElementById('league').value,
+    homeTeam: {
+      name: 'Ev Sahibi', shortName: 'EV',
+      teamRating: +document.getElementById('h-rating').value,
+      formation: document.getElementById('h-form').value,
+      style: document.getElementById('h-style').value,
+      character: { ...state.hChar },
+      manager: { ...state.hMgr },
+      psychology: {
+        last5: [...state.hLast5],
+        titleRace: document.getElementById('h-title').checked,
+        relegationFight: document.getElementById('h-rel').checked,
+        europeChase: document.getElementById('h-eur').checked,
+        cupFinal: false,
+        rivalryMatch: document.getElementById('h-riv').checked,
+        squadConflict: document.getElementById('h-conf').checked,
+        mediaPresure: 5
+      }
+    },
+    awayTeam: {
+      name: 'Deplasman', shortName: 'DEP',
+      teamRating: +document.getElementById('a-rating').value,
+      formation: document.getElementById('a-form').value,
+      style: document.getElementById('a-style').value,
+      character: { ...state.aChar },
+      manager: { ...state.aMgr },
+      psychology: {
+        last5: [...state.aLast5],
+        titleRace: document.getElementById('a-title').checked,
+        relegationFight: document.getElementById('a-rel').checked,
+        europeChase: document.getElementById('a-eur').checked,
+        cupFinal: false,
+        rivalryMatch: document.getElementById('a-riv').checked,
+        squadConflict: document.getElementById('a-conf').checked,
+        mediaPresure: 5
+      }
+    },
+    weather: {
+      tempC: +document.getElementById('w-temp').value,
+      rainMM: +document.getElementById('w-rain').value,
+      windKmh: +document.getElementById('w-wind').value,
+      pitchCondition: document.getElementById('w-pitch').value
+    },
+    odds: {
+      open: {
+        home: +document.getElementById('odds-home').value,
+        draw: +document.getElementById('odds-draw').value,
+        away: +document.getElementById('odds-away').value
+      },
+      close: {
+        home: +document.getElementById('odds-home').value,
+        draw: +document.getElementById('odds-draw').value,
+        away: +document.getElementById('odds-away').value
+      },
+      htft: { "1/1":4.50,"1/X":13.0,"1/2":26.0,"X/1":5.80,"X/X":5.80,"X/2":10.0,"2/1":22.0,"2/X":16.0,"2/2":9.00 }
+    },
+    refereeStats: {
+      homeWinRate: +document.getElementById('ref-home').value / 100,
+      penaltyRate: +document.getElementById('ref-pen').value / 100
+    },
+    schedulingFactor: { homeRestDays: 5, awayRestDays: 5 }
+  };
+}
+
+// ═══════════════ RUN ANALYSIS ═══════════════
+function runAnalysis(labelOverride) {
+  const matchData = buildMatchData(labelOverride);
+  const result = window.EliteEngine.run(matchData);
+  renderResults(matchData, result);
+}
+
+// ═══════════════ RENDER ═══════════════
+function renderResults(match, result) {
+  document.getElementById('placeholder').style.display = 'none';
+  const el = document.getElementById('results');
+  el.style.display = 'block';
+
+  const { valueBets, topPick, topValueBet, manipulation, weatherSummary, fmInsights, psychInsights, fullTimeProbs } = result;
+
+  // HTFT cards sorted by prob
+  const combos = Object.entries(valueBets).sort((a,b) => b[1].modelProb - a[1].modelProb);
+
+  const riskColor = manipulation.riskLevel === 'YÜKSEK' ? 'red' : manipulation.riskLevel === 'ORTA' ? 'gold' : 'green';
+  const riskIcon = manipulation.riskLevel === 'YÜKSEK' ? '🚨' : manipulation.riskLevel === 'ORTA' ? '⚠️' : '✅';
+
+  // Taktik analizi
+  const hForm = match.homeTeam.formation;
+  const aForm = match.awayTeam.formation;
+  const FM_PARAMS_TAC = {
+    "4-3-3": { beats: ["4-2-3-1","3-4-3"], loses: ["5-3-2","4-4-2"] },
+    "4-2-3-1": { beats: ["4-4-2","4-3-3"], loses: ["4-3-3","3-5-2"] },
+    "5-3-2": { beats: ["4-3-3","4-2-3-1"], loses: ["4-4-2","3-4-3"] },
+    "4-4-2": { beats: ["5-3-2","5-4-1"], loses: ["4-2-3-1","4-3-3"] },
+    "3-4-3": { beats: ["4-4-2","4-5-1"], loses: ["4-3-3","5-3-2"] },
+    "3-5-2": { beats: ["4-2-3-1","5-3-2"], loses: ["4-3-3","3-4-3"] },
+    "4-5-1": { beats: ["4-3-3","3-4-3"], loses: ["4-4-2","4-2-3-1"] },
+    "5-4-1": { beats: ["4-2-3-1","4-3-3"], loses: ["4-4-2","3-4-3"] }
+  };
+  const tacInfo = FM_PARAMS_TAC[hForm] || { beats: [], loses: [] };
+  let tacResult = 'neutral';
+  let tacText = 'Taktik avantaj yok';
+  if (tacInfo.beats?.includes(aForm)) { tacResult = 'advantage'; tacText = `${hForm} → ${aForm} taktiğini ezer`; }
+  else if (tacInfo.loses?.includes(aForm)) { tacResult = 'disadvantage'; tacText = `${aForm} → ${hForm} taktiğine üstün gelir`; }
+
+  el.innerHTML = `
+    <!-- MATCH HEADER -->
+    <div class="match-header anim anim-d1">
+      <div class="match-teams-header">${match.label || (match.homeTeam.name + ' — ' + match.awayTeam.name)}</div>
+      <div class="match-meta">
+        <span class="meta-pill">${match.league}</span>
+        <span class="meta-pill">${weatherSummary}</span>
+        <span class="meta-pill">ŞİKE RİSKİ: ${manipulation.riskLevel}</span>
+      </div>
+    </div>
+
+    <!-- ŞİKE ALART -->
+    <div class="alert alert-${riskColor} anim anim-d2">
+      <div class="alert-icon">${riskIcon}</div>
+      <div class="alert-body">
+        <div class="alert-title">Manipülasyon Riski: ${manipulation.riskLevel} (Skor: ${Math.round(manipulation.riskScore*100)})</div>
+        <div class="alert-flags">${manipulation.flags.length ? manipulation.flags.join(' · ') : 'Anomali tespit edilmedi. Piyasa güvenilir görünüyor.'}</div>
+      </div>
+    </div>
+
+    <!-- TOP PICKS SUMMARY -->
+    ${topValueBet ? `
+    <div class="alert alert-gold anim anim-d2">
+      <div class="alert-icon">💎</div>
+      <div class="alert-body">
+        <div class="alert-title">VALUE BET TESPİT EDİLDİ: ${topValueBet.combo}</div>
+        <div class="alert-flags">Model olasılığı: %${Math.round(topValueBet.modelProb*100)} · Oran: ${topValueBet.odds?.toFixed(2)} · Beklenen Değer: +${(topValueBet.ev*100).toFixed(1)}%</div>
+      </div>
+    </div>` : ''}
+
+    <!-- HTFT GRID -->
+    <div class="section-label anim anim-d2">HT/FT TAHMİN MATRİSİ</div>
+    <div class="htft-grid anim anim-d3">
+      ${combos.map(([combo, data]) => {
+        const isTop = combo === topPick.combo;
+        const isValue = topValueBet && combo === topValueBet.combo;
+        const pct = Math.round(data.modelProb * 100);
+        const conf = Math.round(data.confidence);
+        const evSign = data.ev > 0 ? '+' : '';
+        const evClass = data.ev > 0.05 ? 'ev-pos' : 'ev-neg';
+        const cardClass = isTop ? 'top-pick' : isValue ? 'value-bet' : pct < 5 ? 'low' : '';
+        return `
+          <div class="htft-card ${cardClass}">
+            ${isTop ? '<span class="card-tag tag-pick">EN YÜKSEK</span>' : ''}
+            ${isValue && !isTop ? '<span class="card-tag tag-value">VALUE</span>' : ''}
+            <div class="combo-label">${combo}</div>
+            <div class="prob-bar-wrap">
+              <div class="prob-bar-bg"><div class="prob-bar-fill" style="width:${Math.min(pct*2.5,100)}%"></div></div>
+            </div>
+            <div class="htft-stats">
+              <div>
+                <div class="stat-val">${conf}%</div>
+                <div class="stat-sub">GÜVEN</div>
+              </div>
+              <div style="text-align:right">
+                <span class="ev-badge ${evClass}">${evSign}${(data.ev*100).toFixed(1)}%</span>
+                <div class="stat-sub" style="margin-top:4px">Bek. Değer</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+
+    <!-- WIN PROBABILITY -->
+    <div class="winprob-row anim anim-d3" style="margin-bottom:24px">
+      <div class="winprob-label">Maç Sonucu Olasılığı</div>
+      <div class="winprob-bar">
+        <div class="wp-home" style="flex:${fullTimeProbs.probHome.toFixed(3)}">
+          <span class="wp-text">%${Math.round(fullTimeProbs.probHome*100)}</span>
+        </div>
+        <div class="wp-draw" style="flex:${fullTimeProbs.probDraw.toFixed(3)}">
+          <span class="wp-text">%${Math.round(fullTimeProbs.probDraw*100)}</span>
+        </div>
+        <div class="wp-away" style="flex:${fullTimeProbs.probAway.toFixed(3)}">
+          <span class="wp-text">%${Math.round(fullTimeProbs.probAway*100)}</span>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:4px;font-family:var(--mono)">
+        <span>EV SAHİBİ</span><span>BERABERLİK</span><span>DEPLASMAN</span>
+      </div>
+    </div>
+
+    <!-- PANELS -->
+    <div class="section-label anim anim-d4">DETAYLI ANALİZ</div>
+    <div class="panels-grid anim anim-d4">
+
+      <!-- FM Güç Paneli -->
+      <div class="panel">
+        <div class="panel-title">FM Güç Endeksi</div>
+        <div class="team-compare">
+          <div class="team-col">
+            <div class="team-name-sm">EV SAHİBİ</div>
+            <div class="team-score-big" style="color:var(--accent)">${Math.round(fmInsights.homePower*100)}</div>
+            <div class="stat-sub">güç puanı</div>
+          </div>
+          <div class="vs-sep">VS</div>
+          <div class="team-col">
+            <div class="team-name-sm">DEPLASMAN</div>
+            <div class="team-score-big" style="color:var(--orange)">${Math.round(fmInsights.awayPower*100)}</div>
+            <div class="stat-sub">güç puanı</div>
+          </div>
+        </div>
+        <div class="stat-row"><span class="stat-name">Karakter</span><div class="stat-pair"><span class="stat-h">${Math.round(fmInsights.homeChar*100)}</span><span class="stat-a">${Math.round(fmInsights.awayChar*100)}</span></div></div>
+        <div class="stat-row"><span class="stat-name">Hoca</span><div class="stat-pair"><span class="stat-h">${Math.round(fmInsights.homeMgr*100)}</span><span class="stat-a">${Math.round(fmInsights.awayMgr*100)}</span></div></div>
+        <div class="stat-row"><span class="stat-name">Taktik Bonusu</span><div class="stat-pair"><span class="${fmInsights.tacticalBonus > 0 ? 'stat-h' : 'stat-a'}">${fmInsights.tacticalBonus > 0 ? '+' : ''}${Math.round(fmInsights.tacticalBonus*100)}</span></div></div>
+      </div>
+
+      <!-- Psikoloji Paneli -->
+      <div class="panel">
+        <div class="panel-title">Psikoloji ve Moral</div>
+        <div class="team-compare">
+          <div class="team-col">
+            <div class="team-name-sm">EV SAHİBİ</div>
+            <div class="team-score-big" style="color:var(--accent)">${Math.round(psychInsights.homePsych*100)}</div>
+            <div class="last5-display">${state.hLast5.map(v=>`<div class="l5d l5d-${v.toLowerCase()}">${v}</div>`).join('')}</div>
+          </div>
+          <div class="vs-sep">VS</div>
+          <div class="team-col">
+            <div class="team-name-sm">DEPLASMAN</div>
+            <div class="team-score-big" style="color:var(--orange)">${Math.round(psychInsights.awayPsych*100)}</div>
+            <div class="last5-display">${state.aLast5.map(v=>`<div class="l5d l5d-${v.toLowerCase()}">${v}</div>`).join('')}</div>
+          </div>
+        </div>
+        <div class="stat-row"><span class="stat-name">Moral Puanı</span><div class="stat-pair"><span class="stat-h">${psychInsights.homeMoral}</span><span class="stat-a">${psychInsights.awayMoral}</span></div></div>
+        <div class="stat-row"><span class="stat-name">Motivasyon</span><div class="stat-pair"><span class="stat-h">${(psychInsights.homeMotiv*100).toFixed(0)}</span><span class="stat-a">${(psychInsights.awayMotiv*100).toFixed(0)}</span></div></div>
+      </div>
+
+      <!-- Taktik Paneli -->
+      <div class="panel">
+        <div class="panel-title">Taktik Diziliş Analizi</div>
+        <div class="tactic-compare">
+          <span class="tactic-pill tactic-h">${hForm}</span>
+          <span class="tactic-vs">vs</span>
+          <span class="tactic-pill tactic-a">${aForm}</span>
+        </div>
+        <div class="tactic-result tactic-${tacResult}">${tacText}</div>
+        <div class="stat-row" style="margin-top:12px"><span class="stat-name">Ev stili</span><span style="font-family:var(--mono);font-size:11px;color:var(--accent)">${match.homeTeam.style.toUpperCase()}</span></div>
+        <div class="stat-row"><span class="stat-name">Dep stili</span><span style="font-family:var(--mono);font-size:11px;color:var(--orange)">${match.awayTeam.style.toUpperCase()}</span></div>
+      </div>
+
+      <!-- Hava Paneli -->
+      <div class="panel">
+        <div class="panel-title">Hava ve Saha Koşulları</div>
+        <div class="weather-items">
+          <div class="weather-item">
+            <span class="weather-icon">${match.weather.tempC > 28 ? '🌡️' : match.weather.tempC < 5 ? '❄️' : '🌤️'}</span>
+            <div><div class="weather-val">${match.weather.tempC}°C</div><div class="weather-lbl">Sıcaklık</div></div>
+          </div>
+          <div class="weather-item">
+            <span class="weather-icon">${match.weather.rainMM > 5 ? '🌧️' : match.weather.rainMM > 0 ? '🌦️' : '☀️'}</span>
+            <div><div class="weather-val">${match.weather.rainMM}mm</div><div class="weather-lbl">Yağış</div></div>
+          </div>
+          <div class="weather-item">
+            <span class="weather-icon">${match.weather.windKmh > 40 ? '🌬️' : '💨'}</span>
+            <div><div class="weather-val">${match.weather.windKmh} km/s</div><div class="weather-lbl">Rüzgar</div></div>
+          </div>
+          <div class="weather-item">
+            <span class="weather-icon">${match.weather.pitchCondition === 'heavy' ? '🟫' : match.weather.pitchCondition === 'average' ? '🟨' : '🟩'}</span>
+            <div><div class="weather-val">${match.weather.pitchCondition === 'heavy' ? 'Ağır' : match.weather.pitchCondition === 'average' ? 'Ort.' : 'İyi'}</div><div class="weather-lbl">Saha</div></div>
+          </div>
+        </div>
+        <div style="margin-top:12px;font-size:12px;color:var(--muted);line-height:1.6">${weatherSummary !== 'Normal koşullar' ? '<span style="color:var(--orange)">Etki: </span>' + weatherSummary : '✓ Normal koşullar, etki minimal'}</div>
+      </div>
+
+    </div>
+  `;
+
+  // Animate bars after render
+  setTimeout(() => {
+    document.querySelectorAll('.prob-bar-fill').forEach(b => {
+      const w = b.style.width;
+      b.style.width = '0%';
+      setTimeout(() => { b.style.width = w; }, 50);
+    });
+  }, 100);
+}
+
+// ═══════════════ START ═══════════════
+init();
+</script>
+</body>
+</html>
