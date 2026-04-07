@@ -2,137 +2,212 @@ import urllib.request, json, os, time
 from datetime import datetime
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
-    "Accept": "application/json, text/plain, */*",
-    "Accept-Language": "tr-TR,tr;q=0.9,en;q=0.8",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122.0.0.0 Safari/537.36",
+    "Accept": "application/json",
+    "Accept-Language": "tr-TR,tr;q=0.9",
     "Referer": "https://www.sofascore.com/",
     "Origin": "https://www.sofascore.com",
+    "x-requested-with": "XMLHttpRequest",
 }
 
-TEAM_IDS = {
-    "Galatasaray":2918,"Fenerbahce":2919,"Besiktas":2920,"Trabzonspor":2931,
-    "Basaksehir":5981,"Sivasspor":2928,"Konyaspor":2930,"Alanyaspor":262309,
-    "Kasimpasa":2933,"Antalyaspor":2929,"Kayserispor":2935,"Rizespor":2932,
-    "Samsunspor":2927,"Gaziantep":2936,"Kocaelispor":2934,"Goztepe":2926,
-    "Adana Demirspor":261274,"Eyupspor":680742,"Bodrum":680741,
-    "Arsenal":42,"Chelsea":38,"Liverpool":44,"Man City":17,
-    "Man United":35,"Tottenham":33,"Newcastle":39,"Aston Villa":40,
-    "Brighton":30,"West Ham":37,
-    "Real Madrid":2829,"Barcelona":2817,"Atletico Madrid":2836,
-    "Sevilla":2833,"Villarreal":2828,"Athletic Bilbao":2825,
-    "Bayern Munich":2672,"Dortmund":2673,"RB Leipzig":37945,"Leverkusen":2674,
-    "Juventus":2686,"Inter Milan":2697,"AC Milan":2692,"Napoli":2714,
-    "PSG":2172,"Monaco":2173,"Marseille":2175,"Lyon":2174,
+# Super Lig ID: 52, season: 63814
+# Premier League ID: 17, season: 61627
+# La Liga: 8, season: 61643
+# Bundesliga: 35, season: 63635
+# Serie A: 23, season: 63515
+# Ligue 1: 34, season: 63513
+
+LEAGUES = {
+    "TR1": (52, 63814),
+    "EN1": (17, 61627),
+    "ES1": (8, 61643),
+    "DE1": (35, 63635),
+    "IT1": (23, 63515),
+    "FR1": (34, 63513),
 }
 
-def fetch(url, delay=1):
-    time.sleep(delay)
+def fetch(url):
+    time.sleep(1.5)
     try:
         req = urllib.request.Request(url, headers=HEADERS)
         with urllib.request.urlopen(req, timeout=15) as r:
             return json.loads(r.read().decode("utf-8"))
     except Exception as e:
-        print("  HATA: {} -> {}".format(url, e))
+        print("  HATA: {} -> {}".format(url.split("/api")[1][:50], e))
         return None
 
-def get_team_form(team_id):
-    data = fetch("https://www.sofascore.com/api/v1/team/{}/last/5".format(team_id))
+def get_next_event_id(league_id, season_id):
+    """Bir sonraki maçın event ID'sini bul"""
+    data = fetch("https://www.sofascore.com/api/v1/unique-tournament/{}/season/{}/events/next/0".format(league_id, season_id))
+    if data and "events" in data and data["events"]:
+        return data["events"][0]["id"], data["events"][0]
+    return None, None
+
+def get_team_last5(team_id):
+    """Son 5 maç formu"""
+    data = fetch("https://www.sofascore.com/api/v1/team/{}/events/last/0".format(team_id))
     if not data or "events" not in data:
-        return ["D","D","D","D","D"]
+        return ["?","?","?","?","?"]
     form = []
-    for ev in data["events"][:5]:
+    for ev in sorted(data["events"], key=lambda x: x.get("startTimestamp",0), reverse=True)[:5]:
         ht = ev.get("homeTeam",{}).get("id")
         hw = ev.get("homeScore",{}).get("current",0) or 0
         aw = ev.get("awayScore",{}).get("current",0) or 0
         if ht == team_id:
-            form.append("W" if hw > aw else "D" if hw == aw else "L")
+            form.append("W" if hw>aw else "D" if hw==aw else "L")
         else:
-            form.append("W" if aw > hw else "D" if hw == aw else "L")
+            form.append("W" if aw>hw else "D" if hw==aw else "L")
     while len(form) < 5:
-        form.append("D")
+        form.append("?")
     return form
 
 def get_team_info(team_id):
+    """Takım bilgisi - hoca, rating"""
     data = fetch("https://www.sofascore.com/api/v1/team/{}".format(team_id))
     if not data or "team" not in data:
         return {}
     t = data["team"]
-    manager = t.get("manager", {})
-    return {"manager_name": manager.get("name","")}
-
-def get_team_stats(team_id):
-    stats = {}
-    for tid in [52, 17, 8, 35, 23, 34]:
-        data = fetch("https://www.sofascore.com/api/v1/team/{}/unique-tournament/{}/season/stats/overall".format(team_id, tid))
-        if data and "stats" in data:
-            s = data["stats"]
-            m = s.get("matches", 1) or 1
-            stats = {
-                "goals_per_game": round(s.get("goalsScored",0)/m, 2),
-                "conceded_per_game": round(s.get("goalsConceded",0)/m, 2),
-                "possession_avg": round(s.get("avgBallPossessionPercent",50), 1),
-                "pressing_index": round(s.get("tacklesPerGame",5)*2, 1),
-            }
-            if stats["goals_per_game"] > 0:
-                break
-    return stats
-
-def calc_ratings(stats, form):
-    form_score = sum(3 if r=="W" else 1 if r=="D" else 0 for r in form) / 15
-    goals = stats.get("goals_per_game", 1.2)
-    conceded = stats.get("conceded_per_game", 1.2)
-    pressing = min(stats.get("pressing_index", 10) / 20, 1.0)
-    poss = stats.get("possession_avg", 50) / 100
-    attack = min(goals / 2.5, 1.0)
-    defense = max(1.0 - conceded / 3.0, 0.0)
-    rating = round((attack*0.30 + defense*0.30 + form_score*0.25 + poss*0.15) * 100)
-    style = "pressing" if pressing > 0.6 else "technical" if poss > 0.55 else "counter" if goals > 1.5 and poss < 0.45 else "balanced"
-    char = {
-        "determination": round(10 + form_score*10),
-        "bravery": round(10 + pressing*8),
-        "composure": round(8 + poss*10),
-        "leadership": round(10 + form_score*6),
-        "workRate": round(10 + pressing*8),
-        "teamwork": round(10 + poss*8),
-        "concentration": round(10 + defense*8),
+    mgr = t.get("manager", {})
+    return {
+        "manager": mgr.get("name", ""),
+        "ranking": t.get("ranking", 0),
     }
-    mgr = {
-        "manManagement": round(10 + form_score*8),
-        "tactical": round(10 + poss*8),
-        "motivation": round(10 + form_score*9),
-        "adaptability": 13,
-        "pressureHandling": round(10 + form_score*7),
-    }
-    return rating, style, char, mgr
+
+def get_lineup(event_id):
+    """Maç kadrosu ve diziliş"""
+    data = fetch("https://www.sofascore.com/api/v1/event/{}/lineups".format(event_id))
+    if not data:
+        return None
+    result = {}
+    for side in ["home", "away"]:
+        if side not in data:
+            continue
+        side_data = data[side]
+        formation = side_data.get("formation", "")
+        players = []
+        for p in side_data.get("players", []):
+            player = p.get("player", {})
+            stats = p.get("statistics", {})
+            players.append({
+                "name": player.get("name", ""),
+                "position": p.get("position", ""),
+                "rating": stats.get("rating", 0),
+                "jerseyNumber": p.get("jerseyNumber", ""),
+            })
+        result[side] = {
+            "formation": formation,
+            "players": players,
+        }
+    return result
+
+def get_pregame_form(event_id):
+    """Maç öncesi form istatistikleri"""
+    data = fetch("https://www.sofascore.com/api/v1/event/{}/pregame-form".format(event_id))
+    if not data:
+        return {}
+    result = {}
+    for side in ["homeTeam", "awayTeam"]:
+        if side not in data:
+            continue
+        d = data[side]
+        result[side] = {
+            "avgRating": d.get("avgRating", 0),
+            "position": d.get("position", 0),
+            "value": d.get("value", ""),
+            "form": d.get("form", []),
+        }
+    return result
 
 def main():
     os.makedirs("data", exist_ok=True)
-    print("SofaScore profilleri cekiliyor...")
-    profiles = {}
-    total = len(TEAM_IDS)
-    for i, (name, team_id) in enumerate(TEAM_IDS.items()):
-        print("[{}/{}] {}...".format(i+1, total, name))
-        form = get_team_form(team_id)
-        info = get_team_info(team_id)
-        stats = get_team_stats(team_id)
-        rating, style, char, mgr = calc_ratings(stats, form)
-        profiles[name] = {
-            "id": team_id, "teamRating": rating, "style": style,
-            "last5": form, "manager": info.get("manager_name",""),
-            "character": char, "managerStats": mgr, "stats": stats,
-            "updated": datetime.now().strftime("%Y-%m-%d"),
-        }
-        print("  Rating:{} Form:{} Stil:{} Hoca:{}".format(rating, form, style, info.get("manager_name","?")))
+    
     try:
-        with open("data/odds.json","r",encoding="utf-8") as f:
+        with open("data/odds.json", "r", encoding="utf-8") as f:
             existing = json.load(f)
     except:
         existing = {}
-    existing["team_profiles"] = profiles
-    existing["profiles_updated"] = datetime.now().strftime("%Y-%m-%d %H:%M")
-    with open("data/odds.json","w",encoding="utf-8") as f:
+
+    upcoming = existing.get("upcoming", [])
+    sofascore_data = {}
+
+    print("SofaScore maç verileri cekiliyor...")
+    print("Toplam upcoming mac: {}".format(len(upcoming)))
+
+    # Her upcoming maç için SofaScore'da eşleştir
+    matched = 0
+    for match in upcoming[:30]:  # İlk 30 maç
+        home = match.get("home", "")
+        away = match.get("away", "")
+        league = match.get("league", "")
+        
+        if league not in LEAGUES:
+            continue
+            
+        league_id, season_id = LEAGUES[league]
+        
+        # Bir sonraki maçları çek ve eşleştir
+        data = fetch("https://www.sofascore.com/api/v1/unique-tournament/{}/season/{}/events/next/0".format(league_id, season_id))
+        if not data or "events" not in data:
+            continue
+            
+        for ev in data["events"]:
+            ev_home = ev.get("homeTeam", {}).get("name", "")
+            ev_away = ev.get("awayTeam", {}).get("name", "")
+            
+            # İsim benzerliği kontrolü
+            home_match = home[:5].lower() in ev_home.lower() or ev_home[:5].lower() in home.lower()
+            away_match = away[:5].lower() in ev_away.lower() or ev_away[:5].lower() in away.lower()
+            
+            if home_match and away_match:
+                event_id = ev["id"]
+                home_id = ev.get("homeTeam", {}).get("id")
+                away_id = ev.get("awayTeam", {}).get("id")
+                
+                print("  ESLESTI: {} vs {} (ID: {})".format(ev_home, ev_away, event_id))
+                
+                # Form
+                h_form = get_team_last5(home_id) if home_id else ["?","?","?","?","?"]
+                a_form = get_team_last5(away_id) if away_id else ["?","?","?","?","?"]
+                
+                # Takım bilgisi
+                h_info = get_team_info(home_id) if home_id else {}
+                a_info = get_team_info(away_id) if away_id else {}
+                
+                # Pregame form
+                pgf = get_pregame_form(event_id)
+                
+                key = "{}_vs_{}".format(home, away)
+                sofascore_data[key] = {
+                    "eventId": event_id,
+                    "home": {
+                        "id": home_id,
+                        "name": ev_home,
+                        "form": h_form,
+                        "manager": h_info.get("manager", ""),
+                        "ranking": h_info.get("ranking", 0),
+                        "pregameForm": pgf.get("homeTeam", {}),
+                    },
+                    "away": {
+                        "id": away_id,
+                        "name": ev_away,
+                        "form": a_form,
+                        "manager": a_info.get("manager", ""),
+                        "ranking": a_info.get("ranking", 0),
+                        "pregameForm": pgf.get("awayTeam", {}),
+                    }
+                }
+                matched += 1
+                break
+
+    print("Eslesen mac sayisi: {}".format(matched))
+    
+    existing["sofascore"] = sofascore_data
+    existing["sofascore_updated"] = datetime.now().strftime("%Y-%m-%d %H:%M")
+    
+    with open("data/odds.json", "w", encoding="utf-8") as f:
         json.dump(existing, f, ensure_ascii=False, indent=2)
-    print("Tamam: {} takim kaydedildi".format(len(profiles)))
+    
+    print("Kaydedildi!")
 
 if __name__ == "__main__":
     main()
