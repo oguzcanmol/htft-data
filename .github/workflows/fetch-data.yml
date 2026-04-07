@@ -36,5 +36,4 @@ jobs:
           git config user.name "HTFT Bot"
           git config user.email "bot@htft.local"
           git add data/ HTFT_ELITE_SISTEM_CANLI.html
-          git diff --cached --quiet || git commit -m "Veri guncellendi: $(date '+%d/%m/%Y %H:%M')"
-          git push
+          git diff --cached --quiet || (git commit -m "Veri guncellendi: $(date '+%d/%m/%Y %H:%M')" && git pull --rebase && git push)
