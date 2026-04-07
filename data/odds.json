@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-07 09:09",
+  "updated": "2026-04-07 13:18",
   "matrix": {
     "strongHome": {
       "1/1": 0.5,
@@ -40,438 +40,18 @@
       "league": "OTHER",
       "leagueName": "",
       "date": "2026-04-07",
-      "time": "12:30",
-      "home": "Magic Utd Tfa",
-      "away": "Moreton City Excelsior",
-      "open": {
-        "h": 4.82,
-        "d": 4.35,
-        "a": 1.25
-      },
-      "close": {
-        "h": 4.82,
-        "d": 4.35,
-        "a": 1.25
-      },
-      "htft": {},
-      "nesineId": 2842480
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "12:30",
-      "home": "Wolves",
-      "away": "Gold Coast Utd",
-      "open": {
-        "h": 1.64,
-        "d": 3.66,
-        "a": 2.8
-      },
-      "close": {
-        "h": 1.64,
-        "d": 3.66,
-        "a": 2.8
-      },
-      "htft": {},
-      "nesineId": 2796482
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "13:00",
-      "home": "Vizela U23",
-      "away": "Estoril Praia U23",
-      "open": {
-        "h": 1.88,
-        "d": 3.14,
-        "a": 2.57
-      },
-      "close": {
-        "h": 1.88,
-        "d": 3.14,
-        "a": 2.57
-      },
-      "htft": {},
-      "nesineId": 2776795
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "14:00",
-      "home": "Santa Clara U23",
-      "away": "Benfica U23",
-      "open": {
-        "h": 2.46,
-        "d": 3.18,
-        "a": 1.92
-      },
-      "close": {
-        "h": 2.46,
-        "d": 3.18,
-        "a": 1.92
-      },
-      "htft": {},
-      "nesineId": 2776827
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "14:00",
-      "home": "Swansea U21",
-      "away": "Peterborough Utd U21",
-      "open": {
-        "h": 1.85,
-        "d": 3.75,
-        "a": 2.31
-      },
-      "close": {
-        "h": 1.85,
-        "d": 3.75,
-        "a": 2.31
-      },
-      "htft": {},
-      "nesineId": 2776912
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "14:00",
-      "home": "Meshakhte Tkibuli",
-      "away": "Spaeri",
-      "open": {
-        "h": 2.35,
-        "d": 2.8,
-        "a": 2.18
-      },
-      "close": {
-        "h": 2.35,
-        "d": 2.8,
-        "a": 2.18
-      },
-      "htft": {},
-      "nesineId": 2825620
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "14:00",
-      "home": "Rustvai",
-      "away": "Dinamo B.",
-      "open": {
-        "h": 1.68,
-        "d": 3.01,
-        "a": 3.18
-      },
-      "close": {
-        "h": 1.68,
-        "d": 3.01,
-        "a": 3.18
-      },
-      "htft": {},
-      "nesineId": 2836963
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "14:00",
-      "home": "Stabaek II",
-      "away": "Odds BK II",
-      "open": {
-        "h": 2.43,
-        "d": 3.63,
-        "a": 1.81
-      },
-      "close": {
-        "h": 2.43,
-        "d": 3.63,
-        "a": 1.81
-      },
-      "htft": {},
-      "nesineId": 2776922
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "14:00",
-      "home": "Imisli FK",
-      "away": "Turan Tovuz",
-      "open": {
-        "h": 4.39,
-        "d": 2.92,
-        "a": 1.49
-      },
-      "close": {
-        "h": 4.39,
-        "d": 2.92,
-        "a": 1.49
-      },
-      "htft": {},
-      "nesineId": 2765030
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "14:30",
-      "home": "Bandırmaspor",
-      "away": "Sarıyer",
-      "open": {
-        "h": 1.81,
-        "d": 2.86,
-        "a": 2.94
-      },
-      "close": {
-        "h": 1.81,
-        "d": 2.86,
-        "a": 2.94
-      },
-      "htft": {},
-      "nesineId": 2781815
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "15:00",
-      "home": "Fleetwood T. U21",
-      "away": "Bournemouth U21",
-      "open": {
-        "h": 2.68,
-        "d": 3.8,
-        "a": 1.66
-      },
-      "close": {
-        "h": 2.68,
-        "d": 3.8,
-        "a": 1.66
-      },
-      "htft": {},
-      "nesineId": 2776936
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "15:00",
-      "home": "Wigan Ath U21",
-      "away": "S. Wednesday U21",
-      "open": {
-        "h": 1.54,
-        "d": 3.8,
-        "a": 3.07
-      },
-      "close": {
-        "h": 1.54,
-        "d": 3.8,
-        "a": 3.07
-      },
-      "htft": {},
-      "nesineId": 2776944
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "15:00",
-      "home": "Crewe Alexandra U21",
-      "away": "Barnsley U21",
-      "open": {
-        "h": 2.44,
-        "d": 3.35,
-        "a": 1.88
-      },
-      "close": {
-        "h": 2.44,
-        "d": 3.35,
-        "a": 1.88
-      },
-      "htft": {},
-      "nesineId": 2776955
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "15:00",
-      "home": "Coventry City U21",
-      "away": "Huddersfield T. U21",
-      "open": {
-        "h": 1.95,
-        "d": 3.63,
-        "a": 2.21
-      },
-      "close": {
-        "h": 1.95,
-        "d": 3.63,
-        "a": 2.21
-      },
-      "htft": {},
-      "nesineId": 2776828
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "15:15",
-      "home": "Johor Darul",
-      "away": "Kuala Lumpur",
-      "open": {
-        "h": 1,
-        "d": 8.59,
-        "a": 17.1
-      },
-      "close": {
-        "h": 1,
-        "d": 8.59,
-        "a": 17.1
-      },
-      "htft": {},
-      "nesineId": 2799266
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "16:00",
-      "home": "Leicesterford City",
-      "away": "Hungry Lion",
-      "open": {
-        "h": 2.58,
-        "d": 2.45,
-        "a": 2.25
-      },
-      "close": {
-        "h": 2.58,
-        "d": 2.45,
-        "a": 2.25
-      },
-      "htft": {},
-      "nesineId": 2776892
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "16:00",
-      "home": "Uni. Pretoria",
-      "away": "Highbury",
-      "open": {
-        "h": 2.17,
-        "d": 2.37,
-        "a": 2.8
-      },
-      "close": {
-        "h": 2.17,
-        "d": 2.37,
-        "a": 2.8
-      },
-      "htft": {},
-      "nesineId": 2776953
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "16:00",
-      "home": "Cape Town City",
-      "away": "Black Leopar",
-      "open": {
-        "h": 1.48,
-        "d": 2.92,
-        "a": 4.51
-      },
-      "close": {
-        "h": 1.48,
-        "d": 2.92,
-        "a": 4.51
-      },
-      "htft": {},
-      "nesineId": 2776853
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "16:00",
-      "home": "Midlands Wanderers",
-      "away": "Baroka",
-      "open": {
-        "h": 1.86,
-        "d": 2.56,
-        "a": 3.21
-      },
-      "close": {
-        "h": 1.86,
-        "d": 2.56,
-        "a": 3.21
-      },
-      "htft": {},
-      "nesineId": 2776854
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "16:00",
-      "home": "Gomora Utd",
-      "away": "The Bees",
-      "open": {
-        "h": 1.9,
-        "d": 2.47,
-        "a": 3.26
-      },
-      "close": {
-        "h": 1.9,
-        "d": 2.47,
-        "a": 3.26
-      },
-      "htft": {},
-      "nesineId": 2781579
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "16:15",
-      "home": "Zira",
-      "away": "Shamakhi FK",
-      "open": {
-        "h": 1.57,
-        "d": 2.71,
-        "a": 4.27
-      },
-      "close": {
-        "h": 1.57,
-        "d": 2.71,
-        "a": 4.27
-      },
-      "htft": {},
-      "nesineId": 2765228
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
       "time": "16:45",
       "home": "HNK Vukovar 1991",
       "away": "L. Zagreb",
       "open": {
-        "h": 2.41,
-        "d": 2.92,
-        "a": 2.07
+        "h": 2.47,
+        "d": 2.97,
+        "a": 2.01
       },
       "close": {
-        "h": 2.41,
-        "d": 2.92,
-        "a": 2.07
+        "h": 2.47,
+        "d": 2.97,
+        "a": 2.01
       },
       "htft": {},
       "nesineId": 2773667
@@ -484,17 +64,37 @@
       "home": "Manisa FK",
       "away": "Pendikspor",
       "open": {
-        "h": 3.2,
-        "d": 3.15,
-        "a": 1.64
+        "h": 2.96,
+        "d": 3.05,
+        "a": 1.74
       },
       "close": {
-        "h": 3.2,
-        "d": 3.15,
-        "a": 1.64
+        "h": 2.96,
+        "d": 3.05,
+        "a": 1.74
       },
       "htft": {},
       "nesineId": 2781684
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "17:00",
+      "home": "OFK Malzenice",
+      "away": "VZ Moravce",
+      "open": {
+        "h": 2.94,
+        "d": 2.93,
+        "a": 1.79
+      },
+      "close": {
+        "h": 2.94,
+        "d": 2.93,
+        "a": 1.79
+      },
+      "htft": {},
+      "nesineId": 2833094
     },
     {
       "league": "OTHER",
@@ -521,37 +121,17 @@
       "leagueName": "",
       "date": "2026-04-07",
       "time": "17:00",
-      "home": "OFK Malzenice",
-      "away": "VZ Moravce",
-      "open": {
-        "h": 2.56,
-        "d": 3.09,
-        "a": 1.91
-      },
-      "close": {
-        "h": 2.56,
-        "d": 3.09,
-        "a": 1.91
-      },
-      "htft": {},
-      "nesineId": 2833094
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "17:00",
       "home": "Chennaiyin",
       "away": "Inter Kashi",
       "open": {
-        "h": 1.62,
-        "d": 2.92,
-        "a": 3.58
+        "h": 1.72,
+        "d": 2.8,
+        "a": 3.31
       },
       "close": {
-        "h": 1.62,
-        "d": 2.92,
-        "a": 3.58
+        "h": 1.72,
+        "d": 2.8,
+        "a": 3.31
       },
       "htft": {},
       "nesineId": 2776906
@@ -581,37 +161,17 @@
       "leagueName": "",
       "date": "2026-04-07",
       "time": "18:00",
-      "home": "Iberia 1999",
-      "away": "Samgurali Tskaltubo",
-      "open": {
-        "h": 1.67,
-        "d": 3.01,
-        "a": 3.26
-      },
-      "close": {
-        "h": 1.67,
-        "d": 3.01,
-        "a": 3.26
-      },
-      "htft": {},
-      "nesineId": 2836991
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "18:00",
       "home": "Daugavpils",
       "away": "Ogre Utd",
       "open": {
-        "h": 1.34,
-        "d": 3.51,
-        "a": 4.77
+        "h": 1.32,
+        "d": 3.58,
+        "a": 4.98
       },
       "close": {
-        "h": 1.34,
-        "d": 3.51,
-        "a": 4.77
+        "h": 1.32,
+        "d": 3.58,
+        "a": 4.98
       },
       "htft": {},
       "nesineId": 2776793
@@ -621,28 +181,68 @@
       "leagueName": "",
       "date": "2026-04-07",
       "time": "18:00",
+      "home": "Iberia 1999",
+      "away": "Samgurali Tskaltubo",
+      "open": {
+        "h": 1.44,
+        "d": 3.26,
+        "a": 4.22
+      },
+      "close": {
+        "h": 1.44,
+        "d": 3.26,
+        "a": 4.22
+      },
+      "htft": {},
+      "nesineId": 2836991
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "18:00",
+      "home": "Shabab AL Ordon",
+      "away": "Ramtha SC",
+      "open": {
+        "h": 3.79,
+        "d": 3.08,
+        "a": 1.54
+      },
+      "close": {
+        "h": 3.79,
+        "d": 3.08,
+        "a": 1.54
+      },
+      "htft": {},
+      "nesineId": 2842385
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "18:00",
       "home": "Krylia Sovetov",
       "away": "CSKA Moskova",
       "open": {
-        "h": 4.24,
-        "d": 3.42,
-        "a": 1.48
+        "h": 3.86,
+        "d": 3.28,
+        "a": 1.56
       },
       "close": {
-        "h": 4.24,
-        "d": 3.42,
-        "a": 1.48
+        "h": 3.86,
+        "d": 3.28,
+        "a": 1.56
       },
       "htft": {
-        "1/1": 7.49,
-        "1/X": 15.9,
+        "1/1": 6.74,
+        "1/X": 14.8,
         "1/2": 23.1,
-        "X/1": 9.32,
-        "X/X": 5.1,
-        "X/2": 4.16,
+        "X/1": 8.68,
+        "X/X": 5,
+        "X/2": 4.35,
         "2/1": 34,
-        "2/X": 14.35,
-        "2/2": 2.18
+        "2/X": 13.5,
+        "2/2": 2.32
       },
       "nesineId": 2830385
     },
@@ -654,37 +254,17 @@
       "home": "Smouha SC",
       "away": "Enppi Club",
       "open": {
-        "h": 2.16,
-        "d": 2.29,
-        "a": 2.93
+        "h": 2.27,
+        "d": 2.27,
+        "a": 2.8
       },
       "close": {
-        "h": 2.16,
-        "d": 2.29,
-        "a": 2.93
+        "h": 2.27,
+        "d": 2.27,
+        "a": 2.8
       },
       "htft": {},
       "nesineId": 2815854
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "18:00",
-      "home": "Shabab AL Ordon",
-      "away": "Ramtha SC",
-      "open": {
-        "h": 4.04,
-        "d": 2.99,
-        "a": 1.52
-      },
-      "close": {
-        "h": 4.04,
-        "d": 2.99,
-        "a": 1.52
-      },
-      "htft": {},
-      "nesineId": 2842385
     },
     {
       "league": "OTHER",
@@ -694,14 +274,14 @@
       "home": "Araz Nakhchivan PFK",
       "away": "Sabah",
       "open": {
-        "h": 4,
-        "d": 3.35,
-        "a": 1.44
+        "h": 4.33,
+        "d": 3.56,
+        "a": 1.38
       },
       "close": {
-        "h": 4,
-        "d": 3.35,
-        "a": 1.44
+        "h": 4.33,
+        "d": 3.56,
+        "a": 1.38
       },
       "htft": {},
       "nesineId": 2766394
@@ -714,14 +294,14 @@
       "home": "AL Jabil",
       "away": "AL Jandal",
       "open": {
-        "h": 2.21,
-        "d": 2.86,
-        "a": 2.28
+        "h": 2.16,
+        "d": 2.87,
+        "a": 2.33
       },
       "close": {
-        "h": 2.21,
-        "d": 2.86,
-        "a": 2.28
+        "h": 2.16,
+        "d": 2.87,
+        "a": 2.33
       },
       "htft": {},
       "nesineId": 2776929
@@ -734,57 +314,17 @@
       "home": "M. Legnica",
       "away": "Polonia Bytom",
       "open": {
-        "h": 1.74,
-        "d": 3.2,
-        "a": 2.86
+        "h": 1.69,
+        "d": 3.15,
+        "a": 3.03
       },
       "close": {
-        "h": 1.74,
-        "d": 3.2,
-        "a": 2.86
+        "h": 1.69,
+        "d": 3.15,
+        "a": 3.03
       },
       "htft": {},
       "nesineId": 2773495
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "19:00",
-      "home": "AL Arabi (Sar)",
-      "away": "Al Zlfe",
-      "open": {
-        "h": 3.86,
-        "d": 3.11,
-        "a": 1.51
-      },
-      "close": {
-        "h": 3.86,
-        "d": 3.11,
-        "a": 1.51
-      },
-      "htft": {},
-      "nesineId": 2776850
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "19:00",
-      "home": "NK Istra 61",
-      "away": "Hajduk Split",
-      "open": {
-        "h": 3.69,
-        "d": 3.18,
-        "a": 1.53
-      },
-      "close": {
-        "h": 3.69,
-        "d": 3.18,
-        "a": 1.53
-      },
-      "htft": {},
-      "nesineId": 2773506
     },
     {
       "league": "OTHER",
@@ -814,14 +354,14 @@
       "home": "Flora T.",
       "away": "Kuressaare",
       "open": {
-        "h": 1.09,
-        "d": 5.22,
-        "a": 7.97
+        "h": 1.08,
+        "d": 5.28,
+        "a": 8.36
       },
       "close": {
-        "h": 1.09,
-        "d": 5.22,
-        "a": 7.97
+        "h": 1.08,
+        "d": 5.28,
+        "a": 8.36
       },
       "htft": {},
       "nesineId": 2776863
@@ -831,17 +371,117 @@
       "leagueName": "",
       "date": "2026-04-07",
       "time": "19:00",
+      "home": "AL Arabi (Sar)",
+      "away": "Al Zlfe",
+      "open": {
+        "h": 3.86,
+        "d": 3.11,
+        "a": 1.51
+      },
+      "close": {
+        "h": 3.86,
+        "d": 3.11,
+        "a": 1.51
+      },
+      "htft": {},
+      "nesineId": 2776850
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "19:00",
+      "home": "NK Istra 61",
+      "away": "Hajduk Split",
+      "open": {
+        "h": 3.73,
+        "d": 3.16,
+        "a": 1.52
+      },
+      "close": {
+        "h": 3.73,
+        "d": 3.16,
+        "a": 1.52
+      },
+      "htft": {},
+      "nesineId": 2773506
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "19:00",
+      "home": "Vaag IK",
+      "away": "Vindbjart",
+      "open": {
+        "h": 2.82,
+        "d": 4.04,
+        "a": 1.56
+      },
+      "close": {
+        "h": 2.82,
+        "d": 4.04,
+        "a": 1.56
+      },
+      "htft": {},
+      "nesineId": 2776829
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "19:00",
+      "home": "Herd",
+      "away": "Molde II",
+      "open": {
+        "h": 2.97,
+        "d": 3.93,
+        "a": 1.54
+      },
+      "close": {
+        "h": 2.97,
+        "d": 3.93,
+        "a": 1.54
+      },
+      "htft": {},
+      "nesineId": 2776917
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "19:00",
+      "home": "Viking (A)",
+      "away": "FK Haugesund 2",
+      "open": {
+        "h": 1.21,
+        "d": 4.6,
+        "a": 5.26
+      },
+      "close": {
+        "h": 1.21,
+        "d": 4.6,
+        "a": 5.26
+      },
+      "htft": {},
+      "nesineId": 2776807
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "19:00",
       "home": "Academico V. U23",
       "away": "Famalicao U23",
       "open": {
-        "h": 1.86,
-        "d": 3.1,
-        "a": 2.63
+        "h": 2.03,
+        "d": 3.08,
+        "a": 2.36
       },
       "close": {
-        "h": 1.86,
-        "d": 3.1,
-        "a": 2.63
+        "h": 2.03,
+        "d": 3.08,
+        "a": 2.36
       },
       "htft": {},
       "nesineId": 2776947
@@ -851,80 +491,40 @@
       "leagueName": "",
       "date": "2026-04-07",
       "time": "20:00",
-      "home": "Dila Gori",
-      "away": "Gagra",
+      "home": "Aarau",
+      "away": "Etoile Carouge",
       "open": {
-        "h": 1.44,
-        "d": 3.22,
-        "a": 4.32
+        "h": 1.26,
+        "d": 4.03,
+        "a": 5.07
       },
       "close": {
-        "h": 1.44,
-        "d": 3.22,
-        "a": 4.32
+        "h": 1.26,
+        "d": 4.03,
+        "a": 5.07
       },
       "htft": {},
-      "nesineId": 2830353
+      "nesineId": 2776815
     },
     {
       "league": "OTHER",
       "leagueName": "",
       "date": "2026-04-07",
       "time": "20:00",
-      "home": "Arka Gdynia",
-      "away": "Zaglebie Lubin",
+      "home": "Kongsvinger",
+      "away": "Bryne",
       "open": {
-        "h": 1.91,
-        "d": 2.78,
-        "a": 2.81
+        "h": 1.81,
+        "d": 3.15,
+        "a": 2.69
       },
       "close": {
-        "h": 1.91,
-        "d": 2.78,
-        "a": 2.81
+        "h": 1.81,
+        "d": 3.15,
+        "a": 2.69
       },
-      "htft": {
-        "1/1": 3.12,
-        "1/X": 13.25,
-        "1/2": 34,
-        "X/1": 4.81,
-        "X/X": 4.15,
-        "X/2": 6.53,
-        "2/1": 28,
-        "2/X": 13.85,
-        "2/2": 4.99
-      },
-      "nesineId": 2766311
-    },
-    {
-      "league": "EN1",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "20:00",
-      "home": "Kfum Oslo",
-      "away": "Sandefjord",
-      "open": {
-        "h": 1.92,
-        "d": 3.14,
-        "a": 2.75
-      },
-      "close": {
-        "h": 1.92,
-        "d": 3.14,
-        "a": 2.75
-      },
-      "htft": {
-        "1/1": 2.98,
-        "1/X": 12.55,
-        "1/2": 30,
-        "X/1": 5.1,
-        "X/X": 5,
-        "X/2": 6.73,
-        "2/1": 23.5,
-        "2/X": 13,
-        "2/2": 4.56
-      },
-      "nesineId": 2776826
+      "htft": {},
+      "nesineId": 2774722
     },
     {
       "league": "OTHER",
@@ -945,6 +545,26 @@
       },
       "htft": {},
       "nesineId": 2774744
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "20:00",
+      "home": "Dila Gori",
+      "away": "Gagra",
+      "open": {
+        "h": 1.42,
+        "d": 3.25,
+        "a": 4.42
+      },
+      "close": {
+        "h": 1.42,
+        "d": 3.25,
+        "a": 4.42
+      },
+      "htft": {},
+      "nesineId": 2830353
     },
     {
       "league": "EN1",
@@ -981,20 +601,90 @@
       "leagueName": "",
       "date": "2026-04-07",
       "time": "20:00",
-      "home": "Aarau",
-      "away": "Etoile Carouge",
+      "home": "Arka Gdynia",
+      "away": "Zaglebie Lubin",
       "open": {
-        "h": 1.27,
-        "d": 3.95,
-        "a": 4.91
+        "h": 1.98,
+        "d": 2.68,
+        "a": 2.75
       },
       "close": {
-        "h": 1.27,
-        "d": 3.95,
-        "a": 4.91
+        "h": 1.98,
+        "d": 2.68,
+        "a": 2.75
       },
-      "htft": {},
-      "nesineId": 2776815
+      "htft": {
+        "1/1": 3.29,
+        "1/X": 13.2,
+        "1/2": 34,
+        "X/1": 4.92,
+        "X/X": 3.92,
+        "X/2": 6.34,
+        "2/1": 30,
+        "2/X": 13.7,
+        "2/2": 4.87
+      },
+      "nesineId": 2766311
+    },
+    {
+      "league": "EN1",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "20:00",
+      "home": "Kfum Oslo",
+      "away": "Sandefjord",
+      "open": {
+        "h": 1.96,
+        "d": 3.11,
+        "a": 2.68
+      },
+      "close": {
+        "h": 1.96,
+        "d": 3.11,
+        "a": 2.68
+      },
+      "htft": {
+        "1/1": 3.04,
+        "1/X": 12.4,
+        "1/2": 29.5,
+        "X/1": 5.2,
+        "X/X": 4.97,
+        "X/2": 6.62,
+        "2/1": 23.95,
+        "2/X": 12.85,
+        "2/2": 4.43
+      },
+      "nesineId": 2776826
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "20:00",
+      "home": "Nordsjælland",
+      "away": "Brondby",
+      "open": {
+        "h": 1.99,
+        "d": 3.08,
+        "a": 2.64
+      },
+      "close": {
+        "h": 1.99,
+        "d": 3.08,
+        "a": 2.64
+      },
+      "htft": {
+        "1/1": 3.04,
+        "1/X": 11.55,
+        "1/2": 27.5,
+        "X/1": 5.55,
+        "X/X": 5.19,
+        "X/2": 6.86,
+        "2/1": 23.1,
+        "2/X": 11.9,
+        "2/2": 4.26
+      },
+      "nesineId": 2796562
     },
     {
       "league": "OTHER",
@@ -1021,30 +711,50 @@
       "leagueName": "",
       "date": "2026-04-07",
       "time": "20:00",
-      "home": "Nordsjælland",
-      "away": "Brondby",
+      "home": "Byasen",
+      "away": "Rosenborg 2",
       "open": {
-        "h": 1.99,
-        "d": 3.08,
-        "a": 2.64
+        "h": 1.55,
+        "d": 3.72,
+        "a": 3.06
       },
       "close": {
-        "h": 1.99,
-        "d": 3.08,
-        "a": 2.64
+        "h": 1.55,
+        "d": 3.72,
+        "a": 3.06
+      },
+      "htft": {},
+      "nesineId": 2776810
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "20:00",
+      "home": "Mannheim 07",
+      "away": "Hoffenheim II",
+      "open": {
+        "h": 2.34,
+        "d": 3.43,
+        "a": 2.05
+      },
+      "close": {
+        "h": 2.34,
+        "d": 3.43,
+        "a": 2.05
       },
       "htft": {
-        "1/1": 3.08,
-        "1/X": 11.9,
-        "1/2": 28,
-        "X/1": 5.4,
-        "X/X": 5.05,
-        "X/2": 6.69,
+        "1/1": 3.69,
+        "1/X": 12.4,
+        "1/2": 21.8,
+        "X/1": 6.4,
+        "X/X": 6.04,
+        "X/2": 5.78,
         "2/1": 23.5,
         "2/X": 12.25,
-        "2/2": 4.3
+        "2/2": 3.15
       },
-      "nesineId": 2796562
+      "nesineId": 2776845
     },
     {
       "league": "OTHER",
@@ -1055,56 +765,16 @@
       "away": "Bodrum FK",
       "open": {
         "h": 1.44,
-        "d": 3.35,
-        "a": 4.01
+        "d": 3.29,
+        "a": 4.11
       },
       "close": {
         "h": 1.44,
-        "d": 3.35,
-        "a": 4.01
+        "d": 3.29,
+        "a": 4.11
       },
       "htft": {},
       "nesineId": 2781752
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "20:00",
-      "home": "Kongsvinger",
-      "away": "Bryne",
-      "open": {
-        "h": 1.81,
-        "d": 3.15,
-        "a": 2.69
-      },
-      "close": {
-        "h": 1.81,
-        "d": 3.15,
-        "a": 2.69
-      },
-      "htft": {},
-      "nesineId": 2774722
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "20:00",
-      "home": "Byasen",
-      "away": "Rosenborg 2",
-      "open": {
-        "h": 2.09,
-        "d": 3.43,
-        "a": 2.14
-      },
-      "close": {
-        "h": 2.09,
-        "d": 3.43,
-        "a": 2.14
-      },
-      "htft": {},
-      "nesineId": 2776810
     },
     {
       "league": "OTHER",
@@ -1144,25 +814,25 @@
       "home": "E. Cottbus",
       "away": "1860 Münih",
       "open": {
-        "h": 1.7,
-        "d": 3.38,
-        "a": 3.11
+        "h": 1.58,
+        "d": 3.45,
+        "a": 3.53
       },
       "close": {
-        "h": 1.7,
-        "d": 3.38,
-        "a": 3.11
+        "h": 1.58,
+        "d": 3.45,
+        "a": 3.53
       },
       "htft": {
-        "1/1": 2.57,
-        "1/X": 12.85,
-        "1/2": 31.5,
-        "X/1": 4.8,
-        "X/X": 5.53,
-        "X/2": 7.58,
-        "2/1": 21.35,
-        "2/X": 13.6,
-        "2/2": 5.19
+        "1/1": 2.34,
+        "1/X": 13.1,
+        "1/2": 34,
+        "X/1": 4.57,
+        "X/X": 5.6,
+        "X/2": 8.42,
+        "2/1": 20.9,
+        "2/X": 14.1,
+        "2/2": 5.99
       },
       "nesineId": 2776867
     },
@@ -1215,13 +885,13 @@
       },
       "htft": {
         "1/1": 8.93,
-        "1/X": 17.3,
-        "1/2": 19.35,
-        "X/1": 11.9,
-        "X/X": 6.8,
-        "X/2": 4.12,
+        "1/X": 17.15,
+        "1/2": 19.3,
+        "X/1": 12,
+        "X/X": 6.85,
+        "X/2": 4.16,
         "2/1": 34,
-        "2/X": 15.5,
+        "2/X": 15.35,
         "2/2": 1.8
       },
       "nesineId": 2776949
@@ -1234,97 +904,17 @@
       "home": "Hodd IL",
       "away": "Sandnes ULF",
       "open": {
-        "h": 1.95,
-        "d": 3.08,
-        "a": 2.49
+        "h": 1.99,
+        "d": 3.06,
+        "a": 2.43
       },
       "close": {
-        "h": 1.95,
-        "d": 3.08,
-        "a": 2.49
+        "h": 1.99,
+        "d": 3.06,
+        "a": 2.43
       },
       "htft": {},
       "nesineId": 2776858
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "20:00",
-      "home": "Mannheim 07",
-      "away": "Hoffenheim II",
-      "open": {
-        "h": 1.91,
-        "d": 3.45,
-        "a": 2.57
-      },
-      "close": {
-        "h": 1.91,
-        "d": 3.45,
-        "a": 2.57
-      },
-      "htft": {
-        "1/1": 2.89,
-        "1/X": 12.25,
-        "1/2": 25,
-        "X/1": 5.47,
-        "X/X": 6.07,
-        "X/2": 6.85,
-        "2/1": 20.85,
-        "2/X": 12.6,
-        "2/2": 4.08
-      },
-      "nesineId": 2776845
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "20:00",
-      "home": "IK Oddevold",
-      "away": "Sandvikens",
-      "open": {
-        "h": 1.92,
-        "d": 3,
-        "a": 2.61
-      },
-      "close": {
-        "h": 1.92,
-        "d": 3,
-        "a": 2.61
-      },
-      "htft": {
-        "1/1": 3.1,
-        "1/X": 12.9,
-        "1/2": 31,
-        "X/1": 5.05,
-        "X/X": 4.8,
-        "X/2": 6.42,
-        "2/1": 24.8,
-        "2/X": 13.35,
-        "2/2": 4.48
-      },
-      "nesineId": 2774411
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "20:00",
-      "home": "Hertha 03",
-      "away": "Chem Leipzig",
-      "open": {
-        "h": 2.57,
-        "d": 2.92,
-        "a": 1.97
-      },
-      "close": {
-        "h": 2.57,
-        "d": 2.92,
-        "a": 1.97
-      },
-      "htft": {},
-      "nesineId": 2805569
     },
     {
       "league": "OTHER",
@@ -1350,18 +940,68 @@
       "league": "OTHER",
       "leagueName": "",
       "date": "2026-04-07",
+      "time": "20:00",
+      "home": "Hertha 03",
+      "away": "Chem Leipzig",
+      "open": {
+        "h": 2.55,
+        "d": 3.07,
+        "a": 1.92
+      },
+      "close": {
+        "h": 2.55,
+        "d": 3.07,
+        "a": 1.92
+      },
+      "htft": {},
+      "nesineId": 2805569
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "20:00",
+      "home": "IK Oddevold",
+      "away": "Sandvikens",
+      "open": {
+        "h": 1.97,
+        "d": 2.92,
+        "a": 2.57
+      },
+      "close": {
+        "h": 1.97,
+        "d": 2.92,
+        "a": 2.57
+      },
+      "htft": {
+        "1/1": 3.21,
+        "1/X": 13,
+        "1/2": 31,
+        "X/1": 5.08,
+        "X/X": 4.57,
+        "X/2": 6.26,
+        "2/1": 26,
+        "2/X": 13.4,
+        "2/2": 4.44
+      },
+      "nesineId": 2774411
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
       "time": "20:30",
       "home": "Stade Ouchy",
       "away": "Rapperswil",
       "open": {
-        "h": 1.21,
-        "d": 4.33,
-        "a": 5.51
+        "h": 1.29,
+        "d": 4.01,
+        "a": 4.59
       },
       "close": {
-        "h": 1.21,
-        "d": 4.33,
-        "a": 5.51
+        "h": 1.29,
+        "d": 4.01,
+        "a": 4.59
       },
       "htft": {},
       "nesineId": 2776900
@@ -1371,60 +1011,20 @@
       "leagueName": "",
       "date": "2026-04-07",
       "time": "20:30",
-      "home": "Richards Bay",
-      "away": "Stellenbosch",
-      "open": {
-        "h": 2.41,
-        "d": 2.4,
-        "a": 2.45
-      },
-      "close": {
-        "h": 2.41,
-        "d": 2.4,
-        "a": 2.45
-      },
-      "htft": {},
-      "nesineId": 2776801
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "20:30",
       "home": "Vaduz",
       "away": "Bellinzona",
       "open": {
-        "h": 1.14,
-        "d": 4.68,
-        "a": 6.85
+        "h": 1.13,
+        "d": 4.75,
+        "a": 7.12
       },
       "close": {
-        "h": 1.14,
-        "d": 4.68,
-        "a": 6.85
+        "h": 1.13,
+        "d": 4.75,
+        "a": 7.12
       },
       "htft": {},
       "nesineId": 2776821
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "20:30",
-      "home": "Wil 1900",
-      "away": "N. Xamax",
-      "open": {
-        "h": 1.98,
-        "d": 3.02,
-        "a": 2.47
-      },
-      "close": {
-        "h": 1.98,
-        "d": 3.02,
-        "a": 2.47
-      },
-      "htft": {},
-      "nesineId": 2776846
     },
     {
       "league": "OTHER",
@@ -1451,17 +1051,77 @@
       "leagueName": "",
       "date": "2026-04-07",
       "time": "20:30",
+      "home": "Richards Bay",
+      "away": "Stellenbosch",
+      "open": {
+        "h": 2.48,
+        "d": 2.37,
+        "a": 2.41
+      },
+      "close": {
+        "h": 2.48,
+        "d": 2.37,
+        "a": 2.41
+      },
+      "htft": {},
+      "nesineId": 2776801
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "20:30",
+      "home": "Orlando Pirates B",
+      "away": "Gold. Arrow",
+      "open": {
+        "h": 1,
+        "d": 5.59,
+        "a": 12.8
+      },
+      "close": {
+        "h": 1,
+        "d": 5.59,
+        "a": 12.8
+      },
+      "htft": {},
+      "nesineId": 2776835
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "20:30",
+      "home": "Wil 1900",
+      "away": "N. Xamax",
+      "open": {
+        "h": 1.98,
+        "d": 3.02,
+        "a": 2.47
+      },
+      "close": {
+        "h": 1.98,
+        "d": 3.02,
+        "a": 2.47
+      },
+      "htft": {},
+      "nesineId": 2776846
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "20:30",
       "home": "Magesi",
       "away": "Marumo Gallants",
       "open": {
-        "h": 2.08,
+        "h": 2.14,
         "d": 2.42,
-        "a": 2.88
+        "a": 2.8
       },
       "close": {
-        "h": 2.08,
+        "h": 2.14,
         "d": 2.42,
-        "a": 2.88
+        "a": 2.8
       },
       "htft": {},
       "nesineId": 2776802
@@ -1474,37 +1134,17 @@
       "home": "Durban City 2024",
       "away": "Mamel Sundow",
       "open": {
-        "h": 5.24,
-        "d": 3.15,
-        "a": 1.37
+        "h": 5.45,
+        "d": 3.21,
+        "a": 1.34
       },
       "close": {
-        "h": 5.24,
-        "d": 3.15,
-        "a": 1.37
+        "h": 5.45,
+        "d": 3.21,
+        "a": 1.34
       },
       "htft": {},
       "nesineId": 2776822
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "20:30",
-      "home": "Orlando Pirates B",
-      "away": "Gold. Arrow",
-      "open": {
-        "h": 1,
-        "d": 5.38,
-        "a": 13.55
-      },
-      "close": {
-        "h": 1,
-        "d": 5.38,
-        "a": 13.55
-      },
-      "htft": {},
-      "nesineId": 2776835
     },
     {
       "league": "OTHER",
@@ -1514,14 +1154,14 @@
       "home": "Ranheim 2",
       "away": "Melhus",
       "open": {
-        "h": 2.57,
-        "d": 3.59,
-        "a": 1.74
+        "h": 4.28,
+        "d": 4.33,
+        "a": 1.29
       },
       "close": {
-        "h": 2.57,
-        "d": 3.59,
-        "a": 1.74
+        "h": 4.28,
+        "d": 4.33,
+        "a": 1.29
       },
       "htft": {},
       "nesineId": 2776848
@@ -1534,14 +1174,14 @@
       "home": "Cer. Cleopatra",
       "away": "El Ahly (Mıs)",
       "open": {
-        "h": 4.23,
-        "d": 3.15,
-        "a": 1.45
+        "h": 4.77,
+        "d": 3.29,
+        "a": 1.38
       },
       "close": {
-        "h": 4.23,
-        "d": 3.15,
-        "a": 1.45
+        "h": 4.77,
+        "d": 3.29,
+        "a": 1.38
       },
       "htft": {},
       "nesineId": 2836971
@@ -1554,14 +1194,14 @@
       "home": "Rhyl",
       "away": "Gresford Ath",
       "open": {
-        "h": 1.5,
-        "d": 3.6,
-        "a": 3.38
+        "h": 1.56,
+        "d": 3.51,
+        "a": 3.21
       },
       "close": {
-        "h": 1.5,
-        "d": 3.6,
-        "a": 3.38
+        "h": 1.56,
+        "d": 3.51,
+        "a": 3.21
       },
       "htft": {},
       "nesineId": 2847838
@@ -1584,14 +1224,14 @@
         "a": 2.22
       },
       "htft": {
-        "1/1": 3.74,
-        "1/X": 13.15,
+        "1/1": 3.75,
+        "1/X": 13.3,
         "1/2": 28,
-        "X/1": 5.57,
-        "X/X": 4.6,
-        "X/2": 5.57,
+        "X/1": 5.55,
+        "X/X": 4.57,
+        "X/2": 5.54,
         "2/1": 28,
-        "2/X": 13.15,
+        "2/X": 13.3,
         "2/2": 3.74
       },
       "nesineId": 2833037
@@ -1604,197 +1244,27 @@
       "home": "Port Vale",
       "away": "Rotherham",
       "open": {
-        "h": 2.19,
-        "d": 2.79,
-        "a": 2.36
+        "h": 2.29,
+        "d": 2.71,
+        "a": 2.3
       },
       "close": {
-        "h": 2.19,
-        "d": 2.79,
-        "a": 2.36
+        "h": 2.29,
+        "d": 2.71,
+        "a": 2.3
       },
       "htft": {
-        "1/1": 3.69,
-        "1/X": 13.35,
-        "1/2": 31.5,
-        "X/1": 5.34,
-        "X/X": 4.19,
-        "X/2": 5.68,
-        "2/1": 30,
-        "2/X": 13.45,
-        "2/2": 4.06
+        "1/1": 3.97,
+        "1/X": 13.9,
+        "1/2": 33.5,
+        "X/1": 5.39,
+        "X/X": 3.92,
+        "X/2": 5.4,
+        "2/1": 33.5,
+        "2/X": 13.9,
+        "2/2": 3.98
       },
       "nesineId": 2774519
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "21:45",
-      "home": "Montrose",
-      "away": "Cove Rangers",
-      "open": {
-        "h": 1.95,
-        "d": 3.05,
-        "a": 2.51
-      },
-      "close": {
-        "h": 1.95,
-        "d": 3.05,
-        "a": 2.51
-      },
-      "htft": {},
-      "nesineId": 2842416
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "21:45",
-      "home": "Cliftonville",
-      "away": "Glentoran",
-      "open": {
-        "h": 4.32,
-        "d": 3.33,
-        "a": 1.41
-      },
-      "close": {
-        "h": 4.32,
-        "d": 3.33,
-        "a": 1.41
-      },
-      "htft": {
-        "1/1": 8.05,
-        "1/X": 16.65,
-        "1/2": 23.5,
-        "X/1": 9.66,
-        "X/X": 5.03,
-        "X/2": 4.03,
-        "2/1": 34,
-        "2/X": 14.95,
-        "2/2": 2.13
-      },
-      "nesineId": 2833089
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "21:45",
-      "home": "Dungannon",
-      "away": "Linfield",
-      "open": {
-        "h": 3.86,
-        "d": 3.3,
-        "a": 1.48
-      },
-      "close": {
-        "h": 3.86,
-        "d": 3.3,
-        "a": 1.48
-      },
-      "htft": {
-        "1/1": 6.99,
-        "1/X": 15.1,
-        "1/2": 22.25,
-        "X/1": 9.11,
-        "X/X": 5.28,
-        "X/2": 4.32,
-        "2/1": 34,
-        "2/X": 13.7,
-        "2/2": 2.21
-      },
-      "nesineId": 2833024
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "21:45",
-      "home": "Portadown",
-      "away": "Carrick Rangers",
-      "open": {
-        "h": 2.42,
-        "d": 3.08,
-        "a": 1.99
-      },
-      "close": {
-        "h": 2.42,
-        "d": 3.08,
-        "a": 1.99
-      },
-      "htft": {
-        "1/1": 4.07,
-        "1/X": 13.05,
-        "1/2": 24.35,
-        "X/1": 6.18,
-        "X/X": 5.07,
-        "X/2": 5.33,
-        "2/1": 28,
-        "2/X": 12.8,
-        "2/2": 3.24
-      },
-      "nesineId": 2833019
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "21:45",
-      "home": "Ballymena Utd",
-      "away": "Glenavon",
-      "open": {
-        "h": 1.74,
-        "d": 3,
-        "a": 2.99
-      },
-      "close": {
-        "h": 1.74,
-        "d": 3,
-        "a": 2.99
-      },
-      "htft": {
-        "1/1": 2.8,
-        "1/X": 13.5,
-        "1/2": 34,
-        "X/1": 4.6,
-        "X/X": 4.63,
-        "X/2": 7.01,
-        "2/1": 25,
-        "2/X": 14.3,
-        "2/2": 5.33
-      },
-      "nesineId": 2833039
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-07",
-      "time": "21:45",
-      "home": "Larne",
-      "away": "Coleraine",
-      "open": {
-        "h": 1.86,
-        "d": 2.79,
-        "a": 2.92
-      },
-      "close": {
-        "h": 1.86,
-        "d": 2.79,
-        "a": 2.92
-      },
-      "htft": {
-        "1/1": 3.04,
-        "1/X": 13.4,
-        "1/2": 34,
-        "X/1": 4.7,
-        "X/X": 4.12,
-        "X/2": 6.69,
-        "2/1": 28,
-        "2/X": 14.1,
-        "2/2": 5.22
-      },
-      "nesineId": 2833007
     },
     {
       "league": "OTHER",
@@ -1830,29 +1300,199 @@
       "league": "OTHER",
       "leagueName": "",
       "date": "2026-04-07",
+      "time": "21:45",
+      "home": "Montrose",
+      "away": "Cove Rangers",
+      "open": {
+        "h": 1.95,
+        "d": 3.05,
+        "a": 2.51
+      },
+      "close": {
+        "h": 1.95,
+        "d": 3.05,
+        "a": 2.51
+      },
+      "htft": {},
+      "nesineId": 2842416
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "21:45",
+      "home": "Ballymena Utd",
+      "away": "Glenavon",
+      "open": {
+        "h": 1.61,
+        "d": 3.1,
+        "a": 3.39
+      },
+      "close": {
+        "h": 1.61,
+        "d": 3.1,
+        "a": 3.39
+      },
+      "htft": {
+        "1/1": 2.54,
+        "1/X": 14.15,
+        "1/2": 34,
+        "X/1": 4.3,
+        "X/X": 4.68,
+        "X/2": 7.7,
+        "2/1": 24.8,
+        "2/X": 15.2,
+        "2/2": 6.16
+      },
+      "nesineId": 2833039
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "21:45",
+      "home": "Cliftonville",
+      "away": "Glentoran",
+      "open": {
+        "h": 4.99,
+        "d": 3.61,
+        "a": 1.31
+      },
+      "close": {
+        "h": 4.99,
+        "d": 3.61,
+        "a": 1.31
+      },
+      "htft": {
+        "1/1": 9.41,
+        "1/X": 18.1,
+        "1/2": 22.65,
+        "X/1": 11.1,
+        "X/X": 5.49,
+        "X/2": 3.89,
+        "2/1": 34,
+        "2/X": 16,
+        "2/2": 1.92
+      },
+      "nesineId": 2833089
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "21:45",
+      "home": "Dungannon",
+      "away": "Linfield",
+      "open": {
+        "h": 3.69,
+        "d": 3.32,
+        "a": 1.5
+      },
+      "close": {
+        "h": 3.69,
+        "d": 3.32,
+        "a": 1.5
+      },
+      "htft": {
+        "1/1": 6.66,
+        "1/X": 15.15,
+        "1/2": 21.8,
+        "X/1": 8.72,
+        "X/X": 5.31,
+        "X/2": 4.32,
+        "2/1": 34,
+        "2/X": 13.85,
+        "2/2": 2.27
+      },
+      "nesineId": 2833024
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "21:45",
+      "home": "Larne",
+      "away": "Coleraine",
+      "open": {
+        "h": 1.85,
+        "d": 2.8,
+        "a": 2.92
+      },
+      "close": {
+        "h": 1.85,
+        "d": 2.8,
+        "a": 2.92
+      },
+      "htft": {
+        "1/1": 3.02,
+        "1/X": 13.55,
+        "1/2": 34,
+        "X/1": 4.67,
+        "X/X": 4.14,
+        "X/2": 6.68,
+        "2/1": 28,
+        "2/X": 14.25,
+        "2/2": 5.23
+      },
+      "nesineId": 2833007
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
+      "time": "21:45",
+      "home": "Portadown",
+      "away": "Carrick Rangers",
+      "open": {
+        "h": 2.48,
+        "d": 3.04,
+        "a": 1.97
+      },
+      "close": {
+        "h": 2.48,
+        "d": 3.04,
+        "a": 1.97
+      },
+      "htft": {
+        "1/1": 4.22,
+        "1/X": 13.25,
+        "1/2": 24.8,
+        "X/1": 6.22,
+        "X/X": 4.92,
+        "X/2": 5.19,
+        "2/1": 29,
+        "2/X": 12.95,
+        "2/2": 3.2
+      },
+      "nesineId": 2833019
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-07",
       "time": "22:00",
       "home": "Real Madrid",
       "away": "Bayern Münih",
       "open": {
-        "h": 2.33,
+        "h": 2.27,
         "d": 3.53,
-        "a": 2.03
+        "a": 2.08
       },
       "close": {
-        "h": 2.33,
+        "h": 2.27,
         "d": 3.53,
-        "a": 2.03
+        "a": 2.08
       },
       "htft": {
-        "1/1": 3.59,
-        "1/X": 12.2,
+        "1/1": 3.51,
+        "1/X": 12.05,
         "1/2": 20.5,
-        "X/1": 6.59,
-        "X/X": 6.53,
-        "X/2": 5.97,
-        "2/1": 22.25,
-        "2/X": 12.05,
-        "2/2": 3.09
+        "X/1": 6.54,
+        "X/X": 6.57,
+        "X/2": 6.1,
+        "2/1": 21.8,
+        "2/X": 12,
+        "2/2": 3.15
       },
       "nesineId": 2782066
     },
@@ -1864,25 +1504,25 @@
       "home": "Sporting CP",
       "away": "Arsenal",
       "open": {
-        "h": 3.67,
-        "d": 3.18,
+        "h": 3.72,
+        "d": 3.17,
         "a": 1.62
       },
       "close": {
-        "h": 3.67,
-        "d": 3.18,
+        "h": 3.72,
+        "d": 3.17,
         "a": 1.62
       },
       "htft": {
-        "1/1": 6.39,
-        "1/X": 14.5,
-        "1/2": 23.5,
-        "X/1": 8.26,
-        "X/X": 4.8,
-        "X/2": 4.43,
+        "1/1": 6.49,
+        "1/X": 14.6,
+        "1/2": 23.95,
+        "X/1": 8.3,
+        "X/X": 4.75,
+        "X/2": 4.39,
         "2/1": 34,
-        "2/X": 13.3,
-        "2/2": 2.44
+        "2/X": 13.4,
+        "2/2": 2.43
       },
       "nesineId": 2781544
     },
@@ -1924,25 +1564,25 @@
       "home": "Bromley",
       "away": "Shrewsbury",
       "open": {
-        "h": 1.45,
-        "d": 3.09,
-        "a": 4.39
+        "h": 1.42,
+        "d": 3.1,
+        "a": 4.67
       },
       "close": {
-        "h": 1.45,
-        "d": 3.09,
-        "a": 4.39
+        "h": 1.42,
+        "d": 3.1,
+        "a": 4.67
       },
       "htft": {
-        "1/1": 2.24,
-        "1/X": 15.65,
+        "1/1": 2.16,
+        "1/X": 15.75,
         "1/2": 34,
-        "X/1": 3.91,
-        "X/X": 4.36,
-        "X/2": 9.36,
+        "X/1": 3.88,
+        "X/X": 4.37,
+        "X/2": 9.92,
         "2/1": 27.5,
-        "2/X": 17.5,
-        "2/2": 8.35
+        "2/X": 17.8,
+        "2/2": 8.89
       },
       "nesineId": 2774512
     },
@@ -1954,14 +1594,14 @@
       "home": "E.Río Cuarto",
       "away": "Tucuman",
       "open": {
-        "h": 2.37,
-        "d": 2.35,
-        "a": 2.55
+        "h": 2.94,
+        "d": 2.36,
+        "a": 2.1
       },
       "close": {
-        "h": 2.37,
-        "d": 2.35,
-        "a": 2.55
+        "h": 2.94,
+        "d": 2.36,
+        "a": 2.1
       },
       "htft": {},
       "nesineId": 2776889
@@ -2031,36 +1671,6 @@
       "leagueName": "",
       "date": "2026-04-08",
       "time": "01:00",
-      "home": "Barracas",
-      "away": "Vasco Da G.",
-      "open": {
-        "h": 1.68,
-        "d": 2.75,
-        "a": 3.56
-      },
-      "close": {
-        "h": 1.68,
-        "d": 2.75,
-        "a": 3.56
-      },
-      "htft": {
-        "1/1": 2.68,
-        "1/X": 14.1,
-        "1/2": 34,
-        "X/1": 4.29,
-        "X/X": 3.91,
-        "X/2": 7.72,
-        "2/1": 29,
-        "2/X": 15.35,
-        "2/2": 6.6
-      },
-      "nesineId": 2825608
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-08",
-      "time": "01:00",
       "home": "Ind. Mendoza",
       "away": "Club Bolivar",
       "open": {
@@ -2121,27 +1731,57 @@
       "leagueName": "",
       "date": "2026-04-08",
       "time": "01:00",
+      "home": "Barracas",
+      "away": "Vasco Da G.",
+      "open": {
+        "h": 1.64,
+        "d": 2.8,
+        "a": 3.66
+      },
+      "close": {
+        "h": 1.64,
+        "d": 2.8,
+        "a": 3.66
+      },
+      "htft": {
+        "1/1": 2.62,
+        "1/X": 14.45,
+        "1/2": 34,
+        "X/1": 4.19,
+        "X/X": 3.96,
+        "X/2": 7.88,
+        "2/1": 29,
+        "2/X": 15.75,
+        "2/2": 6.84
+      },
+      "nesineId": 2825608
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "01:00",
       "home": "Dep. La Gua.",
       "away": "Fluminense",
       "open": {
-        "h": 4.87,
-        "d": 3.23,
+        "h": 4.88,
+        "d": 3.22,
         "a": 1.38
       },
       "close": {
-        "h": 4.87,
-        "d": 3.23,
+        "h": 4.88,
+        "d": 3.22,
         "a": 1.38
       },
       "htft": {
         "1/1": 9.36,
-        "1/X": 18.45,
-        "1/2": 26.5,
+        "1/X": 18.4,
+        "1/2": 27,
         "X/1": 10.35,
         "X/X": 4.57,
         "X/2": 3.81,
         "2/1": 34,
-        "2/X": 16.3,
+        "2/X": 16.25,
         "2/2": 2.09
       },
       "nesineId": 2825664
@@ -2201,26 +1841,6 @@
       "leagueName": "",
       "date": "2026-04-08",
       "time": "03:00",
-      "home": "Nashville SC",
-      "away": "America",
-      "open": {
-        "h": 2.09,
-        "d": 2.75,
-        "a": 2.51
-      },
-      "close": {
-        "h": 2.09,
-        "d": 2.75,
-        "a": 2.51
-      },
-      "htft": {},
-      "nesineId": 2830412
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-08",
-      "time": "03:00",
       "home": "Barcelona (Ekv)",
       "away": "Cruzeiro MG",
       "open": {
@@ -2245,26 +1865,6 @@
         "2/2": 3.73
       },
       "nesineId": 2825644
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-08",
-      "time": "03:00",
-      "home": "Queretaro",
-      "away": "Juarez",
-      "open": {
-        "h": 2.45,
-        "d": 2.9,
-        "a": 2.06
-      },
-      "close": {
-        "h": 2.45,
-        "d": 2.9,
-        "a": 2.06
-      },
-      "htft": {},
-      "nesineId": 2846877
     },
     {
       "league": "OTHER",
@@ -2301,50 +1901,60 @@
       "leagueName": "",
       "date": "2026-04-08",
       "time": "03:00",
-      "home": "CA Atlanta",
-      "away": "Nueva Chicago",
+      "home": "Queretaro",
+      "away": "Juarez",
       "open": {
-        "h": 1.68,
-        "d": 2.51,
-        "a": 4.11
+        "h": 2.45,
+        "d": 2.9,
+        "a": 2.06
       },
       "close": {
-        "h": 1.68,
-        "d": 2.51,
-        "a": 4.11
+        "h": 2.45,
+        "d": 2.9,
+        "a": 2.06
       },
       "htft": {},
-      "nesineId": 2847915
+      "nesineId": 2846877
     },
     {
       "league": "OTHER",
       "leagueName": "",
       "date": "2026-04-08",
-      "time": "03:30",
-      "home": "Uni. Catolica",
-      "away": "Boca Juniors",
+      "time": "03:00",
+      "home": "Nashville SC",
+      "away": "America",
       "open": {
-        "h": 2.84,
-        "d": 2.68,
-        "a": 1.94
+        "h": 2.04,
+        "d": 2.75,
+        "a": 2.58
       },
       "close": {
-        "h": 2.84,
-        "d": 2.68,
-        "a": 1.94
+        "h": 2.04,
+        "d": 2.75,
+        "a": 2.58
       },
-      "htft": {
-        "1/1": 5.12,
-        "1/X": 14.65,
-        "1/2": 31,
-        "X/1": 6.32,
-        "X/X": 3.81,
-        "X/2": 4.69,
-        "2/1": 34,
-        "2/X": 14.05,
-        "2/2": 3.25
+      "htft": {},
+      "nesineId": 2830412
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "03:00",
+      "home": "CA Atlanta",
+      "away": "Nueva Chicago",
+      "open": {
+        "h": 1.75,
+        "d": 2.5,
+        "a": 3.73
       },
-      "nesineId": 2825574
+      "close": {
+        "h": 1.75,
+        "d": 2.5,
+        "a": 3.73
+      },
+      "htft": {},
+      "nesineId": 2847915
     },
     {
       "league": "OTHER",
@@ -2380,18 +1990,48 @@
       "league": "OTHER",
       "leagueName": "",
       "date": "2026-04-08",
+      "time": "03:30",
+      "home": "Uni. Catolica",
+      "away": "Boca Juniors",
+      "open": {
+        "h": 2.84,
+        "d": 2.68,
+        "a": 1.94
+      },
+      "close": {
+        "h": 2.84,
+        "d": 2.68,
+        "a": 1.94
+      },
+      "htft": {
+        "1/1": 5.12,
+        "1/X": 14.65,
+        "1/2": 31,
+        "X/1": 6.32,
+        "X/X": 3.81,
+        "X/2": 4.69,
+        "2/1": 34,
+        "2/X": 14.05,
+        "2/2": 3.25
+      },
+      "nesineId": 2825574
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
       "time": "04:00",
       "home": "Spokane Velocity",
       "away": "Av Alta",
       "open": {
-        "h": 1.74,
-        "d": 2.98,
-        "a": 3.03
+        "h": 1.65,
+        "d": 3.11,
+        "a": 3.19
       },
       "close": {
-        "h": 1.74,
-        "d": 2.98,
-        "a": 3.03
+        "h": 1.65,
+        "d": 3.11,
+        "a": 3.19
       },
       "htft": {},
       "nesineId": 2781337
@@ -2464,17 +2104,37 @@
       "home": "Los Angeles",
       "away": "Cruz Azul",
       "open": {
-        "h": 1.89,
+        "h": 1.86,
         "d": 2.8,
-        "a": 2.84
+        "a": 2.92
       },
       "close": {
-        "h": 1.89,
+        "h": 1.86,
         "d": 2.8,
-        "a": 2.84
+        "a": 2.92
       },
       "htft": {},
       "nesineId": 2830394
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "12:30",
+      "home": "Tochigi",
+      "away": "Van. Hachinohe",
+      "open": {
+        "h": 2.2,
+        "d": 2.7,
+        "a": 2.42
+      },
+      "close": {
+        "h": 2.2,
+        "d": 2.7,
+        "a": 2.42
+      },
+      "htft": {},
+      "nesineId": 2781396
     },
     {
       "league": "OTHER",
@@ -2484,25 +2144,25 @@
       "home": "Gamba Osaka",
       "away": "Bangkok Utd",
       "open": {
-        "h": 1.09,
-        "d": 4.8,
-        "a": 9.15
+        "h": 1.08,
+        "d": 4.97,
+        "a": 9.36
       },
       "close": {
-        "h": 1.09,
-        "d": 4.8,
-        "a": 9.15
+        "h": 1.08,
+        "d": 4.97,
+        "a": 9.36
       },
       "htft": {
-        "1/1": 1.48,
-        "1/X": 21.8,
+        "1/1": 1.46,
+        "1/X": 22.65,
         "1/2": 34,
-        "X/1": 3.63,
-        "X/X": 7.11,
-        "X/2": 19.6,
-        "2/1": 24.35,
-        "2/X": 26,
-        "2/2": 18.15
+        "X/1": 3.61,
+        "X/X": 7.4,
+        "X/2": 20.1,
+        "2/1": 23.95,
+        "2/X": 27,
+        "2/2": 18.6
       },
       "nesineId": 2781873
     },
@@ -2514,37 +2174,17 @@
       "home": "Ethiopian Coffee SC",
       "away": "Sheger Ketema",
       "open": {
-        "h": 1.87,
-        "d": 2.58,
-        "a": 3.15
+        "h": 2.21,
+        "d": 2.48,
+        "a": 2.6
       },
       "close": {
-        "h": 1.87,
-        "d": 2.58,
-        "a": 3.15
+        "h": 2.21,
+        "d": 2.48,
+        "a": 2.6
       },
       "htft": {},
       "nesineId": 2815733
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-08",
-      "time": "14:00",
-      "home": "Mathare Utd",
-      "away": "Administration Police",
-      "open": {
-        "h": 3.13,
-        "d": 2.39,
-        "a": 1.99
-      },
-      "close": {
-        "h": 3.13,
-        "d": 2.39,
-        "a": 1.99
-      },
-      "htft": {},
-      "nesineId": 2858285
     },
     {
       "league": "OTHER",
@@ -2570,18 +2210,38 @@
       "league": "OTHER",
       "leagueName": "",
       "date": "2026-04-08",
+      "time": "14:00",
+      "home": "Hull City U21",
+      "away": "Bristol City U21",
+      "open": {
+        "h": 1.85,
+        "d": 3.51,
+        "a": 2.42
+      },
+      "close": {
+        "h": 1.85,
+        "d": 3.51,
+        "a": 2.42
+      },
+      "htft": {},
+      "nesineId": 2781935
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
       "time": "15:00",
       "home": "Ethiopia Nigd Bank",
       "away": "Mekelle 70 Enderta",
       "open": {
-        "h": 1.96,
-        "d": 2.56,
-        "a": 2.96
+        "h": 2.39,
+        "d": 2.49,
+        "a": 2.38
       },
       "close": {
-        "h": 1.96,
-        "d": 2.56,
-        "a": 2.96
+        "h": 2.39,
+        "d": 2.49,
+        "a": 2.38
       },
       "htft": {},
       "nesineId": 2815774
@@ -2594,14 +2254,14 @@
       "home": "Juventus U23",
       "away": "Ternana Calcio",
       "open": {
-        "h": 2.46,
-        "d": 2.84,
-        "a": 2.08
+        "h": 2.33,
+        "d": 2.63,
+        "a": 2.32
       },
       "close": {
-        "h": 2.46,
-        "d": 2.84,
-        "a": 2.08
+        "h": 2.33,
+        "d": 2.63,
+        "a": 2.32
       },
       "htft": {},
       "nesineId": 2836957
@@ -2614,17 +2274,57 @@
       "home": "Inter Milano U23",
       "away": "AC Trento",
       "open": {
-        "h": 2.24,
-        "d": 2.79,
-        "a": 2.3
+        "h": 2.54,
+        "d": 2.77,
+        "a": 2.06
       },
       "close": {
-        "h": 2.24,
-        "d": 2.79,
-        "a": 2.3
+        "h": 2.54,
+        "d": 2.77,
+        "a": 2.06
       },
       "htft": {},
       "nesineId": 2837002
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "16:00",
+      "home": "Saint George SC",
+      "away": "Ethiopia Electricity",
+      "open": {
+        "h": 2.27,
+        "d": 2.44,
+        "a": 2.58
+      },
+      "close": {
+        "h": 2.27,
+        "d": 2.44,
+        "a": 2.58
+      },
+      "htft": {},
+      "nesineId": 2815759
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "16:00",
+      "home": "Kruger Utd",
+      "away": "Lerumo Lions",
+      "open": {
+        "h": 1.62,
+        "d": 2.84,
+        "a": 3.69
+      },
+      "close": {
+        "h": 1.62,
+        "d": 2.84,
+        "a": 3.69
+      },
+      "htft": {},
+      "nesineId": 2781537
     },
     {
       "league": "OTHER",
@@ -2655,6 +2355,106 @@
         "2/2": 5.17
       },
       "nesineId": 2836960
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "17:00",
+      "home": "Rio Ave U23",
+      "away": "CS Maritimo U23",
+      "open": {
+        "h": 1.56,
+        "d": 3.28,
+        "a": 3.44
+      },
+      "close": {
+        "h": 1.56,
+        "d": 3.28,
+        "a": 3.44
+      },
+      "htft": {},
+      "nesineId": 2781844
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "17:00",
+      "home": "UD Leiria U23",
+      "away": "Portimonense U23",
+      "open": {
+        "h": 1.75,
+        "d": 3.05,
+        "a": 2.92
+      },
+      "close": {
+        "h": 1.75,
+        "d": 3.05,
+        "a": 2.92
+      },
+      "htft": {},
+      "nesineId": 2781646
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "17:00",
+      "home": "Al Ahli (Ürd)",
+      "away": "AL Hussein Irbid",
+      "open": {
+        "h": 7.25,
+        "d": 4.46,
+        "a": 1.14
+      },
+      "close": {
+        "h": 7.25,
+        "d": 4.46,
+        "a": 1.14
+      },
+      "htft": {},
+      "nesineId": 2842438
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "17:00",
+      "home": "Zakho",
+      "away": "AL Zawraa",
+      "open": {
+        "h": 2,
+        "d": 2.71,
+        "a": 2.68
+      },
+      "close": {
+        "h": 2,
+        "d": 2.71,
+        "a": 2.68
+      },
+      "htft": {},
+      "nesineId": 2866221
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "17:00",
+      "home": "Newroz SC",
+      "away": "AL Karkh",
+      "open": {
+        "h": 1.93,
+        "d": 2.7,
+        "a": 2.85
+      },
+      "close": {
+        "h": 1.93,
+        "d": 2.7,
+        "a": 2.85
+      },
+      "htft": {},
+      "nesineId": 2866263
     },
     {
       "league": "OTHER",
@@ -2714,37 +2514,17 @@
       "home": "Rad. Bijelji",
       "away": "Zrinjski Mostar",
       "open": {
-        "h": 4.72,
-        "d": 3.08,
-        "a": 1.42
+        "h": 4.33,
+        "d": 3.03,
+        "a": 1.48
       },
       "close": {
-        "h": 4.72,
-        "d": 3.08,
-        "a": 1.42
+        "h": 4.33,
+        "d": 3.03,
+        "a": 1.48
       },
       "htft": {},
       "nesineId": 2858444
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-08",
-      "time": "17:30",
-      "home": "Lugano II",
-      "away": "Zurich II",
-      "open": {
-        "h": 2.21,
-        "d": 3.33,
-        "a": 2.05
-      },
-      "close": {
-        "h": 2.21,
-        "d": 3.33,
-        "a": 2.05
-      },
-      "htft": {},
-      "nesineId": 2837000
     },
     {
       "league": "OTHER",
@@ -2771,17 +2551,37 @@
       "leagueName": "",
       "date": "2026-04-08",
       "time": "17:30",
+      "home": "Lugano II",
+      "away": "Zurich II",
+      "open": {
+        "h": 2.29,
+        "d": 3.25,
+        "a": 2.02
+      },
+      "close": {
+        "h": 2.29,
+        "d": 3.25,
+        "a": 2.02
+      },
+      "htft": {},
+      "nesineId": 2837000
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "17:30",
       "home": "Rijeka",
       "away": "NK Slaven",
       "open": {
-        "h": 1.25,
-        "d": 3.74,
-        "a": 5.9
+        "h": 1.27,
+        "d": 3.65,
+        "a": 5.69
       },
       "close": {
-        "h": 1.25,
-        "d": 3.74,
-        "a": 5.9
+        "h": 1.27,
+        "d": 3.65,
+        "a": 5.69
       },
       "htft": {},
       "nesineId": 2805538
@@ -2794,14 +2594,14 @@
       "home": "FK Liepaja",
       "away": "FK Auda",
       "open": {
-        "h": 1.84,
-        "d": 3.27,
-        "a": 2.57
+        "h": 1.92,
+        "d": 3.09,
+        "a": 2.54
       },
       "close": {
-        "h": 1.84,
-        "d": 3.27,
-        "a": 2.57
+        "h": 1.92,
+        "d": 3.09,
+        "a": 2.54
       },
       "htft": {},
       "nesineId": 2781688
@@ -2834,14 +2634,14 @@
       "home": "Tsc Backa T.",
       "away": "FK IMT Novi Beograd",
       "open": {
-        "h": 1.82,
+        "h": 1.74,
         "d": 2.8,
-        "a": 3
+        "a": 3.25
       },
       "close": {
-        "h": 1.82,
+        "h": 1.74,
         "d": 2.8,
-        "a": 3
+        "a": 3.25
       },
       "htft": {},
       "nesineId": 2781680
@@ -2854,14 +2654,14 @@
       "home": "Jav. Ivanjica",
       "away": "FK Zeleznicar Pancevo",
       "open": {
-        "h": 2.58,
-        "d": 2.65,
-        "a": 2.1
+        "h": 2.36,
+        "d": 2.66,
+        "a": 2.27
       },
       "close": {
-        "h": 2.58,
-        "d": 2.65,
-        "a": 2.1
+        "h": 2.36,
+        "d": 2.66,
+        "a": 2.27
       },
       "htft": {},
       "nesineId": 2781645
@@ -2874,14 +2674,14 @@
       "home": "Wadi Degla",
       "away": "Farco",
       "open": {
-        "h": 1.51,
-        "d": 2.78,
-        "a": 4.57
+        "h": 1.49,
+        "d": 2.94,
+        "a": 4.37
       },
       "close": {
-        "h": 1.51,
-        "d": 2.78,
-        "a": 4.57
+        "h": 1.49,
+        "d": 2.94,
+        "a": 4.37
       },
       "htft": {},
       "nesineId": 2815772
@@ -2924,15 +2724,15 @@
         "a": 2.32
       },
       "htft": {
-        "1/1": 3.53,
-        "1/X": 12.5,
+        "1/1": 3.51,
+        "1/X": 12.35,
         "1/2": 26,
-        "X/1": 5.71,
-        "X/X": 5.03,
-        "X/2": 5.91,
+        "X/1": 5.75,
+        "X/X": 5.07,
+        "X/2": 5.95,
         "2/1": 25,
-        "2/X": 12.55,
-        "2/2": 3.72
+        "2/X": 12.4,
+        "2/2": 3.7
       },
       "nesineId": 2825604
     },
@@ -2941,40 +2741,60 @@
       "leagueName": "",
       "date": "2026-04-08",
       "time": "18:30",
-      "home": "Arabi Doha",
-      "away": "Katar SC",
+      "home": "AL Wakrah",
+      "away": "AL Gharrafa",
       "open": {
-        "h": 1.62,
-        "d": 3.33,
-        "a": 3.11
+        "h": 1.86,
+        "d": 3.26,
+        "a": 2.55
       },
       "close": {
-        "h": 1.62,
-        "d": 3.33,
-        "a": 3.11
+        "h": 1.86,
+        "d": 3.26,
+        "a": 2.55
       },
       "htft": {},
-      "nesineId": 2782175
+      "nesineId": 2862435
     },
     {
       "league": "OTHER",
       "leagueName": "",
       "date": "2026-04-08",
       "time": "18:30",
-      "home": "Al Sailiya",
-      "away": "AL Sadd",
+      "home": "AL Ahli Doha",
+      "away": "AL Duhail SC",
       "open": {
-        "h": 7.23,
-        "d": 5.22,
-        "a": 1.1
+        "h": 3.76,
+        "d": 3.52,
+        "a": 1.44
       },
       "close": {
-        "h": 7.23,
-        "d": 5.22,
-        "a": 1.1
+        "h": 3.76,
+        "d": 3.52,
+        "a": 1.44
       },
       "htft": {},
-      "nesineId": 2781548
+      "nesineId": 2781909
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "18:30",
+      "home": "Al Shahaniya",
+      "away": "AL Shamal",
+      "open": {
+        "h": 3.79,
+        "d": 3.3,
+        "a": 1.49
+      },
+      "close": {
+        "h": 3.79,
+        "d": 3.3,
+        "a": 1.49
+      },
+      "htft": {},
+      "nesineId": 2782097
     },
     {
       "league": "OTHER",
@@ -3001,20 +2821,80 @@
       "leagueName": "",
       "date": "2026-04-08",
       "time": "18:30",
-      "home": "Al Shahaniya",
-      "away": "AL Shamal",
+      "home": "Al Sailiya",
+      "away": "AL Sadd",
       "open": {
-        "h": 3.92,
-        "d": 3.32,
-        "a": 1.46
+        "h": 7.23,
+        "d": 5.22,
+        "a": 1.1
       },
       "close": {
-        "h": 3.92,
-        "d": 3.32,
-        "a": 1.46
+        "h": 7.23,
+        "d": 5.22,
+        "a": 1.1
       },
       "htft": {},
-      "nesineId": 2782097
+      "nesineId": 2781548
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "18:30",
+      "home": "Arabi Doha",
+      "away": "Katar SC",
+      "open": {
+        "h": 1.62,
+        "d": 3.33,
+        "a": 3.11
+      },
+      "close": {
+        "h": 1.62,
+        "d": 3.33,
+        "a": 3.11
+      },
+      "htft": {},
+      "nesineId": 2782175
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "18:50",
+      "home": "AL Anwar",
+      "away": "AL Wehda",
+      "open": {
+        "h": 2.27,
+        "d": 2.71,
+        "a": 2.33
+      },
+      "close": {
+        "h": 2.27,
+        "d": 2.71,
+        "a": 2.33
+      },
+      "htft": {},
+      "nesineId": 2781568
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "18:50",
+      "home": "AL Draih",
+      "away": "AL Jabalain",
+      "open": {
+        "h": 1.34,
+        "d": 3.58,
+        "a": 4.63
+      },
+      "close": {
+        "h": 1.34,
+        "d": 3.58,
+        "a": 4.63
+      },
+      "htft": {},
+      "nesineId": 2782033
     },
     {
       "league": "OTHER",
@@ -3044,14 +2924,14 @@
       "home": "Harju JK Laagri",
       "away": "Nomme Kalju",
       "open": {
-        "h": 4.97,
-        "d": 3.78,
-        "a": 1.29
+        "h": 4.72,
+        "d": 3.61,
+        "a": 1.33
       },
       "close": {
-        "h": 4.97,
-        "d": 3.78,
-        "a": 1.29
+        "h": 4.72,
+        "d": 3.61,
+        "a": 1.33
       },
       "htft": {},
       "nesineId": 2781584
@@ -3061,37 +2941,17 @@
       "leagueName": "",
       "date": "2026-04-08",
       "time": "19:00",
-      "home": "FK Vojvodina",
-      "away": "Radnicki Nis",
-      "open": {
-        "h": 1.28,
-        "d": 3.65,
-        "a": 5.31
-      },
-      "close": {
-        "h": 1.28,
-        "d": 3.65,
-        "a": 5.31
-      },
-      "htft": {},
-      "nesineId": 2781847
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-08",
-      "time": "19:00",
       "home": "Paide Flora",
       "away": "Nomme Utd",
       "open": {
-        "h": 1.22,
-        "d": 4.1,
-        "a": 5.57
+        "h": 1.19,
+        "d": 4.47,
+        "a": 5.65
       },
       "close": {
-        "h": 1.22,
-        "d": 4.1,
-        "a": 5.57
+        "h": 1.19,
+        "d": 4.47,
+        "a": 5.65
       },
       "htft": {},
       "nesineId": 2781910
@@ -3101,20 +2961,90 @@
       "leagueName": "",
       "date": "2026-04-08",
       "time": "19:00",
+      "home": "FK Vojvodina",
+      "away": "Radnicki Nis",
+      "open": {
+        "h": 1.19,
+        "d": 4.05,
+        "a": 6.6
+      },
+      "close": {
+        "h": 1.19,
+        "d": 4.05,
+        "a": 6.6
+      },
+      "htft": {},
+      "nesineId": 2781847
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "19:00",
       "home": "Levadia Tall.",
       "away": "Parnu JK Vap",
       "open": {
-        "h": 1.08,
-        "d": 5.21,
-        "a": 8.59
+        "h": 1.09,
+        "d": 5.06,
+        "a": 8.16
       },
       "close": {
-        "h": 1.08,
-        "d": 5.21,
-        "a": 8.59
+        "h": 1.09,
+        "d": 5.06,
+        "a": 8.16
       },
       "htft": {},
       "nesineId": 2869914
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "19:00",
+      "home": "Zawisza Bydgoszcz",
+      "away": "Gornik Zabrze",
+      "open": {
+        "h": 7.61,
+        "d": 4.53,
+        "a": 1.13
+      },
+      "close": {
+        "h": 7.61,
+        "d": 4.53,
+        "a": 1.13
+      },
+      "htft": {
+        "1/1": 14.8,
+        "1/X": 23.5,
+        "1/2": 22.65,
+        "X/1": 16.7,
+        "X/X": 6.89,
+        "X/2": 3.69,
+        "2/1": 34,
+        "2/X": 19.95,
+        "2/2": 1.56
+      },
+      "nesineId": 2795867
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "19:00",
+      "home": "FK Jelgava",
+      "away": "Rigas Skola",
+      "open": {
+        "h": 7.09,
+        "d": 4.34,
+        "a": 1.15
+      },
+      "close": {
+        "h": 7.09,
+        "d": 4.34,
+        "a": 1.15
+      },
+      "htft": {},
+      "nesineId": 2781611
     },
     {
       "league": "OTHER",
@@ -3145,6 +3075,66 @@
         "2/2": 5.75
       },
       "nesineId": 2837011
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "19:15",
+      "home": "Jeddah Club",
+      "away": "AL Raed",
+      "open": {
+        "h": 4.32,
+        "d": 3.25,
+        "a": 1.43
+      },
+      "close": {
+        "h": 4.32,
+        "d": 3.25,
+        "a": 1.43
+      },
+      "htft": {},
+      "nesineId": 2781266
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "19:15",
+      "home": "AL Tai",
+      "away": "AL Bukayriyah",
+      "open": {
+        "h": 1.76,
+        "d": 2.9,
+        "a": 3.06
+      },
+      "close": {
+        "h": 1.76,
+        "d": 2.9,
+        "a": 3.06
+      },
+      "htft": {},
+      "nesineId": 2781403
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "19:30",
+      "home": "AL Faisaly (Ürd)",
+      "away": "Al Jazeera",
+      "open": {
+        "h": 1.25,
+        "d": 3.7,
+        "a": 5.88
+      },
+      "close": {
+        "h": 1.25,
+        "d": 3.7,
+        "a": 5.88
+      },
+      "htft": {},
+      "nesineId": 2842456
     },
     {
       "league": "OTHER",
@@ -3221,28 +3211,48 @@
       "leagueName": "",
       "date": "2026-04-08",
       "time": "20:00",
+      "home": "FK M. Lucani",
+      "away": "FK Napredak Kru.",
+      "open": {
+        "h": 1.33,
+        "d": 3.45,
+        "a": 4.96
+      },
+      "close": {
+        "h": 1.33,
+        "d": 3.45,
+        "a": 4.96
+      },
+      "htft": {},
+      "nesineId": 2782036
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "20:00",
       "home": "Göztepe",
       "away": "Galatasaray",
       "open": {
-        "h": 4.36,
-        "d": 3.47,
-        "a": 1.45
+        "h": 4.16,
+        "d": 3.45,
+        "a": 1.49
       },
       "close": {
-        "h": 4.36,
-        "d": 3.47,
-        "a": 1.45
+        "h": 4.16,
+        "d": 3.45,
+        "a": 1.49
       },
       "htft": {
-        "1/1": 7.62,
-        "1/X": 15.4,
-        "1/2": 22.25,
-        "X/1": 9.79,
-        "X/X": 5.34,
-        "X/2": 4.27,
+        "1/1": 7.23,
+        "1/X": 15.2,
+        "1/2": 21.8,
+        "X/1": 9.41,
+        "X/X": 5.33,
+        "X/2": 4.29,
         "2/1": 34,
-        "2/X": 13.8,
-        "2/2": 2.11
+        "2/X": 13.7,
+        "2/2": 2.17
       },
       "nesineId": 2833075
     },
@@ -3251,20 +3261,20 @@
       "leagueName": "",
       "date": "2026-04-08",
       "time": "20:00",
-      "home": "FK M. Lucani",
-      "away": "FK Napredak Kru.",
+      "home": "A.Club De Getxo",
+      "away": "Pontevedra",
       "open": {
-        "h": 1.49,
-        "d": 3.15,
-        "a": 4
+        "h": 2.39,
+        "d": 2.6,
+        "a": 2.29
       },
       "close": {
-        "h": 1.49,
-        "d": 3.15,
-        "a": 4
+        "h": 2.39,
+        "d": 2.6,
+        "a": 2.29
       },
       "htft": {},
-      "nesineId": 2782036
+      "nesineId": 2833038
     },
     {
       "league": "OTHER",
@@ -3321,30 +3331,60 @@
       "leagueName": "",
       "date": "2026-04-08",
       "time": "20:00",
-      "home": "W. Wiesbaden",
-      "away": "TSV Havelse",
+      "home": "Ingolstadt",
+      "away": "Viktoria Köln",
       "open": {
-        "h": 1.38,
-        "d": 3.88,
-        "a": 4.56
+        "h": 1.98,
+        "d": 3.27,
+        "a": 2.54
       },
       "close": {
-        "h": 1.38,
-        "d": 3.88,
-        "a": 4.56
+        "h": 1.98,
+        "d": 3.27,
+        "a": 2.54
       },
       "htft": {
-        "1/1": 1.96,
-        "1/X": 14.6,
-        "1/2": 34,
-        "X/1": 4.21,
-        "X/X": 6.22,
-        "X/2": 10.5,
-        "2/1": 20,
-        "2/X": 16.2,
-        "2/2": 7.9
+        "1/1": 3.07,
+        "1/X": 12.55,
+        "1/2": 27,
+        "X/1": 5.36,
+        "X/X": 5.43,
+        "X/2": 6.47,
+        "2/1": 22.65,
+        "2/X": 12.85,
+        "2/2": 4.11
       },
-      "nesineId": 2776881
+      "nesineId": 2776930
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "20:00",
+      "home": "Saarbrucken",
+      "away": "A. Aachen",
+      "open": {
+        "h": 2,
+        "d": 3.13,
+        "a": 2.6
+      },
+      "close": {
+        "h": 2,
+        "d": 3.13,
+        "a": 2.6
+      },
+      "htft": {
+        "1/1": 3.15,
+        "1/X": 12.6,
+        "1/2": 28.5,
+        "X/1": 5.23,
+        "X/X": 4.97,
+        "X/2": 6.39,
+        "2/1": 24.35,
+        "2/X": 12.95,
+        "2/2": 4.28
+      },
+      "nesineId": 2776855
     },
     {
       "league": "OTHER",
@@ -3381,60 +3421,30 @@
       "leagueName": "",
       "date": "2026-04-08",
       "time": "20:00",
-      "home": "Ingolstadt",
-      "away": "Viktoria Köln",
+      "home": "W. Wiesbaden",
+      "away": "TSV Havelse",
       "open": {
-        "h": 1.98,
-        "d": 3.27,
-        "a": 2.54
+        "h": 1.38,
+        "d": 3.88,
+        "a": 4.56
       },
       "close": {
-        "h": 1.98,
-        "d": 3.27,
-        "a": 2.54
+        "h": 1.38,
+        "d": 3.88,
+        "a": 4.56
       },
       "htft": {
-        "1/1": 3.07,
-        "1/X": 12.55,
-        "1/2": 27,
-        "X/1": 5.36,
-        "X/X": 5.43,
-        "X/2": 6.47,
-        "2/1": 22.65,
-        "2/X": 12.85,
-        "2/2": 4.11
+        "1/1": 1.96,
+        "1/X": 14.6,
+        "1/2": 34,
+        "X/1": 4.21,
+        "X/X": 6.22,
+        "X/2": 10.5,
+        "2/1": 20,
+        "2/X": 16.2,
+        "2/2": 7.9
       },
-      "nesineId": 2776930
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-08",
-      "time": "20:00",
-      "home": "Saarbrucken",
-      "away": "A. Aachen",
-      "open": {
-        "h": 1.96,
-        "d": 3.12,
-        "a": 2.68
-      },
-      "close": {
-        "h": 1.96,
-        "d": 3.12,
-        "a": 2.68
-      },
-      "htft": {
-        "1/1": 3.06,
-        "1/X": 12.55,
-        "1/2": 29.5,
-        "X/1": 5.16,
-        "X/X": 4.95,
-        "X/2": 6.54,
-        "2/1": 23.95,
-        "2/X": 12.95,
-        "2/2": 4.42
-      },
-      "nesineId": 2776855
+      "nesineId": 2776881
     },
     {
       "league": "OTHER",
@@ -3464,14 +3474,14 @@
       "home": "Botev Plovdiv",
       "away": "Loko Plovdiv",
       "open": {
-        "h": 1.65,
-        "d": 2.92,
-        "a": 3.45
+        "h": 1.62,
+        "d": 2.94,
+        "a": 3.54
       },
       "close": {
-        "h": 1.65,
-        "d": 2.92,
-        "a": 3.45
+        "h": 1.62,
+        "d": 2.94,
+        "a": 3.54
       },
       "htft": {},
       "nesineId": 2801661
@@ -3514,14 +3524,14 @@
       "home": "Haras Hodood",
       "away": "Modern Sport Club",
       "open": {
-        "h": 3.81,
-        "d": 2.58,
-        "a": 1.69
+        "h": 4.16,
+        "d": 2.71,
+        "a": 1.58
       },
       "close": {
-        "h": 3.81,
-        "d": 2.58,
-        "a": 1.69
+        "h": 4.16,
+        "d": 2.71,
+        "a": 1.58
       },
       "htft": {},
       "nesineId": 2815813
@@ -3534,14 +3544,14 @@
       "home": "AL Ittihad",
       "away": "Neom SC",
       "open": {
-        "h": 1.4,
-        "d": 3.52,
-        "a": 4.09
+        "h": 1.43,
+        "d": 3.45,
+        "a": 3.99
       },
       "close": {
-        "h": 1.4,
-        "d": 3.52,
-        "a": 4.09
+        "h": 1.43,
+        "d": 3.45,
+        "a": 3.99
       },
       "htft": {},
       "nesineId": 2776831
@@ -3555,13 +3565,13 @@
       "away": "AL Khlood",
       "open": {
         "h": 1,
-        "d": 6.69,
-        "a": 10.45
+        "d": 6.52,
+        "a": 10.1
       },
       "close": {
         "h": 1,
-        "d": 6.69,
-        "a": 10.45
+        "d": 6.52,
+        "a": 10.1
       },
       "htft": {},
       "nesineId": 2776918
@@ -3594,14 +3604,14 @@
       "home": "Atalanta BC U23",
       "away": "Cavese 1919",
       "open": {
-        "h": 1.72,
-        "d": 2.97,
-        "a": 3.1
+        "h": 1.82,
+        "d": 2.85,
+        "a": 2.94
       },
       "close": {
-        "h": 1.72,
-        "d": 2.97,
-        "a": 3.1
+        "h": 1.82,
+        "d": 2.85,
+        "a": 2.94
       },
       "htft": {},
       "nesineId": 2836959
@@ -3614,14 +3624,14 @@
       "home": "Marine",
       "away": "Hereford",
       "open": {
-        "h": 1.5,
-        "d": 3.29,
-        "a": 3.75
+        "h": 1.51,
+        "d": 3.33,
+        "a": 3.59
       },
       "close": {
-        "h": 1.5,
-        "d": 3.29,
-        "a": 3.75
+        "h": 1.51,
+        "d": 3.33,
+        "a": 3.59
       },
       "htft": {},
       "nesineId": 2782195
@@ -3631,28 +3641,58 @@
       "leagueName": "",
       "date": "2026-04-08",
       "time": "22:00",
+      "home": "Barcelona",
+      "away": "Atl Madrid",
+      "open": {
+        "h": 1.33,
+        "d": 4.28,
+        "a": 4.55
+      },
+      "close": {
+        "h": 1.33,
+        "d": 4.28,
+        "a": 4.55
+      },
+      "htft": {
+        "1/1": 1.86,
+        "1/X": 14.6,
+        "1/2": 34,
+        "X/1": 4.39,
+        "X/X": 7.45,
+        "X/2": 11.25,
+        "2/1": 17.8,
+        "2/X": 16,
+        "2/2": 7.62
+      },
+      "nesineId": 2781333
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-08",
+      "time": "22:00",
       "home": "PSG",
       "away": "Liverpool",
       "open": {
-        "h": 1.5,
-        "d": 3.66,
-        "a": 3.75
+        "h": 1.51,
+        "d": 3.65,
+        "a": 3.73
       },
       "close": {
-        "h": 1.5,
-        "d": 3.66,
-        "a": 3.75
+        "h": 1.51,
+        "d": 3.65,
+        "a": 3.73
       },
       "htft": {
-        "1/1": 2.18,
-        "1/X": 13.15,
+        "1/1": 2.19,
+        "1/X": 13.1,
         "1/2": 34,
-        "X/1": 4.58,
-        "X/X": 6.16,
-        "X/2": 9.15,
-        "2/1": 19.55,
-        "2/X": 14.3,
-        "2/2": 6.29
+        "X/1": 4.59,
+        "X/X": 6.15,
+        "X/2": 9.11,
+        "2/1": 19.6,
+        "2/X": 14.25,
+        "2/2": 6.25
       },
       "nesineId": 2782150
     },
@@ -3661,30 +3701,20 @@
       "leagueName": "",
       "date": "2026-04-08",
       "time": "22:00",
-      "home": "Barcelona",
-      "away": "Atl Madrid",
+      "home": "Farense U23",
+      "away": "Estrela A. U23",
       "open": {
-        "h": 1.34,
-        "d": 4.19,
-        "a": 4.53
+        "h": 1.81,
+        "d": 2.93,
+        "a": 2.89
       },
       "close": {
-        "h": 1.34,
-        "d": 4.19,
-        "a": 4.53
+        "h": 1.81,
+        "d": 2.93,
+        "a": 2.89
       },
-      "htft": {
-        "1/1": 1.86,
-        "1/X": 14.25,
-        "1/2": 34,
-        "X/1": 4.45,
-        "X/X": 7.32,
-        "X/2": 11.2,
-        "2/1": 17.9,
-        "2/X": 15.65,
-        "2/2": 7.58
-      },
-      "nesineId": 2781333
+      "htft": {},
+      "nesineId": 2781621
     },
     {
       "league": "OTHER",
@@ -3764,15 +3794,15 @@
         "a": 2.62
       },
       "htft": {
-        "1/1": 3.45,
-        "1/X": 13.1,
+        "1/1": 3.47,
+        "1/X": 13.4,
         "1/2": 34,
-        "X/1": 5.1,
-        "X/X": 3.93,
-        "X/2": 6.13,
-        "2/1": 30.5,
-        "2/X": 13.45,
-        "2/2": 4.59
+        "X/1": 5.03,
+        "X/X": 3.88,
+        "X/2": 6.06,
+        "2/1": 31,
+        "2/X": 13.75,
+        "2/2": 4.62
       },
       "nesineId": 2825649
     },
@@ -3844,14 +3874,14 @@
       "home": "F. Midland",
       "away": "Acassuso",
       "open": {
-        "h": 1.74,
-        "d": 2.68,
-        "a": 3.39
+        "h": 1.57,
+        "d": 2.81,
+        "a": 3.99
       },
       "close": {
-        "h": 1.74,
-        "d": 2.68,
-        "a": 3.39
+        "h": 1.57,
+        "d": 2.81,
+        "a": 3.99
       },
       "htft": {},
       "nesineId": 2758437
@@ -3891,26 +3921,6 @@
       "leagueName": "",
       "date": "2026-04-09",
       "time": "03:00",
-      "home": "Uni. Catolica",
-      "away": "CS Emelec",
-      "open": {
-        "h": 1.44,
-        "d": 3.25,
-        "a": 4.27
-      },
-      "close": {
-        "h": 1.44,
-        "d": 3.25,
-        "a": 4.27
-      },
-      "htft": {},
-      "nesineId": 2825599
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-09",
-      "time": "03:00",
       "home": "I. Medellin",
       "away": "Estudiantes",
       "open": {
@@ -3940,6 +3950,26 @@
       "league": "OTHER",
       "leagueName": "",
       "date": "2026-04-09",
+      "time": "03:00",
+      "home": "Uni. Catolica",
+      "away": "CS Emelec",
+      "open": {
+        "h": 1.44,
+        "d": 3.25,
+        "a": 4.27
+      },
+      "close": {
+        "h": 1.44,
+        "d": 3.25,
+        "a": 4.27
+      },
+      "htft": {},
+      "nesineId": 2825599
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-09",
       "time": "03:10",
       "home": "CA Sarmiento",
       "away": "T. Suarez",
@@ -3964,25 +3994,25 @@
       "home": "Atl Junior",
       "away": "Palmeiras SP",
       "open": {
-        "h": 3.33,
-        "d": 2.86,
-        "a": 1.69
+        "h": 3.46,
+        "d": 2.88,
+        "a": 1.66
       },
       "close": {
-        "h": 3.33,
-        "d": 2.86,
-        "a": 1.69
+        "h": 3.46,
+        "d": 2.88,
+        "a": 1.66
       },
       "htft": {
-        "1/1": 6.1,
-        "1/X": 15.15,
-        "1/2": 28,
-        "X/1": 7.38,
+        "1/1": 6.39,
+        "1/X": 15.35,
+        "1/2": 27.5,
+        "X/1": 7.63,
         "X/X": 4.16,
-        "X/2": 4.35,
+        "X/2": 4.28,
         "2/1": 34,
-        "2/X": 14.05,
-        "2/2": 2.73
+        "2/X": 14.2,
+        "2/2": 2.64
       },
       "nesineId": 2825635
     },
@@ -4021,36 +4051,6 @@
       "leagueName": "",
       "date": "2026-04-09",
       "time": "03:30",
-      "home": "Torque",
-      "away": "Gremio P.",
-      "open": {
-        "h": 2.67,
-        "d": 2.74,
-        "a": 2
-      },
-      "close": {
-        "h": 2.67,
-        "d": 2.74,
-        "a": 2
-      },
-      "htft": {
-        "1/1": 4.62,
-        "1/X": 12.9,
-        "1/2": 28,
-        "X/1": 6.43,
-        "X/X": 4.21,
-        "X/2": 5.16,
-        "2/1": 33.5,
-        "2/X": 12.5,
-        "2/2": 3.27
-      },
-      "nesineId": 2825584
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-09",
-      "time": "03:30",
       "home": "Cusco",
       "away": "Flamengo",
       "open": {
@@ -4080,6 +4080,36 @@
       "league": "OTHER",
       "leagueName": "",
       "date": "2026-04-09",
+      "time": "03:30",
+      "home": "Torque",
+      "away": "Gremio P.",
+      "open": {
+        "h": 2.67,
+        "d": 2.74,
+        "a": 2
+      },
+      "close": {
+        "h": 2.67,
+        "d": 2.74,
+        "a": 2
+      },
+      "htft": {
+        "1/1": 4.62,
+        "1/X": 12.9,
+        "1/2": 28,
+        "X/1": 6.43,
+        "X/X": 4.21,
+        "X/2": 5.16,
+        "2/1": 33.5,
+        "2/X": 12.5,
+        "2/2": 3.27
+      },
+      "nesineId": 2825584
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-09",
       "time": "04:00",
       "home": "Tigres",
       "away": "S. Sounders",
@@ -4101,47 +4131,17 @@
       "leagueName": "",
       "date": "2026-04-09",
       "time": "05:00",
-      "home": "S. Cristal",
-      "away": "Cerro Porteno",
-      "open": {
-        "h": 2.05,
-        "d": 2.72,
-        "a": 2.6
-      },
-      "close": {
-        "h": 2.05,
-        "d": 2.72,
-        "a": 2.6
-      },
-      "htft": {
-        "1/1": 3.45,
-        "1/X": 13.6,
-        "1/2": 34,
-        "X/1": 4.98,
-        "X/X": 3.95,
-        "X/2": 5.99,
-        "2/1": 31,
-        "2/X": 14,
-        "2/2": 4.58
-      },
-      "nesineId": 2825631
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-09",
-      "time": "05:00",
       "home": "Orange Count",
       "away": "San Antonio",
       "open": {
-        "h": 2.36,
-        "d": 2.41,
-        "a": 2.49
+        "h": 2.12,
+        "d": 2.57,
+        "a": 2.64
       },
       "close": {
-        "h": 2.36,
-        "d": 2.41,
-        "a": 2.49
+        "h": 2.12,
+        "d": 2.57,
+        "a": 2.64
       },
       "htft": {},
       "nesineId": 2782152
@@ -4180,18 +4180,48 @@
       "league": "OTHER",
       "leagueName": "",
       "date": "2026-04-09",
+      "time": "05:00",
+      "home": "S. Cristal",
+      "away": "Cerro Porteno",
+      "open": {
+        "h": 2.05,
+        "d": 2.72,
+        "a": 2.6
+      },
+      "close": {
+        "h": 2.05,
+        "d": 2.72,
+        "a": 2.6
+      },
+      "htft": {
+        "1/1": 3.45,
+        "1/X": 13.6,
+        "1/2": 34,
+        "X/1": 4.98,
+        "X/X": 3.95,
+        "X/2": 5.99,
+        "2/1": 31,
+        "2/X": 14,
+        "2/2": 4.58
+      },
+      "nesineId": 2825631
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-09",
       "time": "06:00",
       "home": "D. Toluca",
       "away": "LA Galaxy",
       "open": {
-        "h": 1.18,
-        "d": 4.25,
-        "a": 6.28
+        "h": 1.15,
+        "d": 4.51,
+        "a": 7.05
       },
       "close": {
-        "h": 1.18,
-        "d": 4.25,
-        "a": 6.28
+        "h": 1.15,
+        "d": 4.51,
+        "a": 7.05
       },
       "htft": {},
       "nesineId": 2830374
@@ -4281,26 +4311,6 @@
       "leagueName": "",
       "date": "2026-04-09",
       "time": "18:00",
-      "home": "Isloch",
-      "away": "Dinamo Brest",
-      "open": {
-        "h": 2.17,
-        "d": 2.8,
-        "a": 2.37
-      },
-      "close": {
-        "h": 2.17,
-        "d": 2.8,
-        "a": 2.37
-      },
-      "htft": {},
-      "nesineId": 2830419
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-09",
-      "time": "18:00",
       "home": "Grobinas SC",
       "away": "Super Nova",
       "open": {
@@ -4321,17 +4331,57 @@
       "leagueName": "",
       "date": "2026-04-09",
       "time": "18:00",
+      "home": "Ludogorets",
+      "away": "Cherno More",
+      "open": {
+        "h": 1.13,
+        "d": 4.35,
+        "a": 8.18
+      },
+      "close": {
+        "h": 1.13,
+        "d": 4.35,
+        "a": 8.18
+      },
+      "htft": {},
+      "nesineId": 2796364
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-09",
+      "time": "18:00",
+      "home": "Isloch",
+      "away": "Dinamo Brest",
+      "open": {
+        "h": 2.17,
+        "d": 2.8,
+        "a": 2.37
+      },
+      "close": {
+        "h": 2.17,
+        "d": 2.8,
+        "a": 2.37
+      },
+      "htft": {},
+      "nesineId": 2830419
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-09",
+      "time": "18:00",
       "home": "Novi Pazar",
       "away": "Partizan",
       "open": {
-        "h": 2.92,
-        "d": 3.24,
-        "a": 1.7
+        "h": 2.85,
+        "d": 3.01,
+        "a": 1.8
       },
       "close": {
-        "h": 2.92,
-        "d": 3.24,
-        "a": 1.7
+        "h": 2.85,
+        "d": 3.01,
+        "a": 1.8
       },
       "htft": {},
       "nesineId": 2781457
@@ -4361,26 +4411,6 @@
       "leagueName": "",
       "date": "2026-04-09",
       "time": "18:00",
-      "home": "Ludogorets",
-      "away": "Cherno More",
-      "open": {
-        "h": 1.14,
-        "d": 4.3,
-        "a": 7.92
-      },
-      "close": {
-        "h": 1.14,
-        "d": 4.3,
-        "a": 7.92
-      },
-      "htft": {},
-      "nesineId": 2796364
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-09",
-      "time": "18:00",
       "home": "Talaea Gaish",
       "away": "N. Bank Egypt",
       "open": {
@@ -4404,17 +4434,77 @@
       "home": "Damac",
       "away": "AL Qadisiyah",
       "open": {
-        "h": 5.41,
-        "d": 3.89,
-        "a": 1.26
+        "h": 5.58,
+        "d": 3.98,
+        "a": 1.24
       },
       "close": {
-        "h": 5.41,
-        "d": 3.89,
-        "a": 1.26
+        "h": 5.58,
+        "d": 3.98,
+        "a": 1.24
       },
       "htft": {},
       "nesineId": 2781289
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-09",
+      "time": "19:00",
+      "home": "Riga",
+      "away": "FK Tukums 2000 Tss",
+      "open": {
+        "h": 1,
+        "d": 6.11,
+        "a": 13.7
+      },
+      "close": {
+        "h": 1,
+        "d": 6.11,
+        "a": 13.7
+      },
+      "htft": {},
+      "nesineId": 2782135
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-09",
+      "time": "19:20",
+      "home": "AL Ula",
+      "away": "Abha Club",
+      "open": {
+        "h": 1.94,
+        "d": 2.96,
+        "a": 2.6
+      },
+      "close": {
+        "h": 1.94,
+        "d": 2.96,
+        "a": 2.6
+      },
+      "htft": {},
+      "nesineId": 2781281
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-09",
+      "time": "19:20",
+      "home": "AL Orubah",
+      "away": "AL Faisaly (Sar)",
+      "open": {
+        "h": 2.2,
+        "d": 2.92,
+        "a": 2.27
+      },
+      "close": {
+        "h": 2.2,
+        "d": 2.92,
+        "a": 2.27
+      },
+      "htft": {},
+      "nesineId": 2781352
     },
     {
       "league": "OTHER",
@@ -4424,25 +4514,25 @@
       "home": "Rakow C.",
       "away": "Katowice",
       "open": {
-        "h": 1.71,
-        "d": 2.96,
-        "a": 3.15
+        "h": 1.75,
+        "d": 2.93,
+        "a": 3.05
       },
       "close": {
-        "h": 1.71,
-        "d": 2.96,
-        "a": 3.15
+        "h": 1.75,
+        "d": 2.93,
+        "a": 3.05
       },
       "htft": {
-        "1/1": 2.71,
-        "1/X": 13.25,
+        "1/1": 2.79,
+        "1/X": 13.1,
         "1/2": 34,
-        "X/1": 4.58,
-        "X/X": 4.55,
-        "X/2": 7.34,
+        "X/1": 4.65,
+        "X/X": 4.52,
+        "X/2": 7.16,
         "2/1": 25,
-        "2/X": 14.15,
-        "2/2": 5.62
+        "2/X": 13.95,
+        "2/2": 5.42
       },
       "nesineId": 2795944
     },
@@ -4481,20 +4571,20 @@
       "leagueName": "",
       "date": "2026-04-09",
       "time": "20:00",
-      "home": "Kızıl Yıldız",
-      "away": "Spartak Subotica",
+      "home": "FK Cukaricki",
+      "away": "Radnicki",
       "open": {
-        "h": 1,
-        "d": 11.1,
-        "a": 17.1
+        "h": 1.83,
+        "d": 2.98,
+        "a": 2.8
       },
       "close": {
-        "h": 1,
-        "d": 11.1,
-        "a": 17.1
+        "h": 1.83,
+        "d": 2.98,
+        "a": 2.8
       },
       "htft": {},
-      "nesineId": 2781363
+      "nesineId": 2781892
     },
     {
       "league": "OTHER",
@@ -4504,14 +4594,14 @@
       "home": "OFK Belgrad",
       "away": "Radnik Surdu.",
       "open": {
-        "h": 1.83,
-        "d": 2.89,
-        "a": 2.87
+        "h": 1.74,
+        "d": 2.95,
+        "a": 3.06
       },
       "close": {
-        "h": 1.83,
-        "d": 2.89,
-        "a": 2.87
+        "h": 1.74,
+        "d": 2.95,
+        "a": 3.06
       },
       "htft": {},
       "nesineId": 2781297
@@ -4521,50 +4611,20 @@
       "leagueName": "",
       "date": "2026-04-09",
       "time": "20:00",
-      "home": "Rizespor",
-      "away": "Samsunspor",
+      "home": "Kızıl Yıldız",
+      "away": "Spartak Subotica",
       "open": {
-        "h": 2.03,
-        "d": 3.09,
-        "a": 2.57
+        "h": 1,
+        "d": 10.45,
+        "a": 17.1
       },
       "close": {
-        "h": 2.03,
-        "d": 3.09,
-        "a": 2.57
-      },
-      "htft": {
-        "1/1": 3.27,
-        "1/X": 13.3,
-        "1/2": 30.5,
-        "X/1": 5.09,
-        "X/X": 4.68,
-        "X/2": 6.09,
-        "2/1": 26,
-        "2/X": 13.6,
-        "2/2": 4.3
-      },
-      "nesineId": 2833016
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-09",
-      "time": "20:00",
-      "home": "FK Cukaricki",
-      "away": "Radnicki",
-      "open": {
-        "h": 2.08,
-        "d": 2.88,
-        "a": 2.44
-      },
-      "close": {
-        "h": 2.08,
-        "d": 2.88,
-        "a": 2.44
+        "h": 1,
+        "d": 10.45,
+        "a": 17.1
       },
       "htft": {},
-      "nesineId": 2781892
+      "nesineId": 2781363
     },
     {
       "league": "OTHER",
@@ -4585,6 +4645,36 @@
       },
       "htft": {},
       "nesineId": 2781767
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-09",
+      "time": "20:00",
+      "home": "Rizespor",
+      "away": "Samsunspor",
+      "open": {
+        "h": 2.03,
+        "d": 3,
+        "a": 2.64
+      },
+      "close": {
+        "h": 2.03,
+        "d": 3,
+        "a": 2.64
+      },
+      "htft": {
+        "1/1": 3.23,
+        "1/X": 12.85,
+        "1/2": 31,
+        "X/1": 5.14,
+        "X/X": 4.57,
+        "X/2": 6.28,
+        "2/1": 26,
+        "2/X": 13.2,
+        "2/2": 4.4
+      },
+      "nesineId": 2833016
     },
     {
       "league": "OTHER",
@@ -4625,6 +4715,26 @@
       },
       "htft": {},
       "nesineId": 2796289
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-09",
+      "time": "20:40",
+      "home": "AL Adalh",
+      "away": "AL Batin",
+      "open": {
+        "h": 2.3,
+        "d": 2.92,
+        "a": 2.16
+      },
+      "close": {
+        "h": 2.3,
+        "d": 2.92,
+        "a": 2.16
+      },
+      "htft": {},
+      "nesineId": 2781501
     },
     {
       "league": "OTHER",
@@ -4691,6 +4801,36 @@
       "leagueName": "",
       "date": "2026-04-09",
       "time": "22:00",
+      "home": "Bologna",
+      "away": "Aston Villa",
+      "open": {
+        "h": 2.66,
+        "d": 2.86,
+        "a": 2.09
+      },
+      "close": {
+        "h": 2.66,
+        "d": 2.86,
+        "a": 2.09
+      },
+      "htft": {
+        "1/1": 4.45,
+        "1/X": 13.05,
+        "1/2": 28,
+        "X/1": 6.24,
+        "X/X": 4.27,
+        "X/2": 5.18,
+        "2/1": 32.5,
+        "2/X": 12.7,
+        "2/2": 3.34
+      },
+      "nesineId": 2781672
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-09",
+      "time": "22:00",
       "home": "Freiburg",
       "away": "Celta Vigo",
       "open": {
@@ -4721,30 +4861,30 @@
       "leagueName": "",
       "date": "2026-04-09",
       "time": "22:00",
-      "home": "Mainz",
-      "away": "Strasbourg",
+      "home": "Porto",
+      "away": "Nottingham F.",
       "open": {
-        "h": 1.79,
-        "d": 3.05,
-        "a": 3.15
+        "h": 1.85,
+        "d": 2.97,
+        "a": 3.07
       },
       "close": {
-        "h": 1.79,
-        "d": 3.05,
-        "a": 3.15
+        "h": 1.85,
+        "d": 2.97,
+        "a": 3.07
       },
       "htft": {
-        "1/1": 2.74,
-        "1/X": 12.65,
+        "1/1": 2.93,
+        "1/X": 13.75,
         "1/2": 34,
-        "X/1": 4.78,
-        "X/X": 4.69,
-        "X/2": 7.34,
-        "2/1": 24.35,
-        "2/X": 13.4,
-        "2/2": 5.35
+        "X/1": 4.57,
+        "X/X": 4.25,
+        "X/2": 6.77,
+        "2/1": 27.5,
+        "2/X": 14.55,
+        "2/2": 5.34
       },
-      "nesineId": 2781368
+      "nesineId": 2781427
     },
     {
       "league": "OTHER",
@@ -4781,30 +4921,30 @@
       "leagueName": "",
       "date": "2026-04-09",
       "time": "22:00",
-      "home": "Bologna",
-      "away": "Aston Villa",
+      "home": "Mainz",
+      "away": "Strasbourg",
       "open": {
-        "h": 2.66,
-        "d": 2.86,
-        "a": 2.09
+        "h": 1.79,
+        "d": 3.05,
+        "a": 3.15
       },
       "close": {
-        "h": 2.66,
-        "d": 2.86,
-        "a": 2.09
+        "h": 1.79,
+        "d": 3.05,
+        "a": 3.15
       },
       "htft": {
-        "1/1": 4.45,
-        "1/X": 13.05,
-        "1/2": 28,
-        "X/1": 6.24,
-        "X/X": 4.27,
-        "X/2": 5.18,
-        "2/1": 32.5,
-        "2/X": 12.7,
-        "2/2": 3.34
+        "1/1": 2.74,
+        "1/X": 12.65,
+        "1/2": 34,
+        "X/1": 4.78,
+        "X/X": 4.69,
+        "X/2": 7.34,
+        "2/1": 24.35,
+        "2/X": 13.4,
+        "2/2": 5.35
       },
-      "nesineId": 2781672
+      "nesineId": 2781368
     },
     {
       "league": "OTHER",
@@ -4859,36 +4999,6 @@
     {
       "league": "OTHER",
       "leagueName": "",
-      "date": "2026-04-09",
-      "time": "22:00",
-      "home": "Porto",
-      "away": "Nottingham F.",
-      "open": {
-        "h": 1.85,
-        "d": 2.97,
-        "a": 3.07
-      },
-      "close": {
-        "h": 1.85,
-        "d": 2.97,
-        "a": 3.07
-      },
-      "htft": {
-        "1/1": 2.93,
-        "1/X": 13.75,
-        "1/2": 34,
-        "X/1": 4.57,
-        "X/X": 4.25,
-        "X/2": 6.77,
-        "2/1": 27.5,
-        "2/X": 14.55,
-        "2/2": 5.34
-      },
-      "nesineId": 2781427
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
       "date": "2026-04-10",
       "time": "01:00",
       "home": "Botafogo RJ",
@@ -4921,36 +5031,6 @@
       "leagueName": "",
       "date": "2026-04-10",
       "time": "01:00",
-      "home": "Ucv",
-      "away": "L. Asuncion",
-      "open": {
-        "h": 2.61,
-        "d": 2.65,
-        "a": 2.09
-      },
-      "close": {
-        "h": 2.61,
-        "d": 2.65,
-        "a": 2.09
-      },
-      "htft": {
-        "1/1": 4.6,
-        "1/X": 13.9,
-        "1/2": 31.5,
-        "X/1": 5.99,
-        "X/X": 3.82,
-        "X/2": 5.04,
-        "2/1": 34,
-        "2/X": 13.5,
-        "2/2": 3.52
-      },
-      "nesineId": 2825636
-    },
-    {
-      "league": "OTHER",
-      "leagueName": "",
-      "date": "2026-04-10",
-      "time": "01:00",
       "home": "CA Juventud De Las Piedras",
       "away": "CS Cienciano",
       "open": {
@@ -4964,15 +5044,15 @@
         "a": 2.86
       },
       "htft": {
-        "1/1": 3,
-        "1/X": 13,
+        "1/1": 3.03,
+        "1/X": 13.35,
         "1/2": 34,
-        "X/1": 4.82,
-        "X/X": 4.33,
-        "X/2": 6.75,
-        "2/1": 26.5,
-        "2/X": 13.65,
-        "2/2": 5.06
+        "X/1": 4.75,
+        "X/X": 4.26,
+        "X/2": 6.66,
+        "2/1": 27.5,
+        "2/X": 14,
+        "2/2": 5.1
       },
       "nesineId": 2825578
     },
@@ -5005,6 +5085,36 @@
         "2/2": 8.15
       },
       "nesineId": 2825588
+    },
+    {
+      "league": "OTHER",
+      "leagueName": "",
+      "date": "2026-04-10",
+      "time": "01:00",
+      "home": "Ucv",
+      "away": "L. Asuncion",
+      "open": {
+        "h": 2.61,
+        "d": 2.65,
+        "a": 2.09
+      },
+      "close": {
+        "h": 2.61,
+        "d": 2.65,
+        "a": 2.09
+      },
+      "htft": {
+        "1/1": 4.6,
+        "1/X": 13.9,
+        "1/2": 31.5,
+        "X/1": 5.99,
+        "X/X": 3.82,
+        "X/2": 5.04,
+        "2/1": 34,
+        "2/X": 13.5,
+        "2/2": 3.52
+      },
+      "nesineId": 2825636
     },
     {
       "league": "OTHER",
@@ -5044,25 +5154,25 @@
       "home": "CSD Macara",
       "away": "America De Cali",
       "open": {
-        "h": 2.76,
-        "d": 2.38,
-        "a": 2.19
+        "h": 2.62,
+        "d": 2.33,
+        "a": 2.33
       },
       "close": {
-        "h": 2.76,
-        "d": 2.38,
-        "a": 2.19
+        "h": 2.62,
+        "d": 2.33,
+        "a": 2.33
       },
       "htft": {
-        "1/1": 4.91,
-        "1/X": 13.7,
+        "1/1": 4.6,
+        "1/X": 13.25,
         "1/2": 34,
-        "X/1": 6.17,
-        "X/X": 3.27,
-        "X/2": 5.16,
+        "X/1": 5.98,
+        "X/X": 3.21,
+        "X/2": 5.45,
         "2/1": 34,
-        "2/X": 13.3,
-        "2/2": 3.71
+        "2/X": 13.05,
+        "2/2": 3.98
       },
       "nesineId": 2825665
     },
@@ -5516,7 +5626,7 @@
     }
   },
   "total_matches": 5870,
-  "nesine_updated": "2026-04-07 09:09",
+  "nesine_updated": "2026-04-07 13:18",
   "team_profiles": {
     "Galatasaray": {
       "id": 2918,
@@ -6976,5 +7086,5 @@
       "updated": "2026-04-07"
     }
   },
-  "profiles_updated": "2026-04-07 09:15"
+  "profiles_updated": "2026-04-07 13:25"
 }
