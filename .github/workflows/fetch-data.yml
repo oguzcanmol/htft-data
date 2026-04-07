@@ -13,11 +13,19 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Python kur
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
+      - name: Git ayarla
+        run: |
+          git config user.name "HTFT Bot"
+          git config user.email "bot@htft.local"
+          git pull --rebase origin main
 
       - name: Tarihsel veri cek
         run: python scripts/fetch_odds.py
@@ -28,12 +36,16 @@ jobs:
       - name: SofaScore profilleri cek
         run: python scripts/fetch_sofascore.py
 
+      - name: Hava durumu
+        run: python scripts/fetch_weather.py
+        env:
+          OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
+
       - name: HTML guncelle
         run: python scripts/save_html.py
 
       - name: Kaydet
         run: |
-          git config user.name "HTFT Bot"
-          git config user.email "bot@htft.local"
           git add data/ HTFT_ELITE_SISTEM_CANLI.html
-          git diff --cached --quiet || (git commit -m "Veri guncellendi: $(date '+%d/%m/%Y %H:%M')" && git pull --rebase && git push)
+          git diff --cached --quiet || git commit -m "Veri guncellendi: $(date '+%d/%m/%Y %H:%M')"
+          git push origin main
