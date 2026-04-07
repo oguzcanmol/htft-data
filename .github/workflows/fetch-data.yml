@@ -25,11 +25,6 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Git ayarla
-        run: |
-          git config user.name "HTFT Bot"
-          git config user.email "bot@htft.local"
-
       - name: Tarihsel veri cek
         run: python scripts/fetch_odds.py
 
@@ -49,10 +44,10 @@ jobs:
 
       - name: Kaydet
         run: |
+          git config user.name "HTFT Bot"
+          git config user.email "bot@htft.local"
+          git pull --rebase origin main
           git add data/ HTFT_ELITE_SISTEM_CANLI.html
           git diff --cached --quiet && echo "Degisiklik yok" && exit 0
           git commit -m "Veri guncellendi: $(date '+%d/%m/%Y %H:%M')"
-          for i in 1 2 3; do
-            git pull --rebase origin main && git push origin main && break
-            sleep 10
-          done
+          git push origin main
