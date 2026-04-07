@@ -48,4 +48,4 @@ jobs:
         run: |
           git add data/ HTFT_ELITE_SISTEM_CANLI.html
           git diff --cached --quiet || git commit -m "Veri guncellendi: $(date '+%d/%m/%Y %H:%M')"
-          git push origin main
+          git push origin main || (git pull --rebase origin main && git push origin main)
